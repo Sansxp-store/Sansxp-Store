@@ -9,13 +9,13 @@
 <style>
 
 /* =========================
-   DASAR WEBSITE
+   RESET
 ========================= */
 
 *{
-    box-sizing:border-box;
     margin:0;
     padding:0;
+    box-sizing:border-box;
 }
 
 html{
@@ -23,220 +23,374 @@ html{
 }
 
 body{
-    margin:0;
-    color:white;
     font-family:Arial, Helvetica, sans-serif;
+    color:white;
+    min-height:100vh;
 
-    /* BACKGROUND BIRU UNTUK SELURUH WEBSITE */
     background:
         radial-gradient(
             circle at 50% 0%,
-            #1556a0 0%,
-            #0b3970 22%,
-            #061e3d 48%,
-            #020d1d 75%,
-            #010711 100%
+            #1264b5 0%,
+            #082f5c 28%,
+            #03182f 55%,
+            #010914 100%
         );
-
-    min-height:100vh;
 }
+
+
+/* =========================
+   CONTAINER
+========================= */
 
 .container{
     width:100%;
     max-width:650px;
     margin:auto;
     min-height:100vh;
-
-    background:
-        linear-gradient(
-            180deg,
-            rgba(5,35,75,0.20),
-            rgba(1,13,29,0.20)
-        );
+    overflow:hidden;
 }
 
 
 /* =========================
-   GAMBAR UTAMA
+   HOME
 ========================= */
 
 .home{
-    position:relative;
-    width:100%;
-}
-
-.home img{
-    width:100%;
-    height:auto;
-    display:block;
-
-    /* Biar gambar menyatu dengan background */
-    border:0;
+    padding:35px 18px 45px;
 }
 
 
 /* =========================
-   AREA KLIK GAMBAR
+   LOGO / NAMA TOKO
 ========================= */
 
-.hotspot{
-    position:absolute;
-    display:block;
-    z-index:10;
-    cursor:pointer;
-}
-
-/* FREE FIRE */
-.ff{
-    left:5%;
-    top:23%;
-    width:43%;
-    height:25%;
-}
-
-/* MOBILE LEGENDS */
-.ml{
-    right:5%;
-    top:23%;
-    width:43%;
-    height:25%;
-}
-
-/* ROBLOX */
-.roblox{
-    left:20%;
-    top:49%;
-    width:60%;
-    height:25%;
-}
-
-/* ADMIN */
-.admin{
-    left:27%;
-    top:78%;
-    width:46%;
-    height:12%;
-}
-
-
-/* =========================
-   INFO STORE
-========================= */
-
-.info-section{
-    padding:30px 18px 35px;
-
-    /* TRANSPARAN AGAR NYAMBUNG */
-    background:transparent;
-}
-
-.info-title{
+.logo{
     text-align:center;
-    font-size:23px;
-    font-weight:bold;
-    margin-bottom:10px;
+    font-size:38px;
+    font-weight:900;
+    letter-spacing:2px;
+
+    color:#ffffff;
 
     text-shadow:
+        0 0 5px #168cff,
+        0 0 15px #168cff,
+        0 0 30px #006eff;
+
+    margin-top:10px;
+}
+
+.logo-line{
+    width:120px;
+    height:3px;
+
+    margin:13px auto 18px;
+
+    background:#1b91ff;
+
+    border-radius:10px;
+
+    box-shadow:
         0 0 8px #168cff,
         0 0 18px #168cff;
 }
 
-.info-subtitle{
-    text-align:center;
-    color:#b9d8ff;
-    font-size:14px;
-    line-height:1.6;
-    margin-bottom:23px;
-}
-
 
 /* =========================
-   FITUR
+   SUBTITLE
 ========================= */
 
-.features{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:10px;
-}
-
-.feature{
-    background:
-        linear-gradient(
-            145deg,
-            rgba(13,61,112,0.85),
-            rgba(3,23,48,0.9)
-        );
-
-    border:1px solid #1674c9;
-    border-radius:14px;
-
-    padding:16px 8px;
+.subtitle{
     text-align:center;
 
-    box-shadow:
-        0 0 10px rgba(0,126,255,0.20);
-}
+    font-size:20px;
+    font-weight:bold;
 
-.feature-icon{
-    font-size:25px;
-    margin-bottom:8px;
-}
+    color:#55b7ff;
 
-.feature h3{
-    font-size:13px;
-    margin-bottom:6px;
-}
-
-.feature p{
-    color:#9dbddd;
-    font-size:10px;
-    line-height:1.4;
-}
-
-
-/* =========================
-   PROMO
-========================= */
-
-.promo{
-    margin-top:20px;
-    padding:18px;
-
-    border-radius:15px;
-    text-align:center;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(10,68,130,0.9),
-            rgba(3,25,54,0.9)
-        );
-
-    border:1px solid #238cff;
-
-    box-shadow:
-        0 0 15px rgba(0,132,255,0.20);
-}
-
-.promo strong{
-    color:#5bb4ff;
-    font-size:16px;
+    letter-spacing:1px;
 
     text-shadow:
         0 0 8px #168cff;
 }
 
-.promo p{
-    color:#b7d1ed;
-    font-size:12px;
-    line-height:1.5;
-    margin-top:7px;
+.description{
+    text-align:center;
+
+    color:#a8c7e5;
+
+    font-size:13px;
+
+    line-height:1.6;
+
+    margin-top:9px;
+
+    margin-bottom:28px;
 }
 
 
 /* =========================
-   HALAMAN HARGA
+   GAME SECTION
+========================= */
+
+.game-title{
+    text-align:center;
+
+    font-size:18px;
+
+    margin-bottom:15px;
+
+    color:#dceeff;
+}
+
+
+/* =========================
+   GAME CARDS
+========================= */
+
+.games{
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:13px;
+}
+
+
+/* ROBLOX FULL WIDTH */
+
+.game-card.roblox-card{
+    grid-column:1 / 3;
+}
+
+
+.game-card{
+    position:relative;
+
+    min-height:155px;
+
+    padding:20px 15px;
+
+    border-radius:18px;
+
+    text-align:center;
+
+    cursor:pointer;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(16,83,148,0.95),
+            rgba(3,27,55,0.98)
+        );
+
+    border:1px solid #188cff;
+
+    box-shadow:
+        0 0 10px rgba(0,140,255,0.25),
+        inset 0 0 20px rgba(0,100,200,0.10);
+
+    transition:
+        transform .2s,
+        box-shadow .2s;
+}
+
+.game-card:hover{
+    transform:translateY(-4px);
+
+    box-shadow:
+        0 0 15px rgba(0,153,255,0.55),
+        0 0 35px rgba(0,105,255,0.25);
+}
+
+.game-icon{
+    width:65px;
+    height:65px;
+
+    margin:0 auto 13px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:17px;
+
+    font-size:34px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #168cff,
+            #064b91
+        );
+
+    border:1px solid #63bdff;
+
+    box-shadow:
+        0 0 12px rgba(0,153,255,0.5);
+}
+
+.game-name{
+    font-size:17px;
+    font-weight:bold;
+
+    margin-bottom:6px;
+}
+
+.game-desc{
+    font-size:11px;
+
+    color:#9fc4e8;
+}
+
+
+/* =========================
+   FEATURES
+========================= */
+
+.features-title{
+    text-align:center;
+
+    margin-top:30px;
+    margin-bottom:14px;
+
+    font-size:17px;
+}
+
+.features{
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:8px;
+}
+
+.feature{
+    padding:16px 7px;
+
+    text-align:center;
+
+    border-radius:14px;
+
+    background:
+        rgba(4,35,68,0.85);
+
+    border:1px solid #125b99;
+
+    box-shadow:
+        0 0 8px rgba(0,120,220,0.15);
+}
+
+.feature-icon{
+    font-size:24px;
+
+    margin-bottom:8px;
+}
+
+.feature h3{
+    font-size:11px;
+
+    margin-bottom:6px;
+}
+
+.feature p{
+    font-size:9px;
+
+    line-height:1.4;
+
+    color:#8fb1d1;
+}
+
+
+/* =========================
+   ADMIN
+========================= */
+
+.admin-box{
+    margin-top:20px;
+
+    padding:18px;
+
+    text-align:center;
+
+    border-radius:16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(10,75,135,.9),
+            rgba(2,29,57,.95)
+        );
+
+    border:1px solid #168cff;
+
+    box-shadow:
+        0 0 15px rgba(0,140,255,.18);
+}
+
+.admin-title{
+    font-size:16px;
+
+    font-weight:bold;
+
+    margin-bottom:6px;
+}
+
+.admin-number{
+    color:#5dbaff;
+
+    font-size:13px;
+
+    margin-bottom:13px;
+}
+
+.admin-button{
+    display:inline-block;
+
+    padding:10px 20px;
+
+    border-radius:10px;
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+    background:
+        linear-gradient(
+            135deg,
+            #168cff,
+            #07509b
+        );
+
+    border:1px solid #67c2ff;
+
+    box-shadow:
+        0 0 10px rgba(0,145,255,.35);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+    text-align:center;
+
+    color:#6686a5;
+
+    font-size:10px;
+
+    margin-top:30px;
+}
+
+
+/* =========================
+   PAGE HARGA
 ========================= */
 
 .page{
@@ -244,15 +398,15 @@ body{
 
     min-height:100vh;
 
-    padding:25px 15px 40px;
+    padding:25px 16px 45px;
 
-    /* BACKGROUND TETAP NYAMBUNG */
     background:
         radial-gradient(
             circle at 50% 0%,
-            rgba(21,86,160,0.65),
-            rgba(6,30,61,0.45) 45%,
-            rgba(1,7,17,0.35) 100%
+            #1264b5 0%,
+            #082f5c 30%,
+            #03182f 65%,
+            #010914 100%
         );
 }
 
@@ -260,162 +414,208 @@ body{
     display:block;
 }
 
-.box{
+.price-container{
     width:100%;
     max-width:520px;
+
     margin:auto;
 }
 
 
 /* =========================
-   TOMBOL KEMBALI
+   BACK BUTTON
 ========================= */
 
 .back{
     display:inline-block;
 
     color:white;
-    text-decoration:none;
 
-    background:
-        linear-gradient(
-            135deg,
-            #1264ad,
-            #07305d
-        );
+    text-decoration:none;
 
     padding:10px 16px;
 
     border-radius:10px;
 
-    border:1px solid #238cff;
+    background:
+        rgba(8,57,105,.9);
+
+    border:1px solid #168cff;
 
     box-shadow:
-        0 0 10px rgba(0,130,255,0.25);
+        0 0 8px rgba(0,140,255,.25);
 
     margin-bottom:25px;
-}
 
-.back:hover{
-    background:#168cff;
+    font-size:13px;
 }
 
 
 /* =========================
-   JUDUL GAME
+   PRICE PAGE TITLE
 ========================= */
 
-.title{
+.price-title{
     text-align:center;
+
     font-size:28px;
-    margin-bottom:25px;
+
+    margin-bottom:8px;
 
     text-shadow:
         0 0 8px #168cff,
         0 0 20px #168cff;
 }
 
+.price-subtitle{
+    text-align:center;
+
+    color:#8eb9df;
+
+    font-size:12px;
+
+    margin-bottom:25px;
+}
+
 
 /* =========================
-   PRODUK / HARGA
+   PRODUCT
 ========================= */
 
 .product{
     display:flex;
-    justify-content:space-between;
+
     align-items:center;
 
+    justify-content:space-between;
+
     gap:12px;
+
+    padding:15px;
+
+    margin-bottom:11px;
+
+    border-radius:14px;
 
     background:
         linear-gradient(
             135deg,
-            rgba(10,53,98,0.9),
-            rgba(3,20,40,0.95)
+            rgba(10,61,110,.95),
+            rgba(2,25,49,.98)
         );
 
-    border:1px solid #176db8;
-
-    border-radius:15px;
-
-    padding:16px;
-
-    margin-bottom:12px;
+    border:1px solid #1469ae;
 
     box-shadow:
-        0 0 10px rgba(0,119,255,0.12);
+        0 0 8px rgba(0,120,220,.12);
 }
 
-.name{
-    font-size:17px;
+.product-name{
+    font-size:15px;
+
     font-weight:bold;
 }
 
-.price{
-    color:#55b4ff;
+.product-price{
+    color:#55b7ff;
+
+    font-size:14px;
+
     font-weight:bold;
+
     margin-top:5px;
 }
 
-
-/* =========================
-   TOMBOL BELI
-========================= */
-
 .buy{
     flex-shrink:0;
+
+    text-decoration:none;
+
+    color:white;
+
+    font-size:12px;
+
+    font-weight:bold;
+
+    padding:9px 15px;
+
+    border-radius:9px;
 
     background:
         linear-gradient(
             135deg,
             #168cff,
-            #0751a0
+            #07509b
         );
 
-    color:white;
-
-    text-decoration:none;
-
-    padding:10px 15px;
-
-    border-radius:9px;
-
-    font-weight:bold;
-
-    border:1px solid #55b4ff;
+    border:1px solid #5dbaff;
 
     box-shadow:
-        0 0 10px rgba(0,140,255,0.30);
+        0 0 8px rgba(0,145,255,.3);
 }
 
-.buy:hover{
-    background:#39a5ff;
+.buy:active{
+    transform:scale(.96);
 }
 
 
 /* =========================
-   CATATAN
+   PRICE NOTE
 ========================= */
 
-.note{
+.price-note{
     text-align:center;
 
-    color:#8fb0d0;
+    margin-top:20px;
 
-    font-size:13px;
+    color:#7698b7;
 
-    margin-top:25px;
+    font-size:11px;
+
+    line-height:1.5;
 }
 
 
 /* =========================
-   RESPONSIVE HP
+   MOBILE
 ========================= */
 
-@media(max-width:420px){
+@media(max-width:430px){
+
+    .home{
+        padding-left:14px;
+        padding-right:14px;
+    }
+
+    .logo{
+        font-size:30px;
+    }
+
+    .subtitle{
+        font-size:17px;
+    }
+
+    .games{
+        gap:9px;
+    }
+
+    .game-card{
+        min-height:145px;
+        padding:16px 8px;
+    }
+
+    .game-icon{
+        width:57px;
+        height:57px;
+        font-size:29px;
+    }
+
+    .game-name{
+        font-size:14px;
+    }
 
     .features{
-        gap:7px;
+        gap:5px;
     }
 
     .feature{
@@ -423,26 +623,25 @@ body{
     }
 
     .feature h3{
-        font-size:11px;
+        font-size:9px;
     }
 
     .feature p{
-        font-size:9px;
+        font-size:8px;
     }
 
     .product{
         padding:13px;
     }
 
-    .name{
-        font-size:15px;
+    .product-name{
+        font-size:14px;
     }
 
     .buy{
         padding:9px 12px;
-        font-size:13px;
+        font-size:11px;
     }
-
 }
 
 </style>
@@ -460,67 +659,115 @@ body{
 
 <div id="home" class="home">
 
-    <!-- GAMBAR UTAMA -->
-    <img
-        src="sans-exp-store.png"
-        alt="SANS EXP STORE"
-    >
 
+    <!-- NAMA TOKO -->
 
-    <!-- KLIK FREE FIRE -->
-    <a
-        href="javascript:void(0)"
-        class="hotspot ff"
-        onclick="showPage('freefire')">
-    </a>
-
-
-    <!-- KLIK MOBILE LEGENDS -->
-    <a
-        href="javascript:void(0)"
-        class="hotspot ml"
-        onclick="showPage('mobilelegends')">
-    </a>
-
-
-    <!-- KLIK ROBLOX -->
-    <a
-        href="javascript:void(0)"
-        class="hotspot roblox"
-        onclick="showPage('roblox')">
-    </a>
-
-
-    <!-- KLIK ADMIN -->
-    <a
-        href="https://wa.me/62882007902763"
-        class="hotspot admin">
-    </a>
-
-</div>
-
-
-
-<!-- ==================================================
-     INFO STORE
-================================================== -->
-
-<section class="info-section">
-
-    <div class="info-title">
-        ⚡ TOP UP CEPAT & MUDAH
+    <div class="logo">
+        SANS EXP STORE
     </div>
 
-    <div class="info-subtitle">
-        Pilih game favoritmu dan lakukan top up
-        dengan mudah bersama SANS EXP STORE.
+    <div class="logo-line"></div>
+
+
+    <!-- SUBTITLE -->
+
+    <div class="subtitle">
+        TOP UP CEPAT & AMAN
+    </div>
+
+    <div class="description">
+        Top up game favoritmu dengan proses cepat,
+        mudah, dan praktis.
+    </div>
+
+
+    <!-- GAME -->
+
+    <div class="game-title">
+        🎮 PILIH GAME
+    </div>
+
+
+    <div class="games">
+
+
+        <!-- FREE FIRE -->
+
+        <div
+            class="game-card"
+            onclick="showPage('freefire')">
+
+            <div class="game-icon">
+                🔥
+            </div>
+
+            <div class="game-name">
+                FREE FIRE
+            </div>
+
+            <div class="game-desc">
+                Top Up Diamond
+            </div>
+
+        </div>
+
+
+
+        <!-- MOBILE LEGENDS -->
+
+        <div
+            class="game-card"
+            onclick="showPage('mobilelegends')">
+
+            <div class="game-icon">
+                ⚔️
+            </div>
+
+            <div class="game-name">
+                MOBILE LEGENDS
+            </div>
+
+            <div class="game-desc">
+                Top Up Diamond
+            </div>
+
+        </div>
+
+
+
+        <!-- ROBLOX -->
+
+        <div
+            class="game-card roblox-card"
+            onclick="showPage('roblox')">
+
+            <div class="game-icon">
+                🟥
+            </div>
+
+            <div class="game-name">
+                ROBLOX
+            </div>
+
+            <div class="game-desc">
+                Top Up Robux
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- FITUR -->
+
+    <div class="features-title">
+        ⚡ KENAPA PILIH SANS EXP STORE?
     </div>
 
 
     <div class="features">
 
-
-        <!-- FITUR 1 -->
 
         <div class="feature">
 
@@ -539,9 +786,6 @@ body{
         </div>
 
 
-
-        <!-- FITUR 2 -->
-
         <div class="feature">
 
             <div class="feature-icon">
@@ -553,14 +797,11 @@ body{
             </h3>
 
             <p>
-                Banyak pilihan nominal top up.
+                Banyak pilihan nominal.
             </p>
 
         </div>
 
-
-
-        <!-- FITUR 3 -->
 
         <div class="feature">
 
@@ -573,7 +814,7 @@ body{
             </h3>
 
             <p>
-                Hubungi admin jika ada kendala.
+                Siap membantu pesananmu.
             </p>
 
         </div>
@@ -582,23 +823,34 @@ body{
 
 
 
-    <!-- PROMO -->
+    <!-- ADMIN -->
 
-    <div class="promo">
+    <div class="admin-box">
 
-        <strong>
-            🎮 MAU TOP UP GAME?
-        </strong>
+        <div class="admin-title">
+            💬 BUTUH BANTUAN?
+        </div>
 
-        <p>
-            Pilih Free Fire, Mobile Legends,
-            atau Roblox di atas dan lihat
-            pilihan harga yang tersedia.
-        </p>
+        <div class="admin-number">
+            Admin: 0882007902763
+        </div>
+
+        <a
+            class="admin-button"
+            href="https://wa.me/62882007902763">
+
+            CHAT ADMIN
+
+        </a>
 
     </div>
 
-</section>
+
+    <div class="footer">
+        © 2026 SANS EXP STORE
+    </div>
+
+</div>
 
 
 
@@ -608,122 +860,136 @@ body{
 
 <div id="freefire" class="page">
 
-    <div class="box">
+<div class="price-container">
 
-        <a
-            href="javascript:void(0)"
-            class="back"
-            onclick="showHome()">
-            ← Kembali
-        </a>
+<a
+    href="javascript:void(0)"
+    class="back"
+    onclick="showHome()">
 
+    ← Kembali
 
-        <h1 class="title">
-            🔥 FREE FIRE
-        </h1>
+</a>
 
 
+<div class="price-title">
+    🔥 FREE FIRE
+</div>
 
-        <!-- 70 DIAMOND -->
-
-        <div class="product">
-
-            <div>
-                <div class="name">
-                    70 Diamond
-                </div>
-
-                <div class="price">
-                    Rp10.000
-                </div>
-            </div>
-
-            <a
-                class="buy"
-                href="https://wa.me/62882007902763?text=Halo%20Admin%20SANS%20EXP%20STORE%2C%20saya%20mau%20beli%2070%20Diamond%20Free%20Fire">
-                Beli
-            </a>
-
-        </div>
+<div class="price-subtitle">
+    Pilih nominal Diamond yang kamu inginkan
+</div>
 
 
 
-        <!-- 140 DIAMOND -->
+<div class="product">
 
-        <div class="product">
+<div>
 
-            <div>
-                <div class="name">
-                    140 Diamond
-                </div>
+<div class="product-name">
+    70 Diamond
+</div>
 
-                <div class="price">
-                    Rp19.000
-                </div>
-            </div>
+<div class="product-price">
+    Rp10.000
+</div>
 
-            <a
-                class="buy"
-                href="https://wa.me/62882007902763?text=Halo%20Admin%20SANS%20EXP%20STORE%2C%20saya%20mau%20beli%20140%20Diamond%20Free%20Fire">
-                Beli
-            </a>
+</div>
 
-        </div>
+<a
+class="buy"
+href="https://wa.me/62882007902763?text=Halo%20Admin%20SANS%20EXP%20STORE%2C%20saya%20mau%20beli%2070%20Diamond%20Free%20Fire">
 
+Beli
 
+</a>
 
-        <!-- 355 DIAMOND -->
-
-        <div class="product">
-
-            <div>
-                <div class="name">
-                    355 Diamond
-                </div>
-
-                <div class="price">
-                    Rp45.000
-                </div>
-            </div>
-
-            <a
-                class="buy"
-                href="https://wa.me/62882007902763?text=Halo%20Admin%20SANS%20EXP%20STORE%2C%20saya%20mau%20beli%20355%20Diamond%20Free%20Fire">
-                Beli
-            </a>
-
-        </div>
+</div>
 
 
 
-        <!-- 720 DIAMOND -->
+<div class="product">
 
-        <div class="product">
+<div>
 
-            <div>
-                <div class="name">
-                    720 Diamond
-                </div>
+<div class="product-name">
+    140 Diamond
+</div>
 
-                <div class="price">
-                    Rp85.000
-                </div>
-            </div>
+<div class="product-price">
+    Rp19.000
+</div>
 
-            <a
-                class="buy"
-                href="https://wa.me/62882007902763?text=Halo%20Admin%20SANS%20EXP%20STORE%2C%20saya%20mau%20beli%20720%20Diamond%20Free%20Fire">
-                Beli
-            </a>
+</div>
 
-        </div>
+<a
+class="buy"
+href="https://wa.me/62882007902763?text=Halo%20Admin%20SANS%20EXP%20STORE%2C%20saya%20mau%20beli%20140%20Diamond%20Free%20Fire">
+
+Beli
+
+</a>
+
+</div>
 
 
-        <div class="note">
-            Harga contoh — silakan ubah sesuai harga toko.
-        </div>
 
-    </div>
+<div class="product">
+
+<div>
+
+<div class="product-name">
+    355 Diamond
+</div>
+
+<div class="product-price">
+    Rp45.000
+</div>
+
+</div>
+
+<a
+class="buy"
+href="https://wa.me/62882007902763?text=Halo%20Admin%20SANS%20EXP%20STORE%2C%20saya%20mau%20beli%20355%20Diamond%20Free%20Fire">
+
+Beli
+
+</a>
+
+</div>
+
+
+
+<div class="product">
+
+<div>
+
+<div class="product-name">
+    720 Diamond
+</div>
+
+<div class="product-price">
+    Rp85.000
+</div>
+
+</div>
+
+<a
+class="buy"
+href="https://wa.me/62882007902763?text=Halo%20Admin%20SANS%20EXP%20STORE%2C%20saya%20mau%20beli%20720%20Diamond%20Free%20Fire">
+
+Beli
+
+</a>
+
+</div>
+
+
+<div class="price-note">
+    Harga contoh. Silakan sesuaikan dengan harga toko.
+</div>
+
+</div>
 
 </div>
 
@@ -735,122 +1001,136 @@ body{
 
 <div id="mobilelegends" class="page">
 
-    <div class="box">
+<div class="price-container">
 
-        <a
-            href="javascript:void(0)"
-            class="back"
-            onclick="showHome()">
-            ← Kembali
-        </a>
+<a
+    href="javascript:void(0)"
+    class="back"
+    onclick="showHome()">
 
+    ← Kembali
 
-        <h1 class="title">
-            🎮 MOBILE LEGENDS
-        </h1>
+</a>
 
 
+<div class="price-title">
+    ⚔️ MOBILE LEGENDS
+</div>
 
-        <!-- 5 DIAMOND -->
-
-        <div class="product">
-
-            <div>
-                <div class="name">
-                    5 Diamond
-                </div>
-
-                <div class="price">
-                    Rp2.000
-                </div>
-            </div>
-
-            <a
-                class="buy"
-                href="https://wa.me/62882007902763?text=Halo%20Admin%20SANS%20EXP%20STORE%2C%20saya%20mau%20beli%205%20Diamond%20Mobile%20Legends">
-                Beli
-            </a>
-
-        </div>
+<div class="price-subtitle">
+    Pilih nominal Diamond yang kamu inginkan
+</div>
 
 
 
-        <!-- 28 DIAMOND -->
+<div class="product">
 
-        <div class="product">
+<div>
 
-            <div>
-                <div class="name">
-                    28 Diamond
-                </div>
+<div class="product-name">
+    5 Diamond
+</div>
 
-                <div class="price">
-                    Rp8.000
-                </div>
-            </div>
+<div class="product-price">
+    Rp2.000
+</div>
 
-            <a
-                class="buy"
-                href="https://wa.me/62882007902763?text=Halo%20Admin%20SANS%20EXP%20STORE%2C%20saya%20mau%20beli%2028%20Diamond%20Mobile%20Legends">
-                Beli
-            </a>
+</div>
 
-        </div>
+<a
+class="buy"
+href="https://wa.me/62882007902763?text=Halo%20Admin%20SANS%20EXP%20STORE%2C%20saya%20mau%20beli%205%20Diamond%20Mobile%20Legends">
 
+Beli
 
+</a>
 
-        <!-- 86 DIAMOND -->
-
-        <div class="product">
-
-            <div>
-                <div class="name">
-                    86 Diamond
-                </div>
-
-                <div class="price">
-                    Rp22.000
-                </div>
-            </div>
-
-            <a
-                class="buy"
-                href="https://wa.me/62882007902763?text=Halo%20Admin%20SANS%20EXP%20STORE%2C%20saya%20mau%20beli%2086%20Diamond%20Mobile%20Legends">
-                Beli
-            </a>
-
-        </div>
+</div>
 
 
 
-        <!-- 170 DIAMOND -->
+<div class="product">
 
-        <div class="product">
+<div>
 
-            <div>
-                <div class="name">
-                    170 Diamond
-                </div>
+<div class="product-name">
+    28 Diamond
+</div>
 
-                <div class="price">
-                    Rp43.000
-                </div>
-            </div>
+<div class="product-price">
+    Rp8.000
+</div>
 
-            <a
-                class="buy"
-                href="https://wa.me/62882007902763?text=Halo%20Admin%20SANS%20EXP%20STORE%2C%20saya%20mau%20beli%20170%20Diamond%20Mobile%20Legends">
-                Beli
-            </a>
+</div>
 
-        </div>
+<a
+class="buy"
+href="https://wa.me/62882007902763?text=Halo%20Admin%20SANS%20EXP%20STORE%2C%20saya%20mau%20beli%2028%20Diamond%20Mobile%20Legends">
+
+Beli
+
+</a>
+
+</div>
 
 
-        <div class="note">
-            Harga contoh — silakan ubah sesuai harga toko.
-        </div>
 
-    </div>
+<div class="product">
+
+<div>
+
+<div class="product-name">
+    86 Diamond
+</div>
+
+<div class="product-price">
+    Rp22.000
+</div>
+
+</div>
+
+<a
+class="buy"
+href="https://wa.me/62882007902763?text=Halo%20Admin%20SANS%20EXP%20STORE%2C%20saya%20mau%20beli%2086%20Diamond%20Mobile%20Legends">
+
+Beli
+
+</a>
+
+</div>
+
+
+
+<div class="product">
+
+<div>
+
+<div class="product-name">
+    170 Diamond
+</div>
+
+<div class="product-price">
+    Rp43.000
+</div>
+
+</div>
+
+<a
+class="buy"
+href="https://wa.me/62882007902763?text=Halo%20Admin%20SANS%20EXP%20STORE%2C%20saya%20mau%20beli%20170%20Diamond%20Mobile%20Legends">
+
+Beli
+
+</a>
+
+</div>
+
+
+<div class="price-note">
+    Harga contoh. Silakan sesuaikan dengan harga toko.
+</div>
+
+</div>
 
 </div>
 
@@ -862,184 +1142,198 @@ body{
 
 <div id="roblox" class="page">
 
-    <div class="box">
+<div class="price-container">
 
-        <a
-            href="javascript:void(0)"
-            class="back"
-            onclick="showHome()">
-            ← Kembali
-        </a>
+<a
+    href="javascript:void(0)"
+    class="back"
+    onclick="showHome()">
 
+    ← Kembali
 
-        <h1 class="title">
-            🟥 ROBLOX
-        </h1>
+</a>
 
 
+<div class="price-title">
+    🟥 ROBLOX
+</div>
 
-        <!-- 80 ROBUX -->
-
-        <div class="product">
-
-            <div>
-                <div class="name">
-                    80 Robux
-                </div>
-
-                <div class="price">
-                    Rp15.000
-                </div>
-            </div>
-
-            <a
-                class="buy"
-                href="https://wa.me/62882007902763?text=Halo%20Admin%20SANS%20EXP%20STORE%2C%20saya%20mau%20beli%2080%20Robux">
-                Beli
-            </a>
-
-        </div>
+<div class="price-subtitle">
+    Pilih nominal Robux yang kamu inginkan
+</div>
 
 
 
-        <!-- 160 ROBUX -->
+<div class="product">
 
-        <div class="product">
+<div>
 
-            <div>
-                <div class="name">
-                    160 Robux
-                </div>
+<div class="product-name">
+    80 Robux
+</div>
 
-                <div class="price">
-                    Rp30.000
-                </div>
-            </div>
+<div class="product-price">
+    Rp15.000
+</div>
 
-            <a
-                class="buy"
-                href="https://wa.me/62882007902763?text=Halo%20Admin%20SANS%20EXP%20STORE%2C%20saya%20mau%20beli%20160%20Robux">
-                Beli
-            </a>
+</div>
 
-        </div>
+<a
+class="buy"
+href="https://wa.me/62882007902763?text=Halo%20Admin%20SANS%20EXP%20STORE%2C%20saya%20mau%20beli%2080%20Robux">
 
+Beli
 
+</a>
 
-        <!-- 400 ROBUX -->
-
-        <div class="product">
-
-            <div>
-                <div class="name">
-                    400 Robux
-                </div>
-
-                <div class="price">
-                    Rp70.000
-                </div>
-            </div>
-
-            <a
-                class="buy"
-                href="https://wa.me/62882007902763?text=Halo%20Admin%20SANS%20EXP%20STORE%2C%20saya%20mau%20beli%20400%20Robux">
-                Beli
-            </a>
-
-        </div>
+</div>
 
 
 
-        <!-- 800 ROBUX -->
+<div class="product">
 
-        <div class="product">
+<div>
 
-            <div>
-                <div class="name">
-                    800 Robux
-                </div>
+<div class="product-name">
+    160 Robux
+</div>
 
-                <div class="price">
-                    Rp135.000
-                </div>
-            </div>
+<div class="product-price">
+    Rp30.000
+</div>
 
-            <a
-                class="buy"
-                href="https://wa.me/62882007902763?text=Halo%20Admin%20SANS%20EXP%20STORE%2C%20saya%20mau%20beli%20800%20Robux">
-                Beli
-            </a>
+</div>
 
-        </div>
+<a
+class="buy"
+href="https://wa.me/62882007902763?text=Halo%20Admin%20SANS%20EXP%20STORE%2C%20saya%20mau%20beli%20160%20Robux">
+
+Beli
+
+</a>
+
+</div>
 
 
-        <div class="note">
-            Harga contoh — silakan ubah sesuai harga toko.
-        </div>
 
-    </div>
+<div class="product">
+
+<div>
+
+<div class="product-name">
+    400 Robux
+</div>
+
+<div class="product-price">
+    Rp70.000
+</div>
+
+</div>
+
+<a
+class="buy"
+href="https://wa.me/62882007902763?text=Halo%20Admin%20SANS%20EXP%20STORE%2C%20saya%20mau%20beli%20400%20Robux">
+
+Beli
+
+</a>
+
+</div>
+
+
+
+<div class="product">
+
+<div>
+
+<div class="product-name">
+    800 Robux
+</div>
+
+<div class="product-price">
+    Rp135.000
+</div>
+
+</div>
+
+<a
+class="buy"
+href="https://wa.me/62882007902763?text=Halo%20Admin%20SANS%20EXP%20STORE%2C%20saya%20mau%20beli%20800%20Robux">
+
+Beli
+
+</a>
+
+</div>
+
+
+<div class="price-note">
+    Harga contoh. Silakan sesuaikan dengan harga toko.
+</div>
+
+</div>
 
 </div>
 
 
 </div>
 
-
-<!-- ==================================================
-     JAVASCRIPT
-================================================== -->
 
 <script>
 
+/* =========================
+   PINDAH KE HALAMAN GAME
+========================= */
+
 function showPage(page){
 
-    /* Sembunyikan halaman utama */
-    document.getElementById("home").style.display = "none";
+    document
+        .getElementById("home")
+        .style.display="none";
 
 
-    /* Sembunyikan semua halaman harga */
     document
         .querySelectorAll(".page")
-        .forEach(function(el){
+        .forEach(function(element){
 
-            el.classList.remove("active");
+            element.classList.remove("active");
 
         });
 
 
-    /* Tampilkan halaman yang dipilih */
     document
         .getElementById(page)
         .classList.add("active");
 
 
-    /* Scroll ke atas */
     window.scrollTo(0,0);
 }
 
 
+/* =========================
+   KEMBALI KE HOME
+========================= */
 
 function showHome(){
 
-    /* Tampilkan halaman utama */
-    document.getElementById("home").style.display = "block";
+    document
+        .getElementById("home")
+        .style.display="block";
 
 
-    /* Sembunyikan semua halaman harga */
     document
         .querySelectorAll(".page")
-        .forEach(function(el){
+        .forEach(function(element){
 
-            el.classList.remove("active");
+            element.classList.remove("active");
 
         });
 
 
-    /* Scroll ke atas */
     window.scrollTo(0,0);
 }
 
 </script>
 
 </body>
-            </html>
+   </html>
