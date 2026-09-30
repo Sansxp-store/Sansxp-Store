@@ -1,249 +1,452 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Sansxp Store</title>
+<title>Sansxp Store</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-    body {
-      font-family: Arial, sans-serif;
-      background: #0b0b12;
-      color: white;
-    }
+body {
+  font-family: Arial, sans-serif;
+  background: #090b12;
+  color: white;
+}
 
-    header {
-      background: #11111c;
-      padding: 18px;
-      text-align: center;
-      border-bottom: 1px solid #29293a;
-    }
+header {
+  background: #111522;
+  padding: 18px;
+  text-align: center;
+  border-bottom: 1px solid #292f40;
+}
 
-    header h1 {
-      color: #7c5cff;
-      font-size: 26px;
-    }
+.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
 
-    header p {
-      color: #999;
-      margin-top: 5px;
-      font-size: 14px;
-    }
+.logo span {
+  color: #795cff;
+}
 
-    .hero {
-      padding: 50px 20px;
-      text-align: center;
-      background: linear-gradient(135deg, #171329, #0b0b12);
-    }
+header p {
+  color: #9299aa;
+  font-size: 13px;
+  margin-top: 5px;
+}
 
-    .hero h2 {
-      font-size: 38px;
-      margin-bottom: 12px;
-    }
+/* HALAMAN UTAMA */
 
-    .hero h2 span {
-      color: #7c5cff;
-    }
+.home {
+  max-width: 1000px;
+  width: 92%;
+  margin: auto;
+  padding: 55px 0;
+}
 
-    .hero p {
-      color: #aaa;
-      margin-bottom: 25px;
-    }
+.hero {
+  text-align: center;
+  margin-bottom: 40px;
+}
 
-    .container {
-      width: 92%;
-      max-width: 1000px;
-      margin: auto;
-    }
+.hero h1 {
+  font-size: 38px;
+  margin-bottom: 10px;
+}
 
-    .title {
-      text-align: center;
-      margin: 40px 0 25px;
-    }
+.hero h1 span {
+  color: #795cff;
+}
 
-    .title h2 {
-      font-size: 28px;
-    }
+.hero p {
+  color: #969dad;
+}
 
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 18px;
-    }
+.games {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
 
-    .card {
-      background: #151522;
-      border: 1px solid #29293a;
-      border-radius: 16px;
-      padding: 22px;
-      text-align: center;
-    }
+.game {
+  background: #151927;
+  border: 1px solid #292f40;
+  border-radius: 20px;
+  padding: 35px 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: .2s;
+}
 
-    .card .icon {
-      font-size: 42px;
-      margin-bottom: 12px;
-    }
+.game:hover {
+  transform: translateY(-5px);
+  border-color: #795cff;
+}
 
-    .card h3 {
-      margin-bottom: 8px;
-    }
+.game-icon {
+  font-size: 60px;
+  margin-bottom: 15px;
+}
 
-    .card p {
-      color: #999;
-      font-size: 14px;
-      margin-bottom: 12px;
-    }
+.game h2 {
+  margin-bottom: 8px;
+}
 
-    .price {
-      color: #8d75ff;
-      font-size: 18px;
-      font-weight: bold;
-      margin-bottom: 15px;
-    }
+.game p {
+  color: #9299aa;
+  margin-bottom: 20px;
+}
 
-    .btn {
-      display: block;
-      width: 100%;
-      padding: 12px;
-      background: #7c5cff;
-      color: white;
-      text-decoration: none;
-      border-radius: 10px;
-      font-weight: bold;
-    }
+.choose {
+  display: inline-block;
+  background: #795cff;
+  padding: 11px 25px;
+  border-radius: 10px;
+  font-weight: bold;
+}
 
-    .btn:hover {
-      background: #6547e8;
-    }
+/* HALAMAN PRODUK */
 
-    .info {
-      margin: 45px 0;
-      background: #151522;
-      border: 1px solid #29293a;
-      border-radius: 16px;
-      padding: 25px;
-      text-align: center;
-    }
+.products-page {
+  display: none;
+  max-width: 900px;
+  width: 92%;
+  margin: auto;
+  padding: 35px 0;
+}
 
-    .info p {
-      color: #aaa;
-      margin-top: 8px;
-    }
+.back {
+  display: inline-block;
+  margin-bottom: 25px;
+  color: #aaa;
+  cursor: pointer;
+}
 
-    footer {
-      text-align: center;
-      padding: 25px;
-      color: #777;
-      border-top: 1px solid #29293a;
-      margin-top: 40px;
-    }
-  </style>
+.page-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.page-title h1 {
+  margin-bottom: 8px;
+}
+
+.page-title p {
+  color: #9299aa;
+}
+
+.diamonds {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.diamond {
+  background: #151927;
+  border: 1px solid #292f40;
+  border-radius: 15px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.diamond h3 {
+  margin-bottom: 5px;
+}
+
+.diamond .price {
+  color: #8d75ff;
+  font-weight: bold;
+}
+
+.buy {
+  background: #795cff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 9px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.buy:hover {
+  background: #6548e8;
+}
+
+.notice {
+  margin-top: 25px;
+  padding: 18px;
+  background: #111522;
+  border: 1px solid #292f40;
+  border-radius: 12px;
+  color: #999;
+  font-size: 13px;
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+  color: #666;
+  padding: 30px;
+  border-top: 1px solid #202535;
+  margin-top: 40px;
+}
+
+@media(max-width:600px) {
+
+  .games {
+    grid-template-columns: 1fr;
+  }
+
+  .diamonds {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 30px;
+  }
+
+}
+</style>
 </head>
 
 <body>
 
-  <header>
-    <h1>Sansxp Store</h1>
-    <p>Top Up Game & Produk Digital</p>
-  </header>
+<header>
+  <div class="logo">
+    Sansxp<span>Store</span>
+  </div>
 
-  <section class="hero">
-    <h2>Welcome to <span>Sansxp Store</span></h2>
-    <p>Top up game cepat, mudah, dan praktis.</p>
-  </section>
+  <p>Top Up Game Cepat & Mudah</p>
+</header>
 
-  <main class="container">
 
-    <div class="title">
-      <h2>🔥 Produk Kami</h2>
-    </div>
+<!-- ===================== -->
+<!-- HALAMAN UTAMA -->
+<!-- ===================== -->
 
-    <div class="products">
+<div class="home" id="home">
 
-      <div class="card">
-        <div class="icon">🎮</div>
-        <h3>Mobile Legends</h3>
-        <p>Top Up Diamond ML</p>
-        <div class="price">Mulai Rp5.000</div>
+  <div class="hero">
 
-        <a
-          class="btn"
-          href="https://wa.me/62882007902763?text=Halo%20Sansxp%20Store%2C%20saya%20mau%20top%20up%20Mobile%20Legends."
-          target="_blank">
-          Pesan
-        </a>
+    <h1>Pilih <span>Game</span></h1>
+
+    <p>
+      Pilih game yang ingin kamu top up
+    </p>
+
+  </div>
+
+
+  <div class="games">
+
+    <!-- MOBILE LEGENDS -->
+
+    <div class="game" onclick="showGame('ml')">
+
+      <div class="game-icon">
+        🎮
       </div>
 
-      <div class="card">
-        <div class="icon">💎</div>
-        <h3>Free Fire</h3>
-        <p>Top Up Diamond FF</p>
-        <div class="price">Mulai Rp5.000</div>
+      <h2>Mobile Legends</h2>
 
-        <a
-          class="btn"
-          href="https://wa.me/62882007902763?text=Halo%20Sansxp%20Store%2C%20saya%20mau%20top%20up%20Free%20Fire."
-          target="_blank">
-          Pesan
-        </a>
-      </div>
+      <p>
+        Top Up Diamond MLBB
+      </p>
 
-      <div class="card">
-        <div class="icon">🪙</div>
-        <h3>Roblox</h3>
-        <p>Top Up Robux</p>
-        <div class="price">Mulai Rp10.000</div>
-
-        <a
-          class="btn"
-          href="https://wa.me/62882007902763?text=Halo%20Sansxp%20Store%2C%20saya%20mau%20top%20up%20Roblox."
-          target="_blank">
-          Pesan
-        </a>
-      </div>
-
-      <div class="card">
-        <div class="icon">📱</div>
-        <h3>Pulsa</h3>
-        <p>Semua Operator</p>
-        <div class="price">Mulai Rp5.000</div>
-
-        <a
-          class="btn"
-          href="https://wa.me/62882007902763?text=Halo%20Sansxp%20Store%2C%20saya%20mau%20beli%20pulsa."
-          target="_blank">
-          Pesan
-        </a>
+      <div class="choose">
+        Pilih Diamond
       </div>
 
     </div>
 
-    <div class="info">
-      <h2>📞 Butuh Bantuan?</h2>
-      <p>Hubungi admin Sansxp Store melalui WhatsApp.</p>
 
-      <br>
+    <!-- FREE FIRE -->
 
-      <a
-        class="btn"
-        href="https://wa.me/62882007902763?text=Halo%20Sansxp%20Store%2C%20saya%20mau%20bertanya."
-        target="_blank">
-        Chat WhatsApp
-      </a>
+    <div class="game" onclick="showGame('ff')">
+
+      <div class="game-icon">
+        🔥
+      </div>
+
+      <h2>Free Fire</h2>
+
+      <p>
+        Top Up Diamond FF
+      </p>
+
+      <div class="choose">
+        Pilih Diamond
+      </div>
+
     </div>
 
-  </main>
+  </div>
 
-  <footer>
-    © 2026 Sansxp Store
-  </footer>
+</div>
 
-</body>
-</html>
+
+
+<!-- ===================== -->
+<!-- HALAMAN MOBILE LEGENDS -->
+<!-- ===================== -->
+
+<div class="products-page" id="ml">
+
+  <div class="back" onclick="goHome()">
+    ← Kembali
+  </div>
+
+  <div class="page-title">
+
+    <h1>🎮 Mobile Legends</h1>
+
+    <p>
+      Pilih jumlah Diamond
+    </p>
+
+  </div>
+
+
+  <div class="diamonds">
+
+    <div class="diamond">
+      <div>
+        <h3>5 Diamond</h3>
+        <div class="price">Rp2.000</div>
+      </div>
+
+      <button class="buy" onclick="buy('Mobile Legends - 5 Diamond - Rp2.000')">
+        Beli
+      </button>
+    </div>
+
+
+    <div class="diamond">
+      <div>
+        <h3>12 Diamond</h3>
+        <div class="price">Rp4.000</div>
+      </div>
+
+      <button class="buy" onclick="buy('Mobile Legends - 12 Diamond - Rp4.000')">
+        Beli
+      </button>
+    </div>
+
+
+    <div class="diamond">
+      <div>
+        <h3>28 Diamond</h3>
+        <div class="price">Rp8.000</div>
+      </div>
+
+      <button class="buy" onclick="buy('Mobile Legends - 28 Diamond - Rp8.000')">
+        Beli
+      </button>
+    </div>
+
+
+    <div class="diamond">
+      <div>
+        <h3>59 Diamond</h3>
+        <div class="price">Rp15.000</div>
+      </div>
+
+      <button class="buy" onclick="buy('Mobile Legends - 59 Diamond - Rp15.000')">
+        Beli
+      </button>
+    </div>
+
+
+    <div class="diamond">
+      <div>
+        <h3>86 Diamond</h3>
+        <div class="price">Rp22.000</div>
+      </div>
+
+      <button class="buy" onclick="buy('Mobile Legends - 86 Diamond - Rp22.000')">
+        Beli
+      </button>
+    </div>
+
+
+    <div class="diamond">
+      <div>
+        <h3>170 Diamond</h3>
+        <div class="price">Rp43.000</div>
+      </div>
+
+      <button class="buy" onclick="buy('Mobile Legends - 170 Diamond - Rp43.000')">
+        Beli
+      </button>
+    </div>
+
+  </div>
+
+
+  <div class="notice">
+    Setelah menekan Beli, kamu akan diarahkan ke WhatsApp
+    untuk melanjutkan pesanan.
+  </div>
+
+</div>
+
+
+
+<!-- ===================== -->
+<!-- HALAMAN FREE FIRE -->
+<!-- ===================== -->
+
+<div class="products-page" id="ff">
+
+  <div class="back" onclick="goHome()">
+    ← Kembali
+  </div>
+
+  <div class="page-title">
+
+    <h1>🔥 Free Fire</h1>
+
+    <p>
+      Pilih jumlah Diamond
+    </p>
+
+  </div>
+
+
+  <div class="diamonds">
+
+    <div class="diamond">
+      <div>
+        <h3>5 Diamond</h3>
+        <div class="price">Rp1.000</div>
+      </div>
+
+      <button class="buy" onclick="buy('Free Fire - 5 Diamond - Rp1.000')">
+        Beli
+      </button>
+    </div>
+
+
+    <div class="diamond">
+      <div>
+        <h3>12 Diamond</h3>
+        <div class="price">Rp2.000</div>
+      </div>
+
+      <button class="buy" onclick="buy('Free Fire - 12 Diamond - Rp2.000')">
+        Beli
+      </button>
+    </div>
+
+
+    <div class="diamond">
+      <div>
+        <h3>50 Diamond</h3
