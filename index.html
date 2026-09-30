@@ -1,200 +1,304 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sansxp Store</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        body {
-            font-family: Arial;
-            background: #111;
-            color: white;
-            text-align: center;
-            margin: 0;
-        }
+<title>Sans Exp Store</title>
 
-        header {
-            background: #6c4cff;
-            padding: 25px;
-        }
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
 
-        h1 {
-            margin: 0;
-        }
+body{
+    font-family:Arial,sans-serif;
+    background:
+        radial-gradient(circle at top,#24204a 0%,#0b0b12 45%,#07070b 100%);
+    color:white;
+    min-height:100vh;
+}
 
-        .container {
-            padding: 25px;
-        }
+/* HEADER */
 
-        .game {
-            background: #222;
-            margin: 15px auto;
-            padding: 25px;
-            max-width: 400px;
-            border-radius: 15px;
-        }
+header{
+    text-align:center;
+    padding:35px 20px 25px;
+}
 
-        a {
-            display: block;
-            background: #6c4cff;
-            color: white;
-            padding: 12px;
-            margin-top: 15px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-        }
+.logo{
+    width:90px;
+    height:90px;
+    margin:auto;
+    border-radius:25px;
+    background:linear-gradient(135deg,#7c4dff,#b026ff);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:35px;
+    font-weight:bold;
+    box-shadow:0 0 30px #7c4dff66;
+}
 
-        .price {
-            background: #222;
-            margin: 10px auto;
-            padding: 18px;
-            max-width: 400px;
-            border-radius: 10px;
-        }
+.logo span{
+    color:white;
+}
 
-        .back {
-            background: #444;
-        }
-    </style>
+h1{
+    margin-top:15px;
+    font-size:30px;
+}
+
+h1 span{
+    color:#9b7aff;
+}
+
+.subtitle{
+    color:#9b9baa;
+    margin-top:7px;
+}
+
+/* GAME */
+
+.container{
+    width:92%;
+    max-width:800px;
+    margin:auto;
+}
+
+.games{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+    margin-top:30px;
+}
+
+.game{
+    background:#15151f;
+    border:1px solid #29293a;
+    border-radius:20px;
+    padding:28px 18px;
+    text-align:center;
+    box-shadow:0 10px 30px #00000030;
+}
+
+.game:hover{
+    border-color:#8b65ff;
+}
+
+.icon{
+    font-size:55px;
+    margin-bottom:12px;
+}
+
+.game h2{
+    margin-bottom:8px;
+}
+
+.game p{
+    color:#9999a8;
+    font-size:14px;
+    margin-bottom:18px;
+}
+
+.button{
+    display:inline-block;
+    background:#7957ff;
+    color:white;
+    text-decoration:none;
+    padding:11px 20px;
+    border-radius:10px;
+    font-weight:bold;
+}
+
+/* ROBLOX TENGAH */
+
+.roblox{
+    max-width:390px;
+    margin:18px auto 0;
+}
+
+/* ADMIN */
+
+.admin{
+    text-align:center;
+    margin-top:45px;
+    padding:25px 15px;
+    border-top:1px solid #29293a;
+    background:#0e0e15;
+}
+
+.admin-title{
+    color:#9999a8;
+    font-size:13px;
+    margin-bottom:8px;
+}
+
+.admin-number{
+    font-size:20px;
+    font-weight:bold;
+    color:#9b7aff;
+}
+
+.wa{
+    display:inline-block;
+    margin-top:12px;
+    background:#20b958;
+    color:white;
+    padding:10px 20px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+footer{
+    text-align:center;
+    color:#555564;
+    padding:20px;
+    font-size:12px;
+}
+
+/* HP */
+
+@media(max-width:600px){
+
+    .games{
+        grid-template-columns:1fr 1fr;
+        gap:12px;
+    }
+
+    .game{
+        padding:22px 10px;
+    }
+
+    .icon{
+        font-size:45px;
+    }
+
+    .game h2{
+        font-size:18px;
+    }
+
+    .game p{
+        font-size:12px;
+    }
+
+    .button{
+        padding:9px 12px;
+        font-size:13px;
+    }
+}
+</style>
 </head>
 
 <body>
 
 <header>
-    <h1>Sansxp Store</h1>
-    <p>Top Up Game</p>
+
+    <div class="logo">
+        SX
+    </div>
+
+    <h1>SANS <span>EXP</span></h1>
+
+    <p class="subtitle">
+        Top Up Game Cepat & Murah
+    </p>
+
 </header>
+
 
 <div class="container">
 
-    <h2>Pilih Game</h2>
+    <div class="games">
 
-    <div class="game">
-        <h2>🔥 Free Fire</h2>
-        <p>Top Up Diamond</p>
-        <a href="#ff">Lihat Harga</a>
-    </div>
+        <!-- FREE FIRE -->
 
-    <div class="game">
-        <h2>🎮 Mobile Legends</h2>
-        <p>Top Up Diamond</p>
-        <a href="#ml">Lihat Harga</a>
-    </div>
+        <div class="game">
 
-    <div class="game">
-        <h2>🟥 Roblox</h2>
-        <p>Top Up Robux</p>
-        <a href="#roblox">Lihat Harga</a>
-    </div>
+            <div class="icon">🔥</div>
 
+            <h2>Free Fire</h2>
 
-    <!-- FREE FIRE -->
+            <p>Top Up Diamond FF</p>
 
-    <div id="ff">
-
-        <h2>🔥 Free Fire</h2>
-
-        <div class="price">
-            70 Diamond<br>
-            <b>Rp10.000</b>
-            <a href="https://wa.me/62882007902763?text=Halo%20Sansxp%20Store,%20saya%20mau%20beli%2070%20Diamond%20Free%20Fire">
-                Beli
+            <a class="button" href="#freefire">
+                Lihat Harga
             </a>
+
         </div>
 
-        <div class="price">
-            140 Diamond<br>
-            <b>Rp19.000</b>
-            <a href="https://wa.me/62882007902763?text=Halo%20Sansxp%20Store,%20saya%20mau%20beli%20140%20Diamond%20Free%20Fire">
-                Beli
-            </a>
-        </div>
 
-        <div class="price">
-            355 Diamond<br>
-            <b>Rp45.000</b>
-            <a href="https://wa.me/62882007902763?text=Halo%20Sansxp%20Store,%20saya%20mau%20beli%20355%20Diamond%20Free%20Fire">
-                Beli
-            </a>
-        </div>
+        <!-- MOBILE LEGENDS -->
 
-        <a class="back" href="#">Kembali</a>
+        <div class="game">
+
+            <div class="icon">🎮</div>
+
+            <h2>Mobile Legends</h2>
+
+            <p>Top Up Diamond ML</p>
+
+            <a class="button" href="#mobilelegends">
+                Lihat Harga
+            </a>
+
+        </div>
 
     </div>
 
 
-    <!-- MOBILE LEGENDS -->
+    <!-- ROBLOX DI TENGAH -->
 
-    <div id="ml">
+    <div class="roblox">
 
-        <h2>🎮 Mobile Legends</h2>
+        <div class="game">
 
-        <div class="price">
-            5 Diamond<br>
-            <b>Rp2.000</b>
-            <a href="https://wa.me/62882007902763?text=Halo%20Sansxp%20Store,%20saya%20mau%20beli%205%20Diamond%20Mobile%20Legends">
-                Beli
+            <div class="icon">🟥</div>
+
+            <h2>Roblox</h2>
+
+            <p>Top Up Robux</p>
+
+            <a class="button" href="#roblox">
+                Lihat Harga
             </a>
+
         </div>
-
-        <div class="price">
-            28 Diamond<br>
-            <b>Rp8.000</b>
-            <a href="https://wa.me/62882007902763?text=Halo%20Sansxp%20Store,%20saya%20mau%20beli%2028%20Diamond%20Mobile%20Legends">
-                Beli
-            </a>
-        </div>
-
-        <div class="price">
-            86 Diamond<br>
-            <b>Rp22.000</b>
-            <a href="https://wa.me/62882007902763?text=Halo%20Sansxp%20Store,%20saya%20mau%20beli%2086%20Diamond%20Mobile%20Legends">
-                Beli
-            </a>
-        </div>
-
-        <a class="back" href="#">Kembali</a>
-
-    </div>
-
-
-    <!-- ROBLOX -->
-
-    <div id="roblox">
-
-        <h2>🟥 Roblox</h2>
-
-        <div class="price">
-            80 Robux<br>
-            <b>Rp15.000</b>
-            <a href="https://wa.me/62882007902763?text=Halo%20Sansxp%20Store,%20saya%20mau%20beli%2080%20Robux%20Roblox">
-                Beli
-            </a>
-        </div>
-
-        <div class="price">
-            160 Robux<br>
-            <b>Rp30.000</b>
-            <a href="https://wa.me/62882007902763?text=Halo%20Sansxp%20Store,%20saya%20mau%20beli%20160%20Robux%20Roblox">
-                Beli
-            </a>
-        </div>
-
-        <div class="price">
-            400 Robux<br>
-            <b>Rp70.000</b>
-            <a href="https://wa.me/62882007902763?text=Halo%20Sansxp%20Store,%20saya%20mau%20beli%20400%20Robux%20Roblox">
-                Beli
-            </a>
-        </div>
-
-        <a class="back" href="#">Kembali</a>
 
     </div>
 
 </div>
+
+
+<!-- ADMIN -->
+
+<div class="admin">
+
+    <div class="admin-title">
+        ADMIN / CUSTOMER SERVICE
+    </div>
+
+    <div class="admin-number">
+        0882 0079 02763
+    </div>
+
+    <a
+        class="wa"
+        href="https://wa.me/62882007902763"
+    >
+        💬 Chat WhatsApp
+    </a>
+
+</div>
+
+
+<footer>
+    © 2026 Sans Exp Store
+</footer>
+
 
 </body>
 </html>
