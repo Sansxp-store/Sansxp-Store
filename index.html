@@ -86,7 +86,9 @@ body::after{
     transition:.3s;
 }
 
-.navbar a:hover{color:#00c8ff;}
+.navbar a:hover{
+    color:#00c8ff;
+}
 
 /* HERO */
 .hero{
@@ -98,7 +100,9 @@ body::after{
     gap:50px;
 }
 
-.hero-text{max-width:650px;}
+.hero-text{
+    max-width:650px;
+}
 
 .badge{
     display:inline-block;
@@ -160,9 +164,11 @@ body::after{
     color:#dce8f5;
 }
 
-.btn:hover{transform:translateY(-3px);}
+.btn:hover{
+    transform:translateY(-3px);
+}
 
-/* HERO VISUAL - TRIANGLE SE */
+/* HERO TRIANGLE */
 .hero-visual{
     width:340px;
     height:340px;
@@ -172,7 +178,7 @@ body::after{
     align-items:center;
 }
 
-/* Lingkaran luar */
+/* Lingkaran luar tetap diam */
 .hero-visual::before{
     content:"";
     position:absolute;
@@ -185,39 +191,41 @@ body::after{
         inset 0 0 25px rgba(0,150,255,.08);
 }
 
-/* Segitiga */
-.triangle-logo{
+/* Container segitiga yang MUTER */
+.triangle-spin{
+    position:absolute;
     width:245px;
     height:245px;
-    position:relative;
     display:flex;
-    align-items:center;
     justify-content:center;
+    align-items:center;
     animation:triangleSpin 6s linear infinite;
     filter:
         drop-shadow(0 0 8px #00bfff)
         drop-shadow(0 0 25px rgba(0,120,255,.8));
 }
 
-/* Bentuk segitiga */
-.triangle-logo::before{
+/* Segitiga utama */
+.triangle-spin::before{
     content:"";
     position:absolute;
     width:190px;
     height:190px;
     border:4px solid #00c8ff;
     background:
-        linear-gradient(135deg,
+        linear-gradient(
+            135deg,
             rgba(0,200,255,.10),
-            rgba(92,44,255,.18));
+            rgba(92,44,255,.18)
+        );
     clip-path:polygon(50% 0%,100% 88%,0% 88%);
     box-shadow:
         0 0 15px #00bfff,
         inset 0 0 25px rgba(0,190,255,.25);
 }
 
-/* Segitiga kedua untuk efek neon */
-.triangle-logo::after{
+/* Segitiga kedua */
+.triangle-spin::after{
     content:"";
     position:absolute;
     width:215px;
@@ -228,15 +236,11 @@ body::after{
     opacity:.7;
 }
 
-/* Tulisan SE */
+/* SE TETAP DIAM */
 .se-text{
-    position:relative;
-    z-index:5;
-    font-family:
-        Impact,
-        "Arial Black",
-        Arial,
-        sans-serif;
+    position:absolute;
+    z-index:10;
+    font-family:Impact,"Arial Black",Arial,sans-serif;
     font-size:52px;
     font-weight:1000;
     font-style:italic;
@@ -247,9 +251,10 @@ body::after{
         0 0 8px #00c8ff,
         0 0 22px #008cff;
     transform:skew(-8deg);
+    animation:none;
 }
 
-/* Titik cahaya */
+/* Titik neon kecil */
 .se-text::after{
     content:"";
     position:absolute;
@@ -265,7 +270,7 @@ body::after{
         0 0 30px #008cff;
 }
 
-/* Muter ke kanan */
+/* MUTER KE KANAN */
 @keyframes triangleSpin{
     from{
         transform:rotate(0deg);
@@ -302,14 +307,18 @@ body::after{
 }
 
 /* SECTION */
-section{padding:70px 7%;}
+section{
+    padding:70px 7%;
+}
 
 .section-title{
     text-align:center;
     margin-bottom:35px;
 }
 
-.section-title h2{font-size:34px;}
+.section-title h2{
+    font-size:34px;
+}
 
 .section-title p{
     color:#8998ad;
@@ -337,7 +346,11 @@ section{padding:70px 7%;}
     min-height:210px;
     border-radius:22px;
     border:1px solid rgba(0,185,255,.14);
-    background:linear-gradient(145deg,rgba(15,28,53,.9),rgba(8,12,28,.95));
+    background:linear-gradient(
+        145deg,
+        rgba(15,28,53,.9),
+        rgba(8,12,28,.95)
+    );
     transition:.3s;
 }
 
@@ -360,7 +373,9 @@ section{padding:70px 7%;}
     margin-bottom:20px;
 }
 
-.game-card h3{font-size:22px;}
+.game-card h3{
+    font-size:22px;
+}
 
 .game-card p{
     color:#8c9bb0;
@@ -369,14 +384,18 @@ section{padding:70px 7%;}
 }
 
 /* PRODUCTS */
-.product-section{margin-top:30px;}
+.product-section{
+    margin-top:30px;
+}
 
 .product-section h2{
     font-size:27px;
     margin-bottom:20px;
 }
 
-.product-section h2 span{color:#00c8ff;}
+.product-section h2 span{
+    color:#00c8ff;
+}
 
 .products{
     display:grid;
@@ -424,7 +443,9 @@ section{padding:70px 7%;}
     transition:.3s;
 }
 
-.buy:hover{background:#00bfff;}
+.buy:hover{
+    background:#00bfff;
+}
 
 /* FEATURES */
 .features{
@@ -445,7 +466,9 @@ section{padding:70px 7%;}
     margin-bottom:12px;
 }
 
-.feature h3{margin-bottom:8px;}
+.feature h3{
+    margin-bottom:8px;
+}
 
 .feature p{
     color:#8c9bb0;
@@ -460,12 +483,18 @@ section{padding:70px 7%;}
     border-radius:25px;
     text-align:center;
     background:
-        radial-gradient(circle at center,rgba(0,157,255,.18),transparent 60%),
+        radial-gradient(
+            circle at center,
+            rgba(0,157,255,.18),
+            transparent 60%
+        ),
         rgba(255,255,255,.035);
     border:1px solid rgba(0,185,255,.18);
 }
 
-.admin h2{margin-bottom:10px;}
+.admin h2{
+    margin-bottom:10px;
+}
 
 .admin p{
     color:#8998ad;
@@ -501,14 +530,15 @@ footer{
         margin-right:auto;
     }
 
-    .buttons{justify-content:center;}
+    .buttons{
+        justify-content:center;
+    }
 
     .games{
         grid-template-columns:repeat(2,minmax(0,1fr));
         gap:15px;
     }
 
-    /* ROBLOX LEBAR, TETAP TENGAH */
     .game-card:nth-child(3){
         grid-column:1 / -1;
         width:calc(50% + 20px);
@@ -519,9 +549,13 @@ footer{
         grid-template-columns:repeat(2,1fr);
     }
 
-    .features{grid-template-columns:1fr;}
+    .features{
+        grid-template-columns:1fr;
+    }
 
-    .trust{grid-template-columns:1fr;}
+    .trust{
+        grid-template-columns:1fr;
+    }
 
     .hero-visual{
         width:280px;
@@ -533,17 +567,17 @@ footer{
         height:250px;
     }
 
-    .triangle-logo{
+    .triangle-spin{
         width:210px;
         height:210px;
     }
 
-    .triangle-logo::before{
+    .triangle-spin::before{
         width:165px;
         height:165px;
     }
 
-    .triangle-logo::after{
+    .triangle-spin::after{
         width:185px;
         height:185px;
     }
@@ -556,9 +590,13 @@ footer{
 /* HP */
 @media(max-width:500px){
 
-    .navbar{padding:13px 5%;}
+    .navbar{
+        padding:13px 5%;
+    }
 
-    .navbar nav{display:none;}
+    .navbar nav{
+        display:none;
+    }
 
     section{
         padding:55px 5%;
@@ -574,7 +612,6 @@ footer{
         gap:10px;
     }
 
-    /* ROBLOX SEDIKIT LEBIH LEBAR, TETAP TENGAH */
     .game-card:nth-child(3){
         grid-column:1 / -1;
         width:calc(50% + 10px);
@@ -612,7 +649,9 @@ footer{
         margin-right:5%;
     }
 
-    .hero h1{font-size:48px;}
+    .hero h1{
+        font-size:48px;
+    }
 
     .hero-visual{
         width:240px;
@@ -624,18 +663,18 @@ footer{
         height:215px;
     }
 
-    .triangle-logo{
+    .triangle-spin{
         width:185px;
         height:185px;
     }
 
-    .triangle-logo::before{
+    .triangle-spin::before{
         width:145px;
         height:145px;
         border-width:3px;
     }
 
-    .triangle-logo::after{
+    .triangle-spin::after{
         width:165px;
         height:165px;
     }
@@ -699,9 +738,13 @@ footer{
     </div>
 
     <div class="hero-visual">
-        <div class="triangle-logo">
-            <div class="se-text">SE</div>
-        </div>
+
+        <!-- Segitiga yang muter -->
+        <div class="triangle-spin"></div>
+
+        <!-- SE tetap diam -->
+        <div class="se-text">SE</div>
+
     </div>
 
 </section>
@@ -1195,4 +1238,4 @@ footer{
 </footer>
 
 </body>
-                                                                                                                                                                                     </html>
+    </html>
