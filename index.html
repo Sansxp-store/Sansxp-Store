@@ -8,210 +8,215 @@
 
 <style>
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background: #090b12;
-  color: white;
+    font-family: Arial, sans-serif;
+    background: #080b12;
+    color: white;
 }
 
+/* HEADER */
 header {
-  background: #111522;
-  padding: 18px;
-  text-align: center;
-  border-bottom: 1px solid #292f40;
+    background: #111622;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #252b3a;
 }
 
 .logo {
-  font-size: 25px;
-  font-weight: bold;
+    font-size: 28px;
+    font-weight: bold;
 }
 
 .logo span {
-  color: #795cff;
+    color: #7c5cff;
 }
 
 header p {
-  color: #9299aa;
-  font-size: 13px;
-  margin-top: 5px;
+    color: #8f96a8;
+    margin-top: 6px;
+    font-size: 14px;
 }
 
-/* HALAMAN UTAMA */
-
+/* HOME */
 .home {
-  max-width: 1000px;
-  width: 92%;
-  margin: auto;
-  padding: 55px 0;
+    width: 92%;
+    max-width: 1000px;
+    margin: auto;
+    padding: 50px 0;
 }
 
 .hero {
-  text-align: center;
-  margin-bottom: 40px;
+    text-align: center;
+    margin-bottom: 40px;
 }
 
 .hero h1 {
-  font-size: 38px;
-  margin-bottom: 10px;
+    font-size: 38px;
+    margin-bottom: 10px;
 }
 
 .hero h1 span {
-  color: #795cff;
+    color: #7c5cff;
 }
 
 .hero p {
-  color: #969dad;
+    color: #9299aa;
 }
 
+/* GAME CARD */
 .games {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
 }
 
 .game {
-  background: #151927;
-  border: 1px solid #292f40;
-  border-radius: 20px;
-  padding: 35px 20px;
-  text-align: center;
-  cursor: pointer;
-  transition: .2s;
+    background: #141925;
+    border: 1px solid #292f40;
+    border-radius: 18px;
+    padding: 35px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: .2s;
 }
 
 .game:hover {
-  transform: translateY(-5px);
-  border-color: #795cff;
+    transform: translateY(-5px);
+    border-color: #7c5cff;
 }
 
-.game-icon {
-  font-size: 60px;
-  margin-bottom: 15px;
+.icon {
+    font-size: 55px;
+    margin-bottom: 15px;
 }
 
 .game h2 {
-  margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 
 .game p {
-  color: #9299aa;
-  margin-bottom: 20px;
+    color: #9299aa;
+    font-size: 14px;
+    margin-bottom: 20px;
 }
 
 .choose {
-  display: inline-block;
-  background: #795cff;
-  padding: 11px 25px;
-  border-radius: 10px;
-  font-weight: bold;
+    display: inline-block;
+    background: #7c5cff;
+    padding: 11px 20px;
+    border-radius: 9px;
+    font-weight: bold;
 }
 
 /* HALAMAN PRODUK */
-
-.products-page {
-  display: none;
-  max-width: 900px;
-  width: 92%;
-  margin: auto;
-  padding: 35px 0;
+.products {
+    display: none;
+    width: 92%;
+    max-width: 900px;
+    margin: auto;
+    padding: 35px 0;
 }
 
 .back {
-  display: inline-block;
-  margin-bottom: 25px;
-  color: #aaa;
-  cursor: pointer;
+    color: #aaa;
+    cursor: pointer;
+    margin-bottom: 25px;
+    display: inline-block;
 }
 
-.page-title {
-  text-align: center;
-  margin-bottom: 30px;
+.title {
+    text-align: center;
+    margin-bottom: 30px;
 }
 
-.page-title h1 {
-  margin-bottom: 8px;
+.title h1 {
+    font-size: 30px;
+    margin-bottom: 8px;
 }
 
-.page-title p {
-  color: #9299aa;
+.title p {
+    color: #9299aa;
 }
 
-.diamonds {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
+/* PRODUK */
+.items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
 }
 
-.diamond {
-  background: #151927;
-  border: 1px solid #292f40;
-  border-radius: 15px;
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.item {
+    background: #141925;
+    border: 1px solid #292f40;
+    border-radius: 14px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.diamond h3 {
-  margin-bottom: 5px;
+.item h3 {
+    margin-bottom: 7px;
 }
 
-.diamond .price {
-  color: #8d75ff;
-  font-weight: bold;
+.price {
+    color: #8c73ff;
+    font-weight: bold;
 }
 
 .buy {
-  background: #795cff;
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 9px;
-  font-weight: bold;
-  cursor: pointer;
+    background: #7c5cff;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 .buy:hover {
-  background: #6548e8;
+    background: #6548e8;
 }
 
+/* CATATAN */
 .notice {
-  margin-top: 25px;
-  padding: 18px;
-  background: #111522;
-  border: 1px solid #292f40;
-  border-radius: 12px;
-  color: #999;
-  font-size: 13px;
-  text-align: center;
+    margin-top: 25px;
+    background: #111622;
+    border: 1px solid #292f40;
+    padding: 17px;
+    border-radius: 12px;
+    color: #858c9e;
+    text-align: center;
+    font-size: 13px;
 }
 
+/* FOOTER */
 footer {
-  text-align: center;
-  color: #666;
-  padding: 30px;
-  border-top: 1px solid #202535;
-  margin-top: 40px;
+    text-align: center;
+    color: #606778;
+    padding: 30px;
+    margin-top: 30px;
 }
 
-@media(max-width:600px) {
+/* HP */
+@media(max-width: 700px) {
 
-  .games {
-    grid-template-columns: 1fr;
-  }
+    .games {
+        grid-template-columns: 1fr;
+    }
 
-  .diamonds {
-    grid-template-columns: 1fr;
-  }
+    .items {
+        grid-template-columns: 1fr;
+    }
 
-  .hero h1 {
-    font-size: 30px;
-  }
+    .hero h1 {
+        font-size: 30px;
+    }
 
 }
 </style>
@@ -220,233 +225,445 @@ footer {
 <body>
 
 <header>
-  <div class="logo">
-    Sansxp<span>Store</span>
-  </div>
 
-  <p>Top Up Game Cepat & Mudah</p>
+    <div class="logo">
+        Sansxp<span>Store</span>
+    </div>
+
+    <p>Top Up Game Cepat & Mudah</p>
+
 </header>
 
 
-<!-- ===================== -->
+<!-- ========================= -->
 <!-- HALAMAN UTAMA -->
-<!-- ===================== -->
+<!-- ========================= -->
 
 <div class="home" id="home">
 
-  <div class="hero">
+    <div class="hero">
 
-    <h1>Pilih <span>Game</span></h1>
+        <h1>Pilih <span>Game</span></h1>
 
-    <p>
-      Pilih game yang ingin kamu top up
-    </p>
-
-  </div>
-
-
-  <div class="games">
-
-    <!-- MOBILE LEGENDS -->
-
-    <div class="game" onclick="showGame('ml')">
-
-      <div class="game-icon">
-        🎮
-      </div>
-
-      <h2>Mobile Legends</h2>
-
-      <p>
-        Top Up Diamond MLBB
-      </p>
-
-      <div class="choose">
-        Pilih Diamond
-      </div>
+        <p>
+            Pilih game yang ingin kamu top up
+        </p>
 
     </div>
 
 
-    <!-- FREE FIRE -->
+    <div class="games">
 
-    <div class="game" onclick="showGame('ff')">
 
-      <div class="game-icon">
-        🔥
-      </div>
+        <!-- FREE FIRE -->
 
-      <h2>Free Fire</h2>
+        <div class="game" onclick="showPage('ff')">
 
-      <p>
-        Top Up Diamond FF
-      </p>
+            <div class="icon">
+                🔥
+            </div>
 
-      <div class="choose">
-        Pilih Diamond
-      </div>
+            <h2>Free Fire</h2>
+
+            <p>
+                Top Up Diamond Free Fire
+            </p>
+
+            <div class="choose">
+                Lihat Harga
+            </div>
+
+        </div>
+
+
+        <!-- MOBILE LEGENDS -->
+
+        <div class="game" onclick="showPage('ml')">
+
+            <div class="icon">
+                🎮
+            </div>
+
+            <h2>Mobile Legends</h2>
+
+            <p>
+                Top Up Diamond MLBB
+            </p>
+
+            <div class="choose">
+                Lihat Harga
+            </div>
+
+        </div>
+
+
+        <!-- ROBLOX -->
+
+        <div class="game" onclick="showPage('roblox')">
+
+            <div class="icon">
+                🟥
+            </div>
+
+            <h2>Roblox</h2>
+
+            <p>
+                Top Up Robux Roblox
+            </p>
+
+            <div class="choose">
+                Lihat Harga
+            </div>
+
+        </div>
+
 
     </div>
-
-  </div>
 
 </div>
 
 
 
-<!-- ===================== -->
-<!-- HALAMAN MOBILE LEGENDS -->
-<!-- ===================== -->
+<!-- ========================= -->
+<!-- FREE FIRE -->
+<!-- ========================= -->
 
-<div class="products-page" id="ml">
+<div class="products" id="ff">
 
-  <div class="back" onclick="goHome()">
-    ← Kembali
-  </div>
+    <div class="back" onclick="home()">
+        ← Kembali
+    </div>
 
-  <div class="page-title">
+    <div class="title">
 
-    <h1>🎮 Mobile Legends</h1>
+        <h1>🔥 Free Fire</h1>
 
-    <p>
-      Pilih jumlah Diamond
-    </p>
+        <p>Pilih jumlah Diamond</p>
 
-  </div>
-
-
-  <div class="diamonds">
-
-    <div class="diamond">
-      <div>
-        <h3>5 Diamond</h3>
-        <div class="price">Rp2.000</div>
-      </div>
-
-      <button class="buy" onclick="buy('Mobile Legends - 5 Diamond - Rp2.000')">
-        Beli
-      </button>
     </div>
 
 
-    <div class="diamond">
-      <div>
-        <h3>12 Diamond</h3>
-        <div class="price">Rp4.000</div>
-      </div>
+    <div class="items">
 
-      <button class="buy" onclick="buy('Mobile Legends - 12 Diamond - Rp4.000')">
-        Beli
-      </button>
+        <div class="item">
+            <div>
+                <h3>70 Diamond</h3>
+                <div class="price">Rp10.000</div>
+            </div>
+
+            <button class="buy"
+            onclick="buy('Free Fire - 70 Diamond - Rp10.000')">
+                Beli
+            </button>
+        </div>
+
+
+        <div class="item">
+            <div>
+                <h3>140 Diamond</h3>
+                <div class="price">Rp19.000</div>
+            </div>
+
+            <button class="buy"
+            onclick="buy('Free Fire - 140 Diamond - Rp19.000')">
+                Beli
+            </button>
+        </div>
+
+
+        <div class="item">
+            <div>
+                <h3>355 Diamond</h3>
+                <div class="price">Rp45.000</div>
+            </div>
+
+            <button class="buy"
+            onclick="buy('Free Fire - 355 Diamond - Rp45.000')">
+                Beli
+            </button>
+        </div>
+
+
+        <div class="item">
+            <div>
+                <h3>720 Diamond</h3>
+                <div class="price">Rp85.000</div>
+            </div>
+
+            <button class="buy"
+            onclick="buy('Free Fire - 720 Diamond - Rp85.000')">
+                Beli
+            </button>
+        </div>
+
     </div>
 
 
-    <div class="diamond">
-      <div>
-        <h3>28 Diamond</h3>
-        <div class="price">Rp8.000</div>
-      </div>
-
-      <button class="buy" onclick="buy('Mobile Legends - 28 Diamond - Rp8.000')">
-        Beli
-      </button>
+    <div class="notice">
+        Harga di atas masih contoh dan bisa kamu ubah nanti.
     </div>
-
-
-    <div class="diamond">
-      <div>
-        <h3>59 Diamond</h3>
-        <div class="price">Rp15.000</div>
-      </div>
-
-      <button class="buy" onclick="buy('Mobile Legends - 59 Diamond - Rp15.000')">
-        Beli
-      </button>
-    </div>
-
-
-    <div class="diamond">
-      <div>
-        <h3>86 Diamond</h3>
-        <div class="price">Rp22.000</div>
-      </div>
-
-      <button class="buy" onclick="buy('Mobile Legends - 86 Diamond - Rp22.000')">
-        Beli
-      </button>
-    </div>
-
-
-    <div class="diamond">
-      <div>
-        <h3>170 Diamond</h3>
-        <div class="price">Rp43.000</div>
-      </div>
-
-      <button class="buy" onclick="buy('Mobile Legends - 170 Diamond - Rp43.000')">
-        Beli
-      </button>
-    </div>
-
-  </div>
-
-
-  <div class="notice">
-    Setelah menekan Beli, kamu akan diarahkan ke WhatsApp
-    untuk melanjutkan pesanan.
-  </div>
 
 </div>
 
 
 
-<!-- ===================== -->
-<!-- HALAMAN FREE FIRE -->
-<!-- ===================== -->
+<!-- ========================= -->
+<!-- MOBILE LEGENDS -->
+<!-- ========================= -->
 
-<div class="products-page" id="ff">
+<div class="products" id="ml">
 
-  <div class="back" onclick="goHome()">
-    ← Kembali
-  </div>
+    <div class="back" onclick="home()">
+        ← Kembali
+    </div>
 
-  <div class="page-title">
+    <div class="title">
 
-    <h1>🔥 Free Fire</h1>
+        <h1>🎮 Mobile Legends</h1>
 
-    <p>
-      Pilih jumlah Diamond
-    </p>
+        <p>Pilih jumlah Diamond</p>
 
-  </div>
-
-
-  <div class="diamonds">
-
-    <div class="diamond">
-      <div>
-        <h3>5 Diamond</h3>
-        <div class="price">Rp1.000</div>
-      </div>
-
-      <button class="buy" onclick="buy('Free Fire - 5 Diamond - Rp1.000')">
-        Beli
-      </button>
     </div>
 
 
-    <div class="diamond">
-      <div>
-        <h3>12 Diamond</h3>
-        <div class="price">Rp2.000</div>
-      </div>
+    <div class="items">
 
-      <button class="buy" onclick="buy('Free Fire - 12 Diamond - Rp2.000')">
-        Beli
-      </button>
+        <div class="item">
+            <div>
+                <h3>5 Diamond</h3>
+                <div class="price">Rp2.000</div>
+            </div>
+
+            <button class="buy"
+            onclick="buy('Mobile Legends - 5 Diamond - Rp2.000')">
+                Beli
+            </button>
+        </div>
+
+
+        <div class="item">
+            <div>
+                <h3>12 Diamond</h3>
+                <div class="price">Rp4.000</div>
+            </div>
+
+            <button class="buy"
+            onclick="buy('Mobile Legends - 12 Diamond - Rp4.000')">
+                Beli
+            </button>
+        </div>
+
+
+        <div class="item">
+            <div>
+                <h3>28 Diamond</h3>
+                <div class="price">Rp8.000</div>
+            </div>
+
+            <button class="buy"
+            onclick="buy('Mobile Legends - 28 Diamond - Rp8.000')">
+                Beli
+            </button>
+        </div>
+
+
+        <div class="item">
+            <div>
+                <h3>59 Diamond</h3>
+                <div class="price">Rp15.000</div>
+            </div>
+
+            <button class="buy"
+            onclick="buy('Mobile Legends - 59 Diamond - Rp15.000')">
+                Beli
+            </button>
+        </div>
+
+
+        <div class="item">
+            <div>
+                <h3>86 Diamond</h3>
+                <div class="price">Rp22.000</div>
+            </div>
+
+            <button class="buy"
+            onclick="buy('Mobile Legends - 86 Diamond - Rp22.000')">
+                Beli
+            </button>
+        </div>
+
+
+        <div class="item">
+            <div>
+                <h3>170 Diamond</h3>
+                <div class="price">Rp43.000</div>
+            </div>
+
+            <button class="buy"
+            onclick="buy('Mobile Legends - 170 Diamond - Rp43.000')">
+                Beli
+            </button>
+        </div>
+
     </div>
 
 
-    <div class="diamond">
-      <div>
-        <h3>50 Diamond</h3
+    <div class="notice">
+        Harga di atas masih contoh dan bisa kamu ubah nanti.
+    </div>
+
+</div>
+
+
+
+<!-- ========================= -->
+<!-- ROBLOX -->
+<!-- ========================= -->
+
+<div class="products" id="roblox">
+
+    <div class="back" onclick="home()">
+        ← Kembali
+    </div>
+
+    <div class="title">
+
+        <h1>🟥 Roblox</h1>
+
+        <p>Pilih jumlah Robux</p>
+
+    </div>
+
+
+    <div class="items">
+
+        <div class="item">
+            <div>
+                <h3>80 Robux</h3>
+                <div class="price">Rp15.000</div>
+            </div>
+
+            <button class="buy"
+            onclick="buy('Roblox - 80 Robux - Rp15.000')">
+                Beli
+            </button>
+        </div>
+
+
+        <div class="item">
+            <div>
+                <h3>160 Robux</h3>
+                <div class="price">Rp30.000</div>
+            </div>
+
+            <button class="buy"
+            onclick="buy('Roblox - 160 Robux - Rp30.000')">
+                Beli
+            </button>
+        </div>
+
+
+        <div class="item">
+            <div>
+                <h3>400 Robux</h3>
+                <div class="price">Rp70.000</div>
+            </div>
+
+            <button class="buy"
+            onclick="buy('Roblox - 400 Robux - Rp70.000')">
+                Beli
+            </button>
+        </div>
+
+
+        <div class="item">
+            <div>
+                <h3>800 Robux</h3>
+                <div class="price">Rp135.000</div>
+            </div>
+
+            <button class="buy"
+            onclick="buy('Roblox - 800 Robux - Rp135.000')">
+                Beli
+            </button>
+        </div>
+
+    </div>
+
+
+    <div class="notice">
+        Harga di atas masih contoh dan bisa kamu ubah nanti.
+    </div>
+
+</div>
+
+
+
+<footer>
+    © 2026 Sansxp Store
+</footer>
+
+
+
+<script>
+
+function showPage(game) {
+
+    document.getElementById("home").style.display = "none";
+
+    document.getElementById("ff").style.display = "none";
+
+    document.getElementById("ml").style.display = "none";
+
+    document.getElementById("roblox").style.display = "none";
+
+    document.getElementById(game).style.display = "block";
+
+    window.scrollTo(0, 0);
+
+}
+
+
+function home() {
+
+    document.getElementById("home").style.display = "block";
+
+    document.getElementById("ff").style.display = "none";
+
+    document.getElementById("ml").style.display = "none";
+
+    document.getElementById("roblox").style.display = "none";
+
+    window.scrollTo(0, 0);
+
+}
+
+
+function buy(product) {
+
+    const nomor = "62882007902763";
+
+    const pesan =
+        "Halo Sansxp Store 👋%0A%0A" +
+        "Saya mau pesan:%0A" +
+        product +
+        "%0A%0AMohon info proses selanjutnya.";
+
+    const link =
+        "https://wa.me/" +
+        nomor +
+        "?text=" +
+        encodeURIComponent(
+            "Halo Sansxp Store 👋\n\nSaya mau pesan:\n" +
+            product +
+            "\n\nMohon info proses selanjutnya."
+        );
+
+    window.location.href = link;
+
+}
+
+</script>
+
+</body>
+</html>
