@@ -162,7 +162,7 @@ body::after{
 
 .btn:hover{transform:translateY(-3px);}
 
-/* HERO ORB */
+/* HERO VISUAL - TRIANGLE SE */
 .hero-visual{
     width:340px;
     height:340px;
@@ -172,38 +172,107 @@ body::after{
     align-items:center;
 }
 
-.orb{
-    width:230px;
-    height:230px;
+/* Lingkaran luar */
+.hero-visual::before{
+    content:"";
+    position:absolute;
+    width:310px;
+    height:310px;
+    border:1px solid rgba(0,190,255,.22);
     border-radius:50%;
-    background:
-        radial-gradient(circle at 35% 30%,#fff,transparent 4%),
-        radial-gradient(circle,#167cff,#111c7d 45%,#070a25 70%);
     box-shadow:
-        0 0 40px #006eff,
-        0 0 100px rgba(0,128,255,.35);
+        0 0 25px rgba(0,150,255,.12),
+        inset 0 0 25px rgba(0,150,255,.08);
+}
+
+/* Segitiga */
+.triangle-logo{
+    width:245px;
+    height:245px;
+    position:relative;
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:100px;
-    font-weight:1000;
-    font-style:italic;
-    color:#fff;
-    animation:float 4s ease-in-out infinite;
+    animation:triangleSpin 6s linear infinite;
+    filter:
+        drop-shadow(0 0 8px #00bfff)
+        drop-shadow(0 0 25px rgba(0,120,255,.8));
 }
 
-.orb::after{
+/* Bentuk segitiga */
+.triangle-logo::before{
     content:"";
     position:absolute;
-    width:290px;
-    height:290px;
-    border:1px solid rgba(0,190,255,.35);
-    border-radius:50%;
+    width:190px;
+    height:190px;
+    border:4px solid #00c8ff;
+    background:
+        linear-gradient(135deg,
+            rgba(0,200,255,.10),
+            rgba(92,44,255,.18));
+    clip-path:polygon(50% 0%,100% 88%,0% 88%);
+    box-shadow:
+        0 0 15px #00bfff,
+        inset 0 0 25px rgba(0,190,255,.25);
 }
 
-@keyframes float{
-    0%,100%{transform:translateY(0)}
-    50%{transform:translateY(-15px)}
+/* Segitiga kedua untuk efek neon */
+.triangle-logo::after{
+    content:"";
+    position:absolute;
+    width:215px;
+    height:215px;
+    border:2px solid rgba(93,75,255,.75);
+    clip-path:polygon(50% 0%,100% 88%,0% 88%);
+    transform:rotate(180deg);
+    opacity:.7;
+}
+
+/* Tulisan SE */
+.se-text{
+    position:relative;
+    z-index:5;
+    font-family:
+        Impact,
+        "Arial Black",
+        Arial,
+        sans-serif;
+    font-size:52px;
+    font-weight:1000;
+    font-style:italic;
+    letter-spacing:-5px;
+    color:#fff;
+    text-shadow:
+        3px 3px 0 #1645a0,
+        0 0 8px #00c8ff,
+        0 0 22px #008cff;
+    transform:skew(-8deg);
+}
+
+/* Titik cahaya */
+.se-text::after{
+    content:"";
+    position:absolute;
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:#fff;
+    right:-13px;
+    top:5px;
+    box-shadow:
+        0 0 8px #fff,
+        0 0 18px #00c8ff,
+        0 0 30px #008cff;
+}
+
+/* Muter ke kanan */
+@keyframes triangleSpin{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(360deg);
+    }
 }
 
 /* TRUST */
@@ -254,10 +323,10 @@ section{padding:70px 7%;}
     gap:20px;
 }
 
-/* ROBLOX DI BAWAH, TENGAH, LEBIH LEBAR */
+/* ROBLOX DI BAWAH, TENGAH, SEDIKIT LEBIH LEBAR */
 .game-card:nth-child(3){
     grid-column:1 / -1;
-    width:calc(100% - 20px);
+    width:calc(50% + 20px);
     justify-self:center;
 }
 
@@ -442,7 +511,7 @@ footer{
     /* ROBLOX LEBAR, TETAP TENGAH */
     .game-card:nth-child(3){
         grid-column:1 / -1;
-        width:calc(100% - 15px);
+        width:calc(50% + 20px);
         justify-self:center;
     }
 
@@ -459,15 +528,28 @@ footer{
         height:280px;
     }
 
-    .orb{
-        width:190px;
-        height:190px;
-        font-size:80px;
+    .hero-visual::before{
+        width:250px;
+        height:250px;
     }
 
-    .orb::after{
-        width:240px;
-        height:240px;
+    .triangle-logo{
+        width:210px;
+        height:210px;
+    }
+
+    .triangle-logo::before{
+        width:165px;
+        height:165px;
+    }
+
+    .triangle-logo::after{
+        width:185px;
+        height:185px;
+    }
+
+    .se-text{
+        font-size:45px;
     }
 }
 
@@ -492,10 +574,10 @@ footer{
         gap:10px;
     }
 
-    /* ROBLOX HAMPIR SELEBAR GABUNGAN ML + EPEP */
+    /* ROBLOX SEDIKIT LEBIH LEBAR, TETAP TENGAH */
     .game-card:nth-child(3){
         grid-column:1 / -1;
-        width:calc(100% - 10px);
+        width:calc(50% + 10px);
         justify-self:center;
     }
 
@@ -531,6 +613,36 @@ footer{
     }
 
     .hero h1{font-size:48px;}
+
+    .hero-visual{
+        width:240px;
+        height:240px;
+    }
+
+    .hero-visual::before{
+        width:215px;
+        height:215px;
+    }
+
+    .triangle-logo{
+        width:185px;
+        height:185px;
+    }
+
+    .triangle-logo::before{
+        width:145px;
+        height:145px;
+        border-width:3px;
+    }
+
+    .triangle-logo::after{
+        width:165px;
+        height:165px;
+    }
+
+    .se-text{
+        font-size:40px;
+    }
 }
 </style>
 </head>
@@ -587,7 +699,9 @@ footer{
     </div>
 
     <div class="hero-visual">
-        <div class="orb">S</div>
+        <div class="triangle-logo">
+            <div class="se-text">SE</div>
+        </div>
     </div>
 
 </section>
@@ -1081,4 +1195,4 @@ footer{
 </footer>
 
 </body>
-                </html>
+                                                                                                                                                                                     </html>
