@@ -3,63 +3,996 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>SANS EXP STORE</title>
+
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:#05050b;color:#fff;font-family:Arial,sans-serif}
-.wrap{width:100%;max-width:650px;margin:auto}
-.home{position:relative;line-height:0}
-.home img{width:100%;height:auto;display:block}
-.hotspot{position:absolute;display:block;z-index:2;border-radius:18px}
-.ff{left:5%;top:23%;width:43%;height:25%}
-.ml{right:5%;top:23%;width:43%;height:25%}
-.roblox{left:20%;top:49%;width:60%;height:25%}
-.admin{left:27%;top:78%;width:46%;height:12%}
-.page{display:none;min-height:100vh;padding:22px 15px 40px;background:radial-gradient(circle at top,#30205a 0%,#0c0818 42%,#05050b 100%)}
-.page:target{display:block}
-#home:target{display:block}
-#home:target ~ .page{display:none}
-.box{max-width:520px;margin:auto}
-.back{display:inline-block;padding:10px 15px;margin-bottom:22px;border-radius:10px;color:#fff;text-decoration:none;background:#2b1d4b}
-h1{text-align:center;margin-bottom:25px;font-size:28px}
-.product{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px;margin:12px 0;border:1px solid #4c347e;border-radius:15px;background:#15121f}
-.name{font-weight:bold;font-size:17px}.price{color:#ae87ff;font-weight:bold;margin-top:5px}
-.buy{flex-shrink:0;padding:10px 15px;border-radius:9px;background:#7c3cff;color:white;text-decoration:none;font-weight:bold}
-.note{text-align:center;color:#999;margin-top:25px;font-size:13px}
-@media(max-width:420px){.product{padding:13px}.name{font-size:15px}.buy{padding:9px 12px;font-size:13px}}
+
+/* ================= DASAR ================= */
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    background:#05050b;
+    color:white;
+    font-family:Arial,sans-serif;
+}
+
+.container{
+    width:100%;
+    max-width:650px;
+    margin:auto;
+}
+
+
+/* ================= HOME ================= */
+
+.home{
+    position:relative;
+    width:100%;
+}
+
+.home img{
+    width:100%;
+    display:block;
+}
+
+
+/* Area klik pada gambar */
+
+.hotspot{
+    position:absolute;
+    display:block;
+    z-index:10;
+}
+
+.ff{
+    left:5%;
+    top:23%;
+    width:43%;
+    height:25%;
+}
+
+.ml{
+    right:5%;
+    top:23%;
+    width:43%;
+    height:25%;
+}
+
+.roblox{
+    left:20%;
+    top:49%;
+    width:60%;
+    height:25%;
+}
+
+.admin{
+    left:27%;
+    top:78%;
+    width:46%;
+    height:12%;
+}
+
+
+/* ================= INFO STORE ================= */
+
+.info-section{
+    padding:30px 18px 35px;
+
+    background:
+    linear-gradient(
+        180deg,
+        #080711 0%,
+        #120b22 100%
+    );
+}
+
+.info-title{
+    text-align:center;
+
+    font-size:23px;
+    font-weight:bold;
+
+    margin-bottom:10px;
+}
+
+.info-subtitle{
+    text-align:center;
+
+    color:#aaa3bb;
+
+    font-size:14px;
+
+    line-height:1.6;
+
+    margin-bottom:23px;
+}
+
+
+/* ================= FITUR ================= */
+
+.features{
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:10px;
+}
+
+.feature{
+    background:#171320;
+
+    border:1px solid #332451;
+
+    border-radius:14px;
+
+    padding:16px 8px;
+
+    text-align:center;
+}
+
+.feature-icon{
+    font-size:25px;
+
+    margin-bottom:8px;
+}
+
+.feature h3{
+    font-size:13px;
+
+    margin-bottom:6px;
+}
+
+.feature p{
+    color:#8f899c;
+
+    font-size:10px;
+
+    line-height:1.4;
+}
+
+
+/* ================= PROMO ================= */
+
+.promo{
+    margin-top:20px;
+
+    padding:18px;
+
+    border-radius:15px;
+
+    text-align:center;
+
+    background:
+    linear-gradient(
+        135deg,
+        #28164b,
+        #151024
+    );
+
+    border:1px solid #5b3b91;
+}
+
+.promo strong{
+    color:#b98cff;
+
+    font-size:16px;
+}
+
+.promo p{
+    color:#bbb3c9;
+
+    font-size:12px;
+
+    line-height:1.5;
+
+    margin-top:7px;
+}
+
+
+/* ================= HALAMAN HARGA ================= */
+
+.page{
+    display:none;
+
+    min-height:100vh;
+
+    padding:25px 15px 40px;
+
+    background:
+    radial-gradient(
+        circle at top,
+        #30205a,
+        #0c0818 45%,
+        #05050b 100%
+    );
+}
+
+.page.active{
+    display:block;
+}
+
+.box{
+    width:100%;
+    max-width:520px;
+    margin:auto;
+}
+
+.back{
+    display:inline-block;
+
+    color:white;
+
+    text-decoration:none;
+
+    background:#2b1d4b;
+
+    padding:10px 16px;
+
+    border-radius:10px;
+
+    margin-bottom:25px;
+}
+
+.title{
+    text-align:center;
+
+    font-size:28px;
+
+    margin-bottom:25px;
+}
+
+
+/* ================= PRODUK ================= */
+
+.product{
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:12px;
+
+    background:#15121f;
+
+    border:1px solid #4c347e;
+
+    border-radius:15px;
+
+    padding:16px;
+
+    margin-bottom:12px;
+}
+
+.name{
+    font-size:17px;
+
+    font-weight:bold;
+}
+
+.price{
+    color:#ae87ff;
+
+    font-weight:bold;
+
+    margin-top:5px;
+}
+
+.buy{
+    flex-shrink:0;
+
+    background:#7c3cff;
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:10px 15px;
+
+    border-radius:9px;
+
+    font-weight:bold;
+}
+
+.note{
+    text-align:center;
+
+    color:#999;
+
+    font-size:13px;
+
+    margin-top:25px;
+}
+
+
+/* ================= HP ================= */
+
+@media(max-width:420px){
+
+    .features{
+        gap:7px;
+    }
+
+    .feature{
+        padding:13px 5px;
+    }
+
+    .feature h3{
+        font-size:11px;
+    }
+
+    .feature p{
+        font-size:9px;
+    }
+
+    .product{
+        padding:13px;
+    }
+
+    .name{
+        font-size:15px;
+    }
+
+    .buy{
+        padding:9px 12px;
+
+        font-size:13px;
+    }
+
+}
+
 </style>
 </head>
+
+
 <body>
-<div class="wrap">
+
+<div class="container">
+
+
+<!-- ================================================= -->
+<!-- HOME + GAMBAR -->
+<!-- ================================================= -->
+
 <div id="home" class="home">
-<img src="sans-exp-store.png" alt="SANS EXP STORE">
-<a class="hotspot ff" href="#freefire" aria-label="Free Fire"></a>
-<a class="hotspot ml" href="#mobilelegends" aria-label="Mobile Legends"></a>
-<a class="hotspot roblox" href="#roblox" aria-label="Roblox"></a>
-<a class="hotspot admin" href="https://wa.me/62882007902763" aria-label="Chat WhatsApp Admin"></a>
+
+    <!--
+    PENTING:
+    file gambar harus bernama:
+    sans-exp-store.png
+    -->
+
+    <img
+        src="sans-exp-store.png"
+        alt="SANS EXP STORE"
+    >
+
+
+    <!-- FREE FIRE -->
+
+    <a
+        href="javascript:void(0)"
+        class="hotspot ff"
+        onclick="showPage('freefire')"
+    ></a>
+
+
+    <!-- MOBILE LEGENDS -->
+
+    <a
+        href="javascript:void(0)"
+        class="hotspot ml"
+        onclick="showPage('mobilelegends')"
+    ></a>
+
+
+    <!-- ROBLOX -->
+
+    <a
+        href="javascript:void(0)"
+        class="hotspot roblox"
+        onclick="showPage('roblox')"
+    ></a>
+
+
+    <!-- ADMIN -->
+
+    <a
+        href="https://wa.me/62882007902763"
+        class="hotspot admin"
+    ></a>
+
 </div>
 
-<section id="freefire" class="page"><div class="box"><a href="#home" class="back">← Kembali</a><h1>🔥 FREE FIRE</h1>
-<div class="product"><div><div class="name">70 Diamond</div><div class="price">Rp10.000</div></div><a class="buy" href="https://wa.me/62882007902763?text=Halo%20Sans%20Exp%2C%20saya%20mau%20beli%2070%20Diamond%20Free%20Fire">Beli</a></div>
-<div class="product"><div><div class="name">140 Diamond</div><div class="price">Rp19.000</div></div><a class="buy" href="https://wa.me/62882007902763?text=Halo%20Sans%20Exp%2C%20saya%20mau%20beli%20140%20Diamond%20Free%20Fire">Beli</a></div>
-<div class="product"><div><div class="name">355 Diamond</div><div class="price">Rp45.000</div></div><a class="buy" href="https://wa.me/62882007902763?text=Halo%20Sans%20Exp%2C%20saya%20mau%20beli%20355%20Diamond%20Free%20Fire">Beli</a></div>
-<div class="product"><div><div class="name">720 Diamond</div><div class="price">Rp85.000</div></div><a class="buy" href="https://wa.me/62882007902763?text=Halo%20Sans%20Exp%2C%20saya%20mau%20beli%20720%20Diamond%20Free%20Fire">Beli</a></div>
-<p class="note">Harga contoh — silakan ubah sesuai harga toko.</p></div></section>
 
-<section id="mobilelegends" class="page"><div class="box"><a href="#home" class="back">← Kembali</a><h1>🎮 MOBILE LEGENDS</h1>
-<div class="product"><div><div class="name">5 Diamond</div><div class="price">Rp2.000</div></div><a class="buy" href="https://wa.me/62882007902763?text=Halo%20Sans%20Exp%2C%20saya%20mau%20beli%205%20Diamond%20Mobile%20Legends">Beli</a></div>
-<div class="product"><div><div class="name">28 Diamond</div><div class="price">Rp8.000</div></div><a class="buy" href="https://wa.me/62882007902763?text=Halo%20Sans%20Exp%2C%20saya%20mau%20beli%2028%20Diamond%20Mobile%20Legends">Beli</a></div>
-<div class="product"><div><div class="name">86 Diamond</div><div class="price">Rp22.000</div></div><a class="buy" href="https://wa.me/62882007902763?text=Halo%20Sans%20Exp%2C%20saya%20mau%20beli%2086%20Diamond%20Mobile%20Legends">Beli</a></div>
-<div class="product"><div><div class="name">170 Diamond</div><div class="price">Rp43.000</div></div><a class="buy" href="https://wa.me/62882007902763?text=Halo%20Sans%20Exp%2C%20saya%20mau%20beli%20170%20Diamond%20Mobile%20Legends">Beli</a></div>
-<p class="note">Harga contoh — silakan ubah sesuai harga toko.</p></div></section>
 
-<section id="roblox" class="page"><div class="box"><a href="#home" class="back">← Kembali</a><h1>🟥 ROBLOX</h1>
-<div class="product"><div><div class="name">80 Robux</div><div class="price">Rp15.000</div></div><a class="buy" href="https://wa.me/62882007902763?text=Halo%20Sans%20Exp%2C%20saya%20mau%20beli%2080%20Robux">Beli</a></div>
-<div class="product"><div><div class="name">160 Robux</div><div class="price">Rp30.000</div></div><a class="buy" href="https://wa.me/62882007902763?text=Halo%20Sans%20Exp%2C%20saya%20mau%20beli%20160%20Robux">Beli</a></div>
-<div class="product"><div><div class="name">400 Robux</div><div class="price">Rp70.000</div></div><a class="buy" href="https://wa.me/62882007902763?text=Halo%20Sans%20Exp%2C%20saya%20mau%20beli%20400%20Robux">Beli</a></div>
-<div class="product"><div><div class="name">800 Robux</div><div class="price">Rp135.000</div></div><a class="buy" href="https://wa.me/62882007902763?text=Halo%20Sans%20Exp%2C%20saya%20mau%20beli%20800%20Robux">Beli</a></div>
-<p class="note">Harga contoh — silakan ubah sesuai harga toko.</p></div></section>
+<!-- ================================================= -->
+<!-- INFO STORE -->
+<!-- ================================================= -->
+
+<section class="info-section">
+
+
+    <div class="info-title">
+        ⚡ TOP UP CEPAT & MUDAH
+    </div>
+
+
+    <div class="info-subtitle">
+
+        Pilih game favoritmu dan lakukan
+        top up dengan mudah bersama
+        SANS EXP STORE.
+
+    </div>
+
+
+
+    <!-- FITUR -->
+
+    <div class="features">
+
+
+        <!-- FITUR 1 -->
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                ⚡
+            </div>
+
+            <h3>
+                PROSES CEPAT
+            </h3>
+
+            <p>
+                Pesanan diproses
+                dengan cepat.
+            </p>
+
+        </div>
+
+
+
+        <!-- FITUR 2 -->
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                💰
+            </div>
+
+            <h3>
+                HARGA TERJANGKAU
+            </h3>
+
+            <p>
+                Banyak pilihan
+                nominal top up.
+            </p>
+
+        </div>
+
+
+
+        <!-- FITUR 3 -->
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                💬
+            </div>
+
+            <h3>
+                ADMIN SIAP BANTU
+            </h3>
+
+            <p>
+                Hubungi admin
+                jika ada kendala.
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- PROMO -->
+
+    <div class="promo">
+
+        <strong>
+            🎮 MAU TOP UP GAME?
+        </strong>
+
+        <p>
+
+            Pilih Free Fire,
+            Mobile Legends,
+            atau Roblox di atas
+            dan lihat pilihan harga
+            yang tersedia.
+
+        </p>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ================================================= -->
+<!-- FREE FIRE -->
+<!-- ================================================= -->
+
+<div
+    id="freefire"
+    class="page"
+>
+
+    <div class="box">
+
+
+        <a
+            href="javascript:void(0)"
+            class="back"
+            onclick="showHome()"
+        >
+            ← Kembali
+        </a>
+
+
+        <h1 class="title">
+            🔥 FREE FIRE
+        </h1>
+
+
+
+        <div class="product">
+
+            <div>
+
+                <div class="name">
+                    70 Diamond
+                </div>
+
+                <div class="price">
+                    Rp10.000
+                </div>
+
+            </div>
+
+
+            <a
+                class="buy"
+                href="https://wa.me/62882007902763?text=Halo%20Sans%20Exp%2C%20saya%20mau%20beli%2070%20Diamond%20Free%20Fire"
+            >
+                Beli
+            </a>
+
+        </div>
+
+
+
+        <div class="product">
+
+            <div>
+
+                <div class="name">
+                    140 Diamond
+                </div>
+
+                <div class="price">
+                    Rp19.000
+                </div>
+
+            </div>
+
+
+            <a
+                class="buy"
+                href="https://wa.me/62882007902763?text=Halo%20Sans%20Exp%2C%20saya%20mau%20beli%20140%20Diamond%20Free%20Fire"
+            >
+                Beli
+            </a>
+
+        </div>
+
+
+
+        <div class="product">
+
+            <div>
+
+                <div class="name">
+                    355 Diamond
+                </div>
+
+                <div class="price">
+                    Rp45.000
+                </div>
+
+            </div>
+
+
+            <a
+                class="buy"
+                href="https://wa.me/62882007902763?text=Halo%20Sans%20Exp%2C%20saya%20mau%20beli%20355%20Diamond%20Free%20Fire"
+            >
+                Beli
+            </a>
+
+        </div>
+
+
+
+        <div class="product">
+
+            <div>
+
+                <div class="name">
+                    720 Diamond
+                </div>
+
+                <div class="price">
+                    Rp85.000
+                </div>
+
+            </div>
+
+
+            <a
+                class="buy"
+                href="https://wa.me/62882007902763?text=Halo%20Sans%20Exp%2C%20saya%20mau%20beli%20720%20Diamond%20Free%20Fire"
+            >
+                Beli
+            </a>
+
+        </div>
+
+
+        <div class="note">
+            Harga contoh — silakan ubah sesuai harga toko.
+        </div>
+
+
+    </div>
+
 </div>
+
+
+
+<!-- ================================================= -->
+<!-- MOBILE LEGENDS -->
+<!-- ================================================= -->
+
+<div
+    id="mobilelegends"
+    class="page"
+>
+
+    <div class="box">
+
+
+        <a
+            href="javascript:void(0)"
+            class="back"
+            onclick="showHome()"
+        >
+            ← Kembali
+        </a>
+
+
+        <h1 class="title">
+            🎮 MOBILE LEGENDS
+        </h1>
+
+
+
+        <div class="product">
+
+            <div>
+
+                <div class="name">
+                    5 Diamond
+                </div>
+
+                <div class="price">
+                    Rp2.000
+                </div>
+
+            </div>
+
+
+            <a
+                class="buy"
+                href="https://wa.me/62882007902763?text=Halo%20Sans%20Exp%2C%20saya%20mau%20beli%205%20Diamond%20Mobile%20Legends"
+            >
+                Beli
+            </a>
+
+        </div>
+
+
+
+        <div class="product">
+
+            <div>
+
+                <div class="name">
+                    28 Diamond
+                </div>
+
+                <div class="price">
+                    Rp8.000
+                </div>
+
+            </div>
+
+
+            <a
+                class="buy"
+                href="https://wa.me/62882007902763?text=Halo%20Sans%20Exp%2C%20saya%20mau%20beli%2028%20Diamond%20Mobile%20Legends"
+            >
+                Beli
+            </a>
+
+        </div>
+
+
+
+        <div class="product">
+
+            <div>
+
+                <div class="name">
+                    86 Diamond
+                </div>
+
+                <div class="price">
+                    Rp22.000
+                </div>
+
+            </div>
+
+
+            <a
+                class="buy"
+                href="https://wa.me/62882007902763?text=Halo%20Sans%20Exp%2C%20saya%20mau%20beli%2086%20Diamond%20Mobile%20Legends"
+            >
+                Beli
+            </a>
+
+        </div>
+
+
+
+        <div class="product">
+
+            <div>
+
+                <div class="name">
+                    170 Diamond
+                </div>
+
+                <div class="price">
+                    Rp43.000
+                </div>
+
+            </div>
+
+
+            <a
+                class="buy"
+                href="https://wa.me/62882007902763?text=Halo%20Sans%20Exp%2C%20saya%20mau%20beli%20170%20Diamond%20Mobile%20Legends"
+            >
+                Beli
+            </a>
+
+        </div>
+
+
+        <div class="note">
+            Harga contoh — silakan ubah sesuai harga toko.
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- ================================================= -->
+<!-- ROBLOX -->
+<!-- ================================================= -->
+
+<div
+    id="roblox"
+    class="page"
+>
+
+    <div class="box">
+
+
+        <a
+            href="javascript:void(0)"
+            class="back"
+            onclick="showHome()"
+        >
+            ← Kembali
+        </a>
+
+
+        <h1 class="title">
+            🟥 ROBLOX
+        </h1>
+
+
+
+        <div class="product">
+
+            <div>
+
+                <div class="name">
+                    80 Robux
+                </div>
+
+                <div class="price">
+                    Rp15.000
+                </div>
+
+            </div>
+
+
+            <a
+                class="buy"
+                href="https://wa.me/62882007902763?text=Halo%20Sans%20Exp%2C%20saya%20mau%20beli%2080%20Robux"
+            >
+                Beli
+            </a>
+
+        </div>
+
+
+
+        <div class="product">
+
+            <div>
+
+                <div class="name">
+                    160 Robux
+                </div>
+
+                <div class="price">
+                    Rp30.000
+                </div>
+
+            </div>
+
+
+            <a
+                class="buy"
+                href="https://wa.me/62882007902763?text=Halo%20Sans%20Exp%2C%20saya%20mau%20beli%20160%20Robux"
+            >
+                Beli
+            </a>
+
+        </div>
+
+
+
+        <div class="product">
+
+            <div>
+
+                <div class="name">
+                    400 Robux
+                </div>
+
+                <div class="price">
+                    Rp70.000
+                </div>
+
+            </div>
+
+
+            <a
+                class="buy"
+                href="https://wa.me/62882007902763?text=Halo%20Sans%20Exp%2C%20saya%20mau%20beli%20400%20Robux"
+            >
+                Beli
+            </a>
+
+        </div>
+
+
+
+        <div class="product">
+
+            <div>
+
+                <div class="name">
+                    800 Robux
+                </div>
+
+                <div class="price">
+                    Rp135.000
+                </div>
+
+            </div>
+
+
+            <a
+                class="buy"
+                href="https://wa.me/62882007902763?text=Halo%20Sans%20Exp%2C%20saya%20mau%20beli%20800%20Robux"
+            >
+                Beli
+            </a>
+
+        </div>
+
+
+        <div class="note">
+            Harga contoh — silakan ubah sesuai harga toko.
+        </div>
+
+
+    </div>
+
+</div>
+
+
+</div>
+
+
+
+<!-- ================================================= -->
+<!-- JAVASCRIPT -->
+<!-- ================================================= -->
+
+<script>
+
+function showPage(page){
+
+    document.getElementById("home").style.display = "none";
+
+    document.querySelectorAll(".page").forEach(function(el){
+
+        el.classList.remove("active");
+
+    });
+
+    document.getElementById(page).classList.add("active");
+
+    window.scrollTo(0,0);
+}
+
+
+function showHome(){
+
+    document.getElementById("home").style.display = "block";
+
+    document.querySelectorAll(".page").forEach(function(el){
+
+        el.classList.remove("active");
+
+    });
+
+    window.scrollTo(0,0);
+}
+
+</script>
+
 </body>
-</html>
+  </html>
