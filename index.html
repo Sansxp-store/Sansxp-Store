@@ -23,7 +23,6 @@ body{
     overflow-x:hidden;
 }
 
-/* BACKGROUND */
 body::before{
     content:"";
     position:fixed;
@@ -436,8 +435,9 @@ footer{
     border-top:1px solid rgba(255,255,255,.07);
 }
 
-/* MOBILE */
+/* TABLET */
 @media(max-width:900px){
+
     .hero{
         flex-direction:column;
         text-align:center;
@@ -457,6 +457,7 @@ footer{
         grid-template-columns:1fr;
     }
 
+    /* 2 PRODUK PER BARIS */
     .products{
         grid-template-columns:repeat(2,1fr);
     }
@@ -486,7 +487,9 @@ footer{
     }
 }
 
+/* HP */
 @media(max-width:500px){
+
     .navbar{
         padding:13px 5%;
     }
@@ -504,8 +507,31 @@ footer{
         padding-right:5%;
     }
 
+    /* TETAP 2 PRODUK PER BARIS DI HP */
     .products{
-        grid-template-columns:1fr;
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:10px;
+    }
+
+    .product{
+        padding:12px;
+        border-radius:13px;
+    }
+
+    .product-name{
+        min-height:44px;
+        font-size:12px;
+        line-height:1.4;
+    }
+
+    .price{
+        font-size:15px;
+        margin:8px 0;
+    }
+
+    .buy{
+        padding:8px 5px;
+        font-size:12px;
     }
 
     .admin{
@@ -524,6 +550,7 @@ footer{
 
 <!-- NAVBAR -->
 <header class="navbar">
+
     <div class="logo">
         <div class="logo-box">SE</div>
         SANS EXP STORE
@@ -535,6 +562,7 @@ footer{
         <a href="#harga">Harga</a>
         <a href="#admin">Admin</a>
     </nav>
+
 </header>
 
 
@@ -543,7 +571,9 @@ footer{
 
     <div class="hero-text">
 
-        <div class="badge">⚡ TOP UP CEPAT • AMAN • TERPERCAYA</div>
+        <div class="badge">
+            ⚡ TOP UP CEPAT • AMAN • TERPERCAYA
+        </div>
 
         <h1>
             SANS<br>
@@ -557,6 +587,7 @@ footer{
         </p>
 
         <div class="buttons">
+
             <a class="btn btn-primary" href="#games">
                 🎮 Pilih Game
             </a>
@@ -566,6 +597,7 @@ footer{
                target="_blank">
                 💬 Chat Admin
             </a>
+
         </div>
 
     </div>
@@ -609,35 +641,53 @@ footer{
     <div class="games">
 
         <div class="game-card">
+
             <div class="game-icon">FF</div>
+
             <h3>Free Fire</h3>
-            <p>Diamond, Membership, BP Card & Level Up Pass.</p>
+
+            <p>
+                Diamond, Membership, BP Card & Level Up Pass.
+            </p>
 
             <a class="btn btn-primary" href="#freefire">
                 Lihat Harga
             </a>
+
         </div>
 
 
         <div class="game-card">
+
             <div class="game-icon">ML</div>
+
             <h3>Mobile Legends</h3>
-            <p>Diamond, Weekly Diamond Pass & Bundle.</p>
+
+            <p>
+                Diamond, Weekly Diamond Pass & Bundle.
+            </p>
 
             <a class="btn btn-primary" href="#mobilelegends">
                 Lihat Harga
             </a>
+
         </div>
 
 
         <div class="game-card">
+
             <div class="game-icon">RB</div>
+
             <h3>Roblox</h3>
-            <p>Robux dan Roblox Gift Card IDR.</p>
+
+            <p>
+                Robux dan Roblox Gift Card IDR.
+            </p>
 
             <a class="btn btn-primary" href="#roblox">
                 Lihat Harga
             </a>
+
         </div>
 
     </div>
@@ -650,7 +700,10 @@ footer{
 
     <div class="section-title">
         <h2>🔥 Free Fire</h2>
-        <p>Pilih produk Free Fire yang kamu inginkan.</p>
+
+        <p>
+            Pilih produk Free Fire yang kamu inginkan.
+        </p>
     </div>
 
 
@@ -921,7 +974,6 @@ footer{
         <p>Roblox Gift Card IDR dan Robux.</p>
     </div>
 
-
     <h2>🎁 <span>Roblox Gift Card IDR</span></h2>
 
     <div class="products">
@@ -1060,7 +1112,6 @@ footer{
 </div>
 
 
-<!-- FOOTER -->
 <footer>
     © 2026 SANS EXP STORE • Top Up Game
 </footer>
