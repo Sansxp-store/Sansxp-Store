@@ -8,7 +8,9 @@
 
 <style>
 
-/* ================= DASAR ================= */
+/* =========================
+   DASAR WEBSITE
+========================= */
 
 *{
     box-sizing:border-box;
@@ -16,20 +18,47 @@
     padding:0;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
-    background:#05050b;
+    margin:0;
     color:white;
-    font-family:Arial,sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
+
+    /* BACKGROUND BIRU UNTUK SELURUH WEBSITE */
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            #1556a0 0%,
+            #0b3970 22%,
+            #061e3d 48%,
+            #020d1d 75%,
+            #010711 100%
+        );
+
+    min-height:100vh;
 }
 
 .container{
     width:100%;
     max-width:650px;
     margin:auto;
+    min-height:100vh;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(5,35,75,0.20),
+            rgba(1,13,29,0.20)
+        );
 }
 
 
-/* ================= HOME ================= */
+/* =========================
+   GAMBAR UTAMA
+========================= */
 
 .home{
     position:relative;
@@ -38,18 +67,26 @@ body{
 
 .home img{
     width:100%;
+    height:auto;
     display:block;
+
+    /* Biar gambar menyatu dengan background */
+    border:0;
 }
 
 
-/* Area klik pada gambar */
+/* =========================
+   AREA KLIK GAMBAR
+========================= */
 
 .hotspot{
     position:absolute;
     display:block;
     z-index:10;
+    cursor:pointer;
 }
 
+/* FREE FIRE */
 .ff{
     left:5%;
     top:23%;
@@ -57,6 +94,7 @@ body{
     height:25%;
 }
 
+/* MOBILE LEGENDS */
 .ml{
     right:5%;
     top:23%;
@@ -64,6 +102,7 @@ body{
     height:25%;
 }
 
+/* ROBLOX */
 .roblox{
     left:20%;
     top:49%;
@@ -71,6 +110,7 @@ body{
     height:25%;
 }
 
+/* ADMIN */
 .admin{
     left:27%;
     top:78%;
@@ -79,124 +119,125 @@ body{
 }
 
 
-/* ================= INFO STORE ================= */
+/* =========================
+   INFO STORE
+========================= */
 
 .info-section{
     padding:30px 18px 35px;
 
-    background:
-    linear-gradient(
-        180deg,
-        #080711 0%,
-        #120b22 100%
-    );
+    /* TRANSPARAN AGAR NYAMBUNG */
+    background:transparent;
 }
 
 .info-title{
     text-align:center;
-
     font-size:23px;
     font-weight:bold;
-
     margin-bottom:10px;
+
+    text-shadow:
+        0 0 8px #168cff,
+        0 0 18px #168cff;
 }
 
 .info-subtitle{
     text-align:center;
-
-    color:#aaa3bb;
-
+    color:#b9d8ff;
     font-size:14px;
-
     line-height:1.6;
-
     margin-bottom:23px;
 }
 
 
-/* ================= FITUR ================= */
+/* =========================
+   FITUR
+========================= */
 
 .features{
     display:grid;
-
-    grid-template-columns:
-    repeat(3,1fr);
-
+    grid-template-columns:repeat(3,1fr);
     gap:10px;
 }
 
 .feature{
-    background:#171320;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(13,61,112,0.85),
+            rgba(3,23,48,0.9)
+        );
 
-    border:1px solid #332451;
-
+    border:1px solid #1674c9;
     border-radius:14px;
 
     padding:16px 8px;
-
     text-align:center;
+
+    box-shadow:
+        0 0 10px rgba(0,126,255,0.20);
 }
 
 .feature-icon{
     font-size:25px;
-
     margin-bottom:8px;
 }
 
 .feature h3{
     font-size:13px;
-
     margin-bottom:6px;
 }
 
 .feature p{
-    color:#8f899c;
-
+    color:#9dbddd;
     font-size:10px;
-
     line-height:1.4;
 }
 
 
-/* ================= PROMO ================= */
+/* =========================
+   PROMO
+========================= */
 
 .promo{
     margin-top:20px;
-
     padding:18px;
 
     border-radius:15px;
-
     text-align:center;
 
     background:
-    linear-gradient(
-        135deg,
-        #28164b,
-        #151024
-    );
+        linear-gradient(
+            135deg,
+            rgba(10,68,130,0.9),
+            rgba(3,25,54,0.9)
+        );
 
-    border:1px solid #5b3b91;
+    border:1px solid #238cff;
+
+    box-shadow:
+        0 0 15px rgba(0,132,255,0.20);
 }
 
 .promo strong{
-    color:#b98cff;
-
+    color:#5bb4ff;
     font-size:16px;
+
+    text-shadow:
+        0 0 8px #168cff;
 }
 
 .promo p{
-    color:#bbb3c9;
-
+    color:#b7d1ed;
     font-size:12px;
-
     line-height:1.5;
-
     margin-top:7px;
 }
 
 
-/* ================= HALAMAN HARGA ================= */
+/* =========================
+   HALAMAN HARGA
+========================= */
 
 .page{
     display:none;
@@ -205,13 +246,14 @@ body{
 
     padding:25px 15px 40px;
 
+    /* BACKGROUND TETAP NYAMBUNG */
     background:
-    radial-gradient(
-        circle at top,
-        #30205a,
-        #0c0818 45%,
-        #05050b 100%
-    );
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(21,86,160,0.65),
+            rgba(6,30,61,0.45) 45%,
+            rgba(1,7,17,0.35) 100%
+        );
 }
 
 .page.active{
@@ -224,71 +266,111 @@ body{
     margin:auto;
 }
 
+
+/* =========================
+   TOMBOL KEMBALI
+========================= */
+
 .back{
     display:inline-block;
 
     color:white;
-
     text-decoration:none;
 
-    background:#2b1d4b;
+    background:
+        linear-gradient(
+            135deg,
+            #1264ad,
+            #07305d
+        );
 
     padding:10px 16px;
 
     border-radius:10px;
 
+    border:1px solid #238cff;
+
+    box-shadow:
+        0 0 10px rgba(0,130,255,0.25);
+
     margin-bottom:25px;
 }
+
+.back:hover{
+    background:#168cff;
+}
+
+
+/* =========================
+   JUDUL GAME
+========================= */
 
 .title{
     text-align:center;
-
     font-size:28px;
-
     margin-bottom:25px;
+
+    text-shadow:
+        0 0 8px #168cff,
+        0 0 20px #168cff;
 }
 
 
-/* ================= PRODUK ================= */
+/* =========================
+   PRODUK / HARGA
+========================= */
 
 .product{
     display:flex;
-
     justify-content:space-between;
-
     align-items:center;
 
     gap:12px;
 
-    background:#15121f;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(10,53,98,0.9),
+            rgba(3,20,40,0.95)
+        );
 
-    border:1px solid #4c347e;
+    border:1px solid #176db8;
 
     border-radius:15px;
 
     padding:16px;
 
     margin-bottom:12px;
+
+    box-shadow:
+        0 0 10px rgba(0,119,255,0.12);
 }
 
 .name{
     font-size:17px;
-
     font-weight:bold;
 }
 
 .price{
-    color:#ae87ff;
-
+    color:#55b4ff;
     font-weight:bold;
-
     margin-top:5px;
 }
+
+
+/* =========================
+   TOMBOL BELI
+========================= */
 
 .buy{
     flex-shrink:0;
 
-    background:#7c3cff;
+    background:
+        linear-gradient(
+            135deg,
+            #168cff,
+            #0751a0
+        );
 
     color:white;
 
@@ -299,12 +381,26 @@ body{
     border-radius:9px;
 
     font-weight:bold;
+
+    border:1px solid #55b4ff;
+
+    box-shadow:
+        0 0 10px rgba(0,140,255,0.30);
 }
+
+.buy:hover{
+    background:#39a5ff;
+}
+
+
+/* =========================
+   CATATAN
+========================= */
 
 .note{
     text-align:center;
 
-    color:#999;
+    color:#8fb0d0;
 
     font-size:13px;
 
@@ -312,7 +408,9 @@ body{
 }
 
 
-/* ================= HP ================= */
+/* =========================
+   RESPONSIVE HP
+========================= */
 
 @media(max-width:420px){
 
@@ -342,7 +440,6 @@ body{
 
     .buy{
         padding:9px 12px;
-
         font-size:13px;
     }
 
@@ -357,85 +454,68 @@ body{
 <div class="container">
 
 
-<!-- ================================================= -->
-<!-- HOME + GAMBAR -->
-<!-- ================================================= -->
+<!-- ==================================================
+     HOME
+================================================== -->
 
 <div id="home" class="home">
 
-    <!--
-    PENTING:
-    file gambar harus bernama:
-    sans-exp-store.png
-    -->
-
+    <!-- GAMBAR UTAMA -->
     <img
         src="sans-exp-store.png"
         alt="SANS EXP STORE"
     >
 
 
-    <!-- FREE FIRE -->
-
+    <!-- KLIK FREE FIRE -->
     <a
         href="javascript:void(0)"
         class="hotspot ff"
-        onclick="showPage('freefire')"
-    ></a>
+        onclick="showPage('freefire')">
+    </a>
 
 
-    <!-- MOBILE LEGENDS -->
-
+    <!-- KLIK MOBILE LEGENDS -->
     <a
         href="javascript:void(0)"
         class="hotspot ml"
-        onclick="showPage('mobilelegends')"
-    ></a>
+        onclick="showPage('mobilelegends')">
+    </a>
 
 
-    <!-- ROBLOX -->
-
+    <!-- KLIK ROBLOX -->
     <a
         href="javascript:void(0)"
         class="hotspot roblox"
-        onclick="showPage('roblox')"
-    ></a>
+        onclick="showPage('roblox')">
+    </a>
 
 
-    <!-- ADMIN -->
-
+    <!-- KLIK ADMIN -->
     <a
         href="https://wa.me/62882007902763"
-        class="hotspot admin"
-    ></a>
+        class="hotspot admin">
+    </a>
 
 </div>
 
 
 
-<!-- ================================================= -->
-<!-- INFO STORE -->
-<!-- ================================================= -->
+<!-- ==================================================
+     INFO STORE
+================================================== -->
 
 <section class="info-section">
-
 
     <div class="info-title">
         ⚡ TOP UP CEPAT & MUDAH
     </div>
 
-
     <div class="info-subtitle">
-
-        Pilih game favoritmu dan lakukan
-        top up dengan mudah bersama
-        SANS EXP STORE.
-
+        Pilih game favoritmu dan lakukan top up
+        dengan mudah bersama SANS EXP STORE.
     </div>
 
-
-
-    <!-- FITUR -->
 
     <div class="features">
 
@@ -453,8 +533,7 @@ body{
             </h3>
 
             <p>
-                Pesanan diproses
-                dengan cepat.
+                Pesanan diproses dengan cepat.
             </p>
 
         </div>
@@ -474,8 +553,7 @@ body{
             </h3>
 
             <p>
-                Banyak pilihan
-                nominal top up.
+                Banyak pilihan nominal top up.
             </p>
 
         </div>
@@ -495,12 +573,10 @@ body{
             </h3>
 
             <p>
-                Hubungi admin
-                jika ada kendala.
+                Hubungi admin jika ada kendala.
             </p>
 
         </div>
-
 
     </div>
 
@@ -515,39 +591,29 @@ body{
         </strong>
 
         <p>
-
-            Pilih Free Fire,
-            Mobile Legends,
-            atau Roblox di atas
-            dan lihat pilihan harga
-            yang tersedia.
-
+            Pilih Free Fire, Mobile Legends,
+            atau Roblox di atas dan lihat
+            pilihan harga yang tersedia.
         </p>
 
     </div>
-
 
 </section>
 
 
 
-<!-- ================================================= -->
-<!-- FREE FIRE -->
-<!-- ================================================= -->
+<!-- ==================================================
+     FREE FIRE
+================================================== -->
 
-<div
-    id="freefire"
-    class="page"
->
+<div id="freefire" class="page">
 
     <div class="box">
-
 
         <a
             href="javascript:void(0)"
             class="back"
-            onclick="showHome()"
-        >
+            onclick="showHome()">
             ← Kembali
         </a>
 
@@ -558,10 +624,11 @@ body{
 
 
 
+        <!-- 70 DIAMOND -->
+
         <div class="product">
 
             <div>
-
                 <div class="name">
                     70 Diamond
                 </div>
@@ -569,14 +636,11 @@ body{
                 <div class="price">
                     Rp10.000
                 </div>
-
             </div>
-
 
             <a
                 class="buy"
-                href="https://wa.me/62882007902763?text=Halo%20Sans%20Exp%2C%20saya%20mau%20beli%2070%20Diamond%20Free%20Fire"
-            >
+                href="https://wa.me/62882007902763?text=Halo%20Admin%20SANS%20EXP%20STORE%2C%20saya%20mau%20beli%2070%20Diamond%20Free%20Fire">
                 Beli
             </a>
 
@@ -584,10 +648,11 @@ body{
 
 
 
+        <!-- 140 DIAMOND -->
+
         <div class="product">
 
             <div>
-
                 <div class="name">
                     140 Diamond
                 </div>
@@ -595,14 +660,11 @@ body{
                 <div class="price">
                     Rp19.000
                 </div>
-
             </div>
-
 
             <a
                 class="buy"
-                href="https://wa.me/62882007902763?text=Halo%20Sans%20Exp%2C%20saya%20mau%20beli%20140%20Diamond%20Free%20Fire"
-            >
+                href="https://wa.me/62882007902763?text=Halo%20Admin%20SANS%20EXP%20STORE%2C%20saya%20mau%20beli%20140%20Diamond%20Free%20Fire">
                 Beli
             </a>
 
@@ -610,10 +672,11 @@ body{
 
 
 
+        <!-- 355 DIAMOND -->
+
         <div class="product">
 
             <div>
-
                 <div class="name">
                     355 Diamond
                 </div>
@@ -621,14 +684,11 @@ body{
                 <div class="price">
                     Rp45.000
                 </div>
-
             </div>
-
 
             <a
                 class="buy"
-                href="https://wa.me/62882007902763?text=Halo%20Sans%20Exp%2C%20saya%20mau%20beli%20355%20Diamond%20Free%20Fire"
-            >
+                href="https://wa.me/62882007902763?text=Halo%20Admin%20SANS%20EXP%20STORE%2C%20saya%20mau%20beli%20355%20Diamond%20Free%20Fire">
                 Beli
             </a>
 
@@ -636,10 +696,11 @@ body{
 
 
 
+        <!-- 720 DIAMOND -->
+
         <div class="product">
 
             <div>
-
                 <div class="name">
                     720 Diamond
                 </div>
@@ -647,14 +708,11 @@ body{
                 <div class="price">
                     Rp85.000
                 </div>
-
             </div>
-
 
             <a
                 class="buy"
-                href="https://wa.me/62882007902763?text=Halo%20Sans%20Exp%2C%20saya%20mau%20beli%20720%20Diamond%20Free%20Fire"
-            >
+                href="https://wa.me/62882007902763?text=Halo%20Admin%20SANS%20EXP%20STORE%2C%20saya%20mau%20beli%20720%20Diamond%20Free%20Fire">
                 Beli
             </a>
 
@@ -665,30 +723,24 @@ body{
             Harga contoh — silakan ubah sesuai harga toko.
         </div>
 
-
     </div>
 
 </div>
 
 
 
-<!-- ================================================= -->
-<!-- MOBILE LEGENDS -->
-<!-- ================================================= -->
+<!-- ==================================================
+     MOBILE LEGENDS
+================================================== -->
 
-<div
-    id="mobilelegends"
-    class="page"
->
+<div id="mobilelegends" class="page">
 
     <div class="box">
-
 
         <a
             href="javascript:void(0)"
             class="back"
-            onclick="showHome()"
-        >
+            onclick="showHome()">
             ← Kembali
         </a>
 
@@ -699,10 +751,11 @@ body{
 
 
 
+        <!-- 5 DIAMOND -->
+
         <div class="product">
 
             <div>
-
                 <div class="name">
                     5 Diamond
                 </div>
@@ -710,14 +763,11 @@ body{
                 <div class="price">
                     Rp2.000
                 </div>
-
             </div>
-
 
             <a
                 class="buy"
-                href="https://wa.me/62882007902763?text=Halo%20Sans%20Exp%2C%20saya%20mau%20beli%205%20Diamond%20Mobile%20Legends"
-            >
+                href="https://wa.me/62882007902763?text=Halo%20Admin%20SANS%20EXP%20STORE%2C%20saya%20mau%20beli%205%20Diamond%20Mobile%20Legends">
                 Beli
             </a>
 
@@ -725,10 +775,11 @@ body{
 
 
 
+        <!-- 28 DIAMOND -->
+
         <div class="product">
 
             <div>
-
                 <div class="name">
                     28 Diamond
                 </div>
@@ -736,14 +787,11 @@ body{
                 <div class="price">
                     Rp8.000
                 </div>
-
             </div>
-
 
             <a
                 class="buy"
-                href="https://wa.me/62882007902763?text=Halo%20Sans%20Exp%2C%20saya%20mau%20beli%2028%20Diamond%20Mobile%20Legends"
-            >
+                href="https://wa.me/62882007902763?text=Halo%20Admin%20SANS%20EXP%20STORE%2C%20saya%20mau%20beli%2028%20Diamond%20Mobile%20Legends">
                 Beli
             </a>
 
@@ -751,10 +799,11 @@ body{
 
 
 
+        <!-- 86 DIAMOND -->
+
         <div class="product">
 
             <div>
-
                 <div class="name">
                     86 Diamond
                 </div>
@@ -762,14 +811,11 @@ body{
                 <div class="price">
                     Rp22.000
                 </div>
-
             </div>
-
 
             <a
                 class="buy"
-                href="https://wa.me/62882007902763?text=Halo%20Sans%20Exp%2C%20saya%20mau%20beli%2086%20Diamond%20Mobile%20Legends"
-            >
+                href="https://wa.me/62882007902763?text=Halo%20Admin%20SANS%20EXP%20STORE%2C%20saya%20mau%20beli%2086%20Diamond%20Mobile%20Legends">
                 Beli
             </a>
 
@@ -777,10 +823,11 @@ body{
 
 
 
+        <!-- 170 DIAMOND -->
+
         <div class="product">
 
             <div>
-
                 <div class="name">
                     170 Diamond
                 </div>
@@ -788,14 +835,11 @@ body{
                 <div class="price">
                     Rp43.000
                 </div>
-
             </div>
-
 
             <a
                 class="buy"
-                href="https://wa.me/62882007902763?text=Halo%20Sans%20Exp%2C%20saya%20mau%20beli%20170%20Diamond%20Mobile%20Legends"
-            >
+                href="https://wa.me/62882007902763?text=Halo%20Admin%20SANS%20EXP%20STORE%2C%20saya%20mau%20beli%20170%20Diamond%20Mobile%20Legends">
                 Beli
             </a>
 
@@ -806,30 +850,24 @@ body{
             Harga contoh — silakan ubah sesuai harga toko.
         </div>
 
-
     </div>
 
 </div>
 
 
 
-<!-- ================================================= -->
-<!-- ROBLOX -->
-<!-- ================================================= -->
+<!-- ==================================================
+     ROBLOX
+================================================== -->
 
-<div
-    id="roblox"
-    class="page"
->
+<div id="roblox" class="page">
 
     <div class="box">
-
 
         <a
             href="javascript:void(0)"
             class="back"
-            onclick="showHome()"
-        >
+            onclick="showHome()">
             ← Kembali
         </a>
 
@@ -840,10 +878,11 @@ body{
 
 
 
+        <!-- 80 ROBUX -->
+
         <div class="product">
 
             <div>
-
                 <div class="name">
                     80 Robux
                 </div>
@@ -851,14 +890,11 @@ body{
                 <div class="price">
                     Rp15.000
                 </div>
-
             </div>
-
 
             <a
                 class="buy"
-                href="https://wa.me/62882007902763?text=Halo%20Sans%20Exp%2C%20saya%20mau%20beli%2080%20Robux"
-            >
+                href="https://wa.me/62882007902763?text=Halo%20Admin%20SANS%20EXP%20STORE%2C%20saya%20mau%20beli%2080%20Robux">
                 Beli
             </a>
 
@@ -866,10 +902,11 @@ body{
 
 
 
+        <!-- 160 ROBUX -->
+
         <div class="product">
 
             <div>
-
                 <div class="name">
                     160 Robux
                 </div>
@@ -877,14 +914,11 @@ body{
                 <div class="price">
                     Rp30.000
                 </div>
-
             </div>
-
 
             <a
                 class="buy"
-                href="https://wa.me/62882007902763?text=Halo%20Sans%20Exp%2C%20saya%20mau%20beli%20160%20Robux"
-            >
+                href="https://wa.me/62882007902763?text=Halo%20Admin%20SANS%20EXP%20STORE%2C%20saya%20mau%20beli%20160%20Robux">
                 Beli
             </a>
 
@@ -892,10 +926,11 @@ body{
 
 
 
+        <!-- 400 ROBUX -->
+
         <div class="product">
 
             <div>
-
                 <div class="name">
                     400 Robux
                 </div>
@@ -903,14 +938,11 @@ body{
                 <div class="price">
                     Rp70.000
                 </div>
-
             </div>
-
 
             <a
                 class="buy"
-                href="https://wa.me/62882007902763?text=Halo%20Sans%20Exp%2C%20saya%20mau%20beli%20400%20Robux"
-            >
+                href="https://wa.me/62882007902763?text=Halo%20Admin%20SANS%20EXP%20STORE%2C%20saya%20mau%20beli%20400%20Robux">
                 Beli
             </a>
 
@@ -918,10 +950,11 @@ body{
 
 
 
+        <!-- 800 ROBUX -->
+
         <div class="product">
 
             <div>
-
                 <div class="name">
                     800 Robux
                 </div>
@@ -929,14 +962,11 @@ body{
                 <div class="price">
                     Rp135.000
                 </div>
-
             </div>
-
 
             <a
                 class="buy"
-                href="https://wa.me/62882007902763?text=Halo%20Sans%20Exp%2C%20saya%20mau%20beli%20800%20Robux"
-            >
+                href="https://wa.me/62882007902763?text=Halo%20Admin%20SANS%20EXP%20STORE%2C%20saya%20mau%20beli%20800%20Robux">
                 Beli
             </a>
 
@@ -947,7 +977,6 @@ body{
             Harga contoh — silakan ubah sesuai harga toko.
         </div>
 
-
     </div>
 
 </div>
@@ -956,43 +985,61 @@ body{
 </div>
 
 
-
-<!-- ================================================= -->
-<!-- JAVASCRIPT -->
-<!-- ================================================= -->
+<!-- ==================================================
+     JAVASCRIPT
+================================================== -->
 
 <script>
 
 function showPage(page){
 
+    /* Sembunyikan halaman utama */
     document.getElementById("home").style.display = "none";
 
-    document.querySelectorAll(".page").forEach(function(el){
 
-        el.classList.remove("active");
+    /* Sembunyikan semua halaman harga */
+    document
+        .querySelectorAll(".page")
+        .forEach(function(el){
 
-    });
+            el.classList.remove("active");
 
-    document.getElementById(page).classList.add("active");
+        });
 
+
+    /* Tampilkan halaman yang dipilih */
+    document
+        .getElementById(page)
+        .classList.add("active");
+
+
+    /* Scroll ke atas */
     window.scrollTo(0,0);
 }
 
 
+
 function showHome(){
 
+    /* Tampilkan halaman utama */
     document.getElementById("home").style.display = "block";
 
-    document.querySelectorAll(".page").forEach(function(el){
 
-        el.classList.remove("active");
+    /* Sembunyikan semua halaman harga */
+    document
+        .querySelectorAll(".page")
+        .forEach(function(el){
 
-    });
+            el.classList.remove("active");
 
+        });
+
+
+    /* Scroll ke atas */
     window.scrollTo(0,0);
 }
 
 </script>
 
 </body>
-  </html>
+            </html>
