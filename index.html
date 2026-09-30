@@ -13,9 +13,7 @@
     font-family:Arial,Helvetica,sans-serif;
 }
 
-html{
-    scroll-behavior:smooth;
-}
+html{scroll-behavior:smooth;}
 
 body{
     background:#050914;
@@ -88,9 +86,7 @@ body::after{
     transition:.3s;
 }
 
-.navbar a:hover{
-    color:#00c8ff;
-}
+.navbar a:hover{color:#00c8ff;}
 
 /* HERO */
 .hero{
@@ -102,9 +98,7 @@ body::after{
     gap:50px;
 }
 
-.hero-text{
-    max-width:650px;
-}
+.hero-text{max-width:650px;}
 
 .badge{
     display:inline-block;
@@ -166,9 +160,7 @@ body::after{
     color:#dce8f5;
 }
 
-.btn:hover{
-    transform:translateY(-3px);
-}
+.btn:hover{transform:translateY(-3px);}
 
 /* HERO ORB */
 .hero-visual{
@@ -241,18 +233,14 @@ body::after{
 }
 
 /* SECTION */
-section{
-    padding:70px 7%;
-}
+section{padding:70px 7%;}
 
 .section-title{
     text-align:center;
     margin-bottom:35px;
 }
 
-.section-title h2{
-    font-size:34px;
-}
+.section-title h2{font-size:34px;}
 
 .section-title p{
     color:#8998ad;
@@ -262,8 +250,15 @@ section{
 /* GAME CARDS */
 .games{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
+    grid-template-columns:repeat(2,minmax(0,1fr));
     gap:20px;
+}
+
+/* ROBLOX DI TENGAH */
+.game-card:nth-child(3){
+    grid-column:1 / -1;
+    width:calc((100% - 20px) / 2);
+    justify-self:center;
 }
 
 .game-card{
@@ -296,9 +291,7 @@ section{
     margin-bottom:20px;
 }
 
-.game-card h3{
-    font-size:22px;
-}
+.game-card h3{font-size:22px;}
 
 .game-card p{
     color:#8c9bb0;
@@ -307,18 +300,14 @@ section{
 }
 
 /* PRODUCTS */
-.product-section{
-    margin-top:30px;
-}
+.product-section{margin-top:30px;}
 
 .product-section h2{
     font-size:27px;
     margin-bottom:20px;
 }
 
-.product-section h2 span{
-    color:#00c8ff;
-}
+.product-section h2 span{color:#00c8ff;}
 
 .products{
     display:grid;
@@ -366,9 +355,7 @@ section{
     transition:.3s;
 }
 
-.buy:hover{
-    background:#00bfff;
-}
+.buy:hover{background:#00bfff;}
 
 /* FEATURES */
 .features{
@@ -389,9 +376,7 @@ section{
     margin-bottom:12px;
 }
 
-.feature h3{
-    margin-bottom:8px;
-}
+.feature h3{margin-bottom:8px;}
 
 .feature p{
     color:#8c9bb0;
@@ -411,9 +396,7 @@ section{
     border:1px solid rgba(0,185,255,.18);
 }
 
-.admin h2{
-    margin-bottom:10px;
-}
+.admin h2{margin-bottom:10px;}
 
 .admin p{
     color:#8998ad;
@@ -449,12 +432,18 @@ footer{
         margin-right:auto;
     }
 
-    .buttons{
-        justify-content:center;
+    .buttons{justify-content:center;}
+
+    /* GAME TETAP 2 SEJAJAR */
+    .games{
+        grid-template-columns:repeat(2,minmax(0,1fr));
     }
 
-    .games{
-        grid-template-columns:1fr;
+    /* ROBLOX TETAP DI TENGAH */
+    .game-card:nth-child(3){
+        grid-column:1 / -1;
+        width:calc((100% - 20px) / 2);
+        justify-self:center;
     }
 
     /* 2 PRODUK PER BARIS */
@@ -462,13 +451,9 @@ footer{
         grid-template-columns:repeat(2,1fr);
     }
 
-    .features{
-        grid-template-columns:1fr;
-    }
+    .features{grid-template-columns:1fr;}
 
-    .trust{
-        grid-template-columns:1fr;
-    }
+    .trust{grid-template-columns:1fr;}
 
     .hero-visual{
         width:280px;
@@ -490,13 +475,9 @@ footer{
 /* HP */
 @media(max-width:500px){
 
-    .navbar{
-        padding:13px 5%;
-    }
+    .navbar{padding:13px 5%;}
 
-    .navbar nav{
-        display:none;
-    }
+    .navbar nav{display:none;}
 
     section{
         padding:55px 5%;
@@ -507,7 +488,20 @@ footer{
         padding-right:5%;
     }
 
-    /* TETAP 2 PRODUK PER BARIS DI HP */
+    /* GAME 2 KOLOM DI HP */
+    .games{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:10px;
+    }
+
+    /* ROBLOX DI BAWAH TENGAH */
+    .game-card:nth-child(3){
+        grid-column:1 / -1;
+        width:calc((100% - 10px) / 2);
+        justify-self:center;
+    }
+
+    /* 2 PRODUK PER BARIS DI HP */
     .products{
         grid-template-columns:repeat(2,minmax(0,1fr));
         gap:10px;
@@ -539,18 +533,14 @@ footer{
         margin-right:5%;
     }
 
-    .hero h1{
-        font-size:48px;
-    }
+    .hero h1{font-size:48px;}
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
 <header class="navbar">
-
     <div class="logo">
         <div class="logo-box">SE</div>
         SANS EXP STORE
@@ -562,11 +552,8 @@ footer{
         <a href="#harga">Harga</a>
         <a href="#admin">Admin</a>
     </nav>
-
 </header>
 
-
-<!-- HERO -->
 <section class="hero" id="home">
 
     <div class="hero-text">
@@ -608,8 +595,6 @@ footer{
 
 </section>
 
-
-<!-- TRUST -->
 <div class="trust">
 
     <div class="trust-card">
@@ -629,8 +614,6 @@ footer{
 
 </div>
 
-
-<!-- GAME -->
 <section id="games">
 
     <div class="section-title">
@@ -656,7 +639,6 @@ footer{
 
         </div>
 
-
         <div class="game-card">
 
             <div class="game-icon">ML</div>
@@ -672,7 +654,6 @@ footer{
             </a>
 
         </div>
-
 
         <div class="game-card">
 
@@ -694,20 +675,15 @@ footer{
 
 </section>
 
-
 <!-- FREE FIRE -->
 <section class="product-section" id="freefire">
 
     <div class="section-title">
         <h2>🔥 Free Fire</h2>
-
-        <p>
-            Pilih produk Free Fire yang kamu inginkan.
-        </p>
+        <p>Pilih produk Free Fire yang kamu inginkan.</p>
     </div>
 
-
-    <h2>💎 <span>Diamond</span></h2>
+    <h2 id="harga">💎 <span>Diamond</span></h2>
 
     <div class="products">
 
@@ -833,7 +809,6 @@ footer{
 
     </div>
 
-
     <h2 style="margin-top:45px;">👑 <span>Membership & Pass</span></h2>
 
     <div class="products">
@@ -887,9 +862,7 @@ footer{
         </div>
 
     </div>
-
 </section>
-
 
 <!-- MOBILE LEGENDS -->
 <section class="product-section" id="mobilelegends">
@@ -962,9 +935,7 @@ footer{
         </div>
 
     </div>
-
 </section>
-
 
 <!-- ROBLOX -->
 <section class="product-section" id="roblox">
@@ -1010,7 +981,6 @@ footer{
 
     </div>
 
-
     <h2 style="margin-top:45px;">💚 <span>Robux</span></h2>
 
     <div class="products">
@@ -1042,7 +1012,6 @@ footer{
     </div>
 
 </section>
-
 
 <!-- FEATURES -->
 <section>
@@ -1085,7 +1054,6 @@ footer{
 
 </section>
 
-
 <!-- ADMIN -->
 <div class="admin" id="admin">
 
@@ -1110,7 +1078,6 @@ footer{
     </div>
 
 </div>
-
 
 <footer>
     © 2026 SANS EXP STORE • Top Up Game
