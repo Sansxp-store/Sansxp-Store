@@ -1,0 +1,1350 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SANS EXP STORE</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+html{scroll-behavior:smooth;}
+
+body{
+    background:#050914;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-2;
+    background:
+        radial-gradient(circle at 20% 20%,rgba(0,140,255,.18),transparent 30%),
+        radial-gradient(circle at 80% 70%,rgba(100,0,255,.18),transparent 30%),
+        #050914;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    opacity:.15;
+    background-image:
+        linear-gradient(rgba(0,174,255,.15) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(0,174,255,.15) 1px,transparent 1px);
+    background-size:40px 40px;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+    position:sticky;
+    top:0;
+    z-index:100;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 7%;
+    background:rgba(5,9,20,.82);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid rgba(0,180,255,.15);
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:19px;
+    font-weight:900;
+    letter-spacing:1px;
+}
+
+.logo-box{
+    width:38px;
+    height:38px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:11px;
+    background:linear-gradient(135deg,#00b7ff,#5c2cff);
+    box-shadow:0 0 25px rgba(0,174,255,.45);
+}
+
+.navbar a{
+    color:#b9c8dc;
+    text-decoration:none;
+    margin-left:20px;
+    font-size:14px;
+    transition:.3s;
+}
+
+.navbar a:hover{
+    color:#00c8ff;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:650px;
+    padding:80px 7%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:50px;
+}
+
+.hero-text{
+    max-width:650px;
+}
+
+.badge{
+    display:inline-block;
+    padding:8px 15px;
+    border:1px solid rgba(0,195,255,.35);
+    background:rgba(0,170,255,.08);
+    border-radius:30px;
+    color:#58d9ff;
+    font-size:13px;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:clamp(42px,7vw,80px);
+    line-height:.95;
+    font-weight:1000;
+    letter-spacing:-3px;
+}
+
+.hero h1 span{
+    background:linear-gradient(90deg,#fff,#00c8ff,#725cff);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.hero p{
+    margin-top:25px;
+    color:#9eacc1;
+    line-height:1.7;
+    max-width:550px;
+}
+
+.buttons{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-top:30px;
+}
+
+.btn{
+    display:inline-block;
+    padding:13px 20px;
+    border-radius:12px;
+    text-decoration:none;
+    font-weight:800;
+    font-size:14px;
+    transition:.3s;
+}
+
+.btn-primary{
+    background:linear-gradient(135deg,#00bfff,#5145ff);
+    color:#fff;
+    box-shadow:0 0 25px rgba(0,174,255,.25);
+}
+
+.btn-secondary{
+    border:1px solid rgba(255,255,255,.12);
+    background:rgba(255,255,255,.04);
+    color:#dce8f5;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+/* ================= ESPORTS EMBLEM ================= */
+
+.hero-visual{
+    width:360px;
+    height:360px;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.hero-visual::before{
+    content:"";
+    position:absolute;
+    width:300px;
+    height:300px;
+    border-radius:50%;
+    background:
+        radial-gradient(
+            circle,
+            rgba(0,195,255,.13),
+            rgba(80,50,255,.08) 45%,
+            transparent 70%
+        );
+    filter:blur(3px);
+}
+
+.emblem-ring{
+    position:absolute;
+    width:290px;
+    height:290px;
+    border-radius:50%;
+    border:1px solid rgba(0,190,255,.28);
+    animation:ringSpin 10s linear infinite;
+    box-shadow:
+        0 0 20px rgba(0,174,255,.15),
+        inset 0 0 20px rgba(0,174,255,.08);
+}
+
+.emblem-ring::before{
+    content:"";
+    position:absolute;
+    inset:12px;
+    border-radius:50%;
+    border:2px dashed rgba(0,200,255,.55);
+    box-shadow:0 0 10px rgba(0,200,255,.5);
+}
+
+.emblem-ring::after{
+    content:"";
+    position:absolute;
+    inset:32px;
+    border-radius:50%;
+    border:1px solid rgba(100,70,255,.55);
+}
+
+.emblem-cut{
+    position:absolute;
+    width:240px;
+    height:240px;
+    border-radius:50%;
+    border-top:3px solid #00c8ff;
+    border-right:3px solid transparent;
+    border-bottom:3px solid #634cff;
+    border-left:3px solid transparent;
+    transform:rotate(-25deg);
+    filter:
+        drop-shadow(0 0 7px #00c8ff)
+        drop-shadow(0 0 15px rgba(85,60,255,.7));
+    animation:cutPulse 3s ease-in-out infinite;
+}
+
+.emblem-core{
+    position:absolute;
+    width:190px;
+    height:190px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            rgba(0,200,255,.2),
+            rgba(15,20,42,.98) 65%
+        );
+    border:2px solid rgba(0,200,255,.65);
+    box-shadow:
+        0 0 20px rgba(0,190,255,.35),
+        0 0 55px rgba(80,50,255,.22),
+        inset 0 0 30px rgba(0,180,255,.12);
+}
+
+.emblem-core::before{
+    content:"";
+    position:absolute;
+    width:160px;
+    height:160px;
+    border-radius:50%;
+    border:1px solid rgba(255,255,255,.12);
+}
+
+.se-text{
+    position:relative;
+    z-index:5;
+    font-family:Impact,"Arial Black",Arial,sans-serif;
+    font-size:64px;
+    font-weight:1000;
+    font-style:italic;
+    letter-spacing:-6px;
+    color:#fff;
+    transform:skew(-8deg);
+    text-shadow:
+        3px 3px 0 #153e91,
+        0 0 8px #00c8ff,
+        0 0 20px #008cff,
+        0 0 35px rgba(0,130,255,.7);
+}
+
+.se-text::after{
+    content:"";
+    position:absolute;
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:#fff;
+    right:-14px;
+    top:6px;
+    box-shadow:
+        0 0 8px #fff,
+        0 0 18px #00c8ff,
+        0 0 30px #008cff;
+}
+
+.dot{
+    position:absolute;
+    width:5px;
+    height:5px;
+    border-radius:50%;
+    background:#00c8ff;
+    box-shadow:0 0 8px #00c8ff,0 0 15px #008cff;
+}
+
+.dot-1{top:28px;right:65px;}
+.dot-2{bottom:45px;left:55px;}
+.dot-3{top:75px;left:35px;}
+
+@keyframes ringSpin{
+    from{transform:rotate(0deg);}
+    to{transform:rotate(360deg);}
+}
+
+@keyframes cutPulse{
+    0%,100%{
+        opacity:.75;
+        transform:rotate(-25deg) scale(1);
+    }
+    50%{
+        opacity:1;
+        transform:rotate(-25deg) scale(1.035);
+    }
+}
+
+/* ================= TRUST ================= */
+
+.trust{
+    padding:20px 7%;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.trust-card{
+    padding:18px;
+    border-radius:16px;
+    border:1px solid rgba(255,255,255,.08);
+    background:rgba(255,255,255,.035);
+    text-align:center;
+}
+
+.trust-card strong{
+    display:block;
+    margin-bottom:5px;
+}
+
+.trust-card span{
+    color:#8796aa;
+    font-size:13px;
+}
+
+/* ================= SECTION ================= */
+
+section{padding:70px 7%;}
+
+.section-title{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.section-title h2{font-size:34px;}
+
+.section-title p{
+    color:#8998ad;
+    margin-top:8px;
+}
+
+/* ================= GAME ================= */
+
+.games{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:20px;
+}
+
+.game-card:nth-child(3){
+    grid-column:1 / -1;
+    width:calc(50% + 20px);
+    justify-self:center;
+}
+
+.game-card{
+    position:relative;
+    overflow:hidden;
+    padding:28px;
+    min-height:210px;
+    border-radius:22px;
+    border:1px solid rgba(0,185,255,.14);
+    background:linear-gradient(145deg,rgba(15,28,53,.9),rgba(8,12,28,.95));
+    transition:.3s;
+}
+
+.game-card:hover{
+    transform:translateY(-6px);
+    border-color:rgba(0,195,255,.5);
+    box-shadow:0 15px 40px rgba(0,125,255,.12);
+}
+
+.game-icon{
+    width:58px;
+    height:58px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:17px;
+    background:linear-gradient(135deg,#087eff,#573bff);
+    font-weight:1000;
+    font-size:22px;
+    margin-bottom:20px;
+}
+
+.game-card h3{font-size:22px;}
+
+.game-card p{
+    color:#8c9bb0;
+    margin:8px 0 20px;
+    font-size:14px;
+}
+
+/* ================= PRODUCTS ================= */
+
+.product-section{margin-top:30px;}
+
+.product-section h2{
+    font-size:27px;
+    margin-bottom:20px;
+}
+
+.product-section h2 span{color:#00c8ff;}
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:13px;
+}
+
+.product{
+    background:rgba(255,255,255,.035);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:15px;
+    padding:17px;
+    transition:.3s;
+}
+
+.product:hover{
+    transform:translateY(-3px);
+    border-color:rgba(0,200,255,.35);
+}
+
+.product-name{
+    min-height:42px;
+    font-size:14px;
+    font-weight:700;
+    color:#dfe9f5;
+}
+
+.price{
+    font-size:18px;
+    font-weight:900;
+    color:#3dd4ff;
+    margin:10px 0;
+}
+
+.buy{
+    display:block;
+    text-align:center;
+    padding:9px;
+    border-radius:9px;
+    background:#087cff;
+    color:#fff;
+    text-decoration:none;
+    font-size:13px;
+    font-weight:800;
+    transition:.3s;
+}
+
+.buy:hover{background:#00bfff;}
+
+/* ================= FEATURES ================= */
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.feature{
+    padding:25px;
+    border-radius:18px;
+    background:rgba(255,255,255,.035);
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.feature-icon{
+    font-size:27px;
+    margin-bottom:12px;
+}
+
+.feature h3{margin-bottom:8px;}
+
+.feature p{
+    color:#8c9bb0;
+    font-size:14px;
+    line-height:1.6;
+}
+
+/* ================= ADMIN ================= */
+
+.admin{
+    margin:30px 7% 70px;
+    padding:35px;
+    border-radius:25px;
+    text-align:center;
+    background:
+        radial-gradient(circle at center,rgba(0,157,255,.18),transparent 60%),
+        rgba(255,255,255,.035);
+    border:1px solid rgba(0,185,255,.18);
+}
+
+.admin h2{margin-bottom:10px;}
+
+.admin p{
+    color:#8998ad;
+    margin-bottom:20px;
+}
+
+.wa-number{
+    color:#46d8ff;
+    font-weight:900;
+    font-size:20px;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    padding:30px 7%;
+    text-align:center;
+    color:#65758b;
+    font-size:13px;
+    border-top:1px solid rgba(255,255,255,.07);
+}
+
+/* ================= TABLET ================= */
+
+@media(max-width:900px){
+
+    .hero{
+        flex-direction:column;
+        text-align:center;
+        padding-top:60px;
+    }
+
+    .hero p{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .buttons{justify-content:center;}
+
+    .games{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:15px;
+    }
+
+    .game-card:nth-child(3){
+        grid-column:1 / -1;
+        width:calc(50% + 20px);
+        justify-self:center;
+    }
+
+    .products{grid-template-columns:repeat(2,1fr);}
+    .features{grid-template-columns:1fr;}
+    .trust{grid-template-columns:1fr;}
+
+    .hero-visual{
+        width:300px;
+        height:300px;
+    }
+
+    .emblem-ring{width:250px;height:250px;}
+    .emblem-cut{width:210px;height:210px;}
+    .emblem-core{width:165px;height:165px;}
+
+    .emblem-core::before{
+        width:140px;
+        height:140px;
+    }
+
+    .se-text{font-size:54px;}
+}
+
+/* ================= HP ================= */
+
+@media(max-width:500px){
+
+    .navbar{padding:13px 5%;}
+    .navbar nav{display:none;}
+
+    section{padding:55px 5%;}
+
+    .hero{
+        padding-left:5%;
+        padding-right:5%;
+    }
+
+    .games{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:10px;
+    }
+
+    .game-card:nth-child(3){
+        grid-column:1 / -1;
+        width:calc(50% + 10px);
+        justify-self:center;
+    }
+
+    .products{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:10px;
+    }
+
+    .product{
+        padding:12px;
+        border-radius:13px;
+    }
+
+    .product-name{
+        min-height:44px;
+        font-size:12px;
+        line-height:1.4;
+    }
+
+    .price{
+        font-size:15px;
+        margin:8px 0;
+    }
+
+    .buy{
+        padding:8px 5px;
+        font-size:12px;
+    }
+
+    .admin{
+        margin-left:5%;
+        margin-right:5%;
+    }
+
+    .hero h1{font-size:48px;}
+
+    .hero-visual{
+        width:250px;
+        height:250px;
+    }
+
+    .emblem-ring{width:215px;height:215px;}
+
+    .emblem-ring::before{inset:9px;}
+    .emblem-ring::after{inset:24px;}
+
+    .emblem-cut{width:180px;height:180px;}
+    .emblem-core{width:145px;height:145px;}
+
+    .emblem-core::before{
+        width:122px;
+        height:122px;
+    }
+
+    .se-text{font-size:46px;}
+
+    .dot-1{top:30px;right:42px;}
+    .dot-2{bottom:35px;left:40px;}
+    .dot-3{top:65px;left:28px;}
+}
+</style>
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div class="logo">
+        <div class="logo-box">SE</div>
+        SANS EXP STORE
+    </div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#games">Game</a>
+        <a href="#harga">Harga</a>
+        <a href="#admin">Admin</a>
+    </nav>
+
+</header>
+
+<section class="hero" id="home">
+
+    <div class="hero-text">
+
+        <div class="badge">
+            ⚡ TOP UP CEPAT • AMAN • TERPERCAYA
+        </div>
+
+        <h1>
+            SANS<br>
+            <span>EXP STORE</span>
+        </h1>
+
+        <p>
+            Tempat top up game dengan harga bersahabat.
+            Pilih game favoritmu, pilih produk, lalu langsung
+            hubungi admin melalui WhatsApp.
+        </p>
+
+        <div class="buttons">
+
+            <a class="btn btn-primary" href="#games">
+                🎮 Pilih Game
+            </a>
+
+            <a
+                class="btn btn-secondary"
+                href="https://wa.me/62882007902763?text=Halo%20Admin%20SANS%20EXP%20STORE%2C%20saya%20mau%20tanya%20produk."
+                target="_blank"
+            >
+                💬 Chat Admin
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="hero-visual">
+
+        <div class="emblem-ring"></div>
+        <div class="emblem-cut"></div>
+
+        <div class="emblem-core">
+            <div class="se-text">SE</div>
+        </div>
+
+        <div class="dot dot-1"></div>
+        <div class="dot dot-2"></div>
+        <div class="dot dot-3"></div>
+
+    </div>
+
+</section>
+
+<!-- TRUST -->
+
+<div class="trust">
+
+    <div class="trust-card">
+        <strong>⚡ Proses Cepat</strong>
+        <span>Pesanan diproses setelah pembayaran.</span>
+    </div>
+
+    <div class="trust-card">
+        <strong>💎 Harga Bersahabat</strong>
+        <span>Harga dibuat dengan keuntungan kecil.</span>
+    </div>
+
+    <div class="trust-card">
+        <strong>💬 Admin WhatsApp</strong>
+        <span>Hubungi admin untuk bantuan.</span>
+    </div>
+
+</div>
+
+<!-- GAME -->
+
+<section id="games">
+
+    <div class="section-title">
+        <h2>🎮 Pilih Game</h2>
+        <p>Pilih game untuk melihat daftar produknya.</p>
+    </div>
+
+    <div class="games">
+
+        <div class="game-card">
+
+            <div class="game-icon">FF</div>
+            <h3>Free Fire</h3>
+
+            <p>
+                Diamond, Membership, BP Card & Level Up Pass.
+            </p>
+
+            <a class="btn btn-primary" href="#freefire">
+                Lihat Harga
+            </a>
+
+        </div>
+
+        <div class="game-card">
+
+            <div class="game-icon">ML</div>
+            <h3>Mobile Legends</h3>
+
+            <p>
+                Diamond, Weekly Diamond Pass & Bundle.
+            </p>
+
+            <a class="btn btn-primary" href="#mobilelegends">
+                Lihat Harga
+            </a>
+
+        </div>
+
+        <div class="game-card">
+
+            <div class="game-icon">RB</div>
+            <h3>Roblox</h3>
+
+            <p>
+                Robux dan Roblox Gift Card IDR.
+            </p>
+
+            <a class="btn btn-primary" href="#roblox">
+                Lihat Harga
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= FREE FIRE ================= -->
+
+<section class="product-section" id="freefire">
+
+    <div class="section-title">
+        <h2>🔥 Free Fire</h2>
+        <p>Pilih produk Free Fire yang kamu inginkan.</p>
+    </div>
+
+    <h2 id="harga">💎 <span>Diamond</span></h2>
+
+    <div class="products">
+
+        <div class="product">
+            <div class="product-name">5 Diamonds</div>
+            <div class="price">Rp1.500</div>
+            <a class="buy" href="https://wa.me/62882007902763?text=Halo%20Admin%2C%20saya%20mau%20beli%205%20Diamonds%20Free%20Fire%20seharga%20Rp1.500." target="_blank">Beli</a>
+        </div>
+
+        <div class="product">
+            <div class="product-name">10 Diamonds</div>
+            <div class="price">Rp2.500</div>
+            <a class="buy" href="https://wa.me/62882007902763?text=Halo%20Admin%2C%20saya%20mau%20beli%2010%20Diamonds%20Free%20Fire%20seharga%20Rp2.500." target="_blank">Beli</a>
+        </div>
+
+        <div class="product">
+            <div class="product-name">12 Diamonds</div>
+            <div class="price">Rp2.500</div>
+            <a class="buy" href="https://wa.me/62882007902763?text=Halo%20Admin%2C%20saya%20mau%20beli%2012%20Diamonds%20Free%20Fire%20seharga%20Rp2.500." target="_blank">Beli</a>
+        </div>
+
+        <div class="product">
+            <div class="product-name">20 Diamonds 🔥 PROMO</div>
+            <div class="price">Rp5.000</div>
+            <a class="buy" href="https://wa.me/62882007902763?text=Halo%20Admin%2C%20saya%20mau%20beli%2020%20Diamonds%20Free%20Fire%20seharga%20Rp5.000." target="_blank">Beli</a>
+        </div>
+
+        <div class="product">
+            <div class="product-name">25 Diamonds</div>
+            <div class="price">Rp6.000</div>
+            <a class="buy" href="https://wa.me/62882007902763?text=Halo%20Admin%2C%20saya%20mau%20beli%2025%20Diamonds%20Free%20Fire%20seharga%20Rp6.000." target="_blank">Beli</a>
+        </div>
+
+        <div class="product">
+            <div class="product-name">30 Diamonds</div>
+            <div class="price">Rp6.500</div>
+            <a class="buy" href="https://wa.me/62882007902763?text=Halo%20Admin%2C%20saya%20mau%20beli%2030%20Diamonds%20Free%20Fire%20seharga%20Rp6.500." target="_blank">Beli</a>
+        </div>
+
+        <div class="product">
+            <div class="product-name">50 Diamonds 🔥 PROMO</div>
+            <div class="price">Rp8.500</div>
+            <a class="buy" href="https://wa.me/62882007902763?text=Halo%20Admin%2C%20saya%20mau%20beli%2050%20Diamonds%20Free%20Fire%20seharga%20Rp8.500." target="_blank">Beli</a>
+        </div>
+
+        <div class="product">
+            <div class="product-name">55 Diamonds</div>
+            <div class="price">Rp9.000</div>
+            <a class="buy" href="https://wa.me/62882007902763?text=Halo%20Admin%2C%20saya%20mau%20beli%2055%20Diamonds%20Free%20Fire%20seharga%20Rp9.000." target="_blank">Beli</a>
+        </div>
+
+        <div class="product">
+            <div class="product-name">70 Diamonds 🔥 PROMO</div>
+            <div class="price">Rp10.500</div>
+            <a class="buy" href="https://wa.me/62882007902763?text=Halo%20Admin%2C%20saya%20mau%20beli%2070%20Diamonds%20Free%20Fire%20seharga%20Rp10.500." target="_blank">Beli</a>
+        </div>
+
+        <div class="product">
+            <div class="product-name">80 Diamonds</div>
+            <div class="price">Rp13.000</div>
+            <a class="buy" href="https://wa.me/62882007902763?text=Halo%20Admin%2C%20saya%20mau%20beli%2080%20Diamonds%20Free%20Fire%20seharga%20Rp13.000." target="_blank">Beli</a>
+        </div>
+
+        <div class="product">
+            <div class="product-name">100 Diamonds</div>
+            <div class="price">Rp15.500</div>
+            <a class="buy" href="https://wa.me/62882007902763?text=Halo%20Admin%2C%20saya%20mau%20beli%20100%20Diamonds%20Free%20Fire%20seharga%20Rp15.500." target="_blank">Beli</a>
+        </div>
+
+        <div class="product">
+            <div class="product-name">120 Diamonds</div>
+            <div class="price">Rp18.000</div>
+            <a class="buy" href="https://wa.me/62882007902763?text=Halo%20Admin%2C%20saya%20mau%20beli%20120%20Diamonds%20Free%20Fire%20seharga%20Rp18.000." target="_blank">Beli</a>
+        </div>
+
+        <div class="product">
+            <div class="product-name">130 Diamonds</div>
+            <div class="price">Rp20.500</div>
+            <a class="buy" href="https://wa.me/62882007902763?text=Halo%20Admin%2C%20saya%20mau%20beli%20130%20Diamonds%20Free%20Fire%20seharga%20Rp20.500." target="_blank">Beli</a>
+        </div>
+
+        <div class="product">
+            <div class="product-name">140 Diamonds 🔥 PROMO</div>
+            <div class="price">Rp21.000</div>
+            <a class="buy" href="https://wa.me/62882007902763?text=Halo%20Admin%2C%20saya%20mau%20beli%20140%20Diamonds%20Free%20Fire%20seharga%20Rp21.000." target="_blank">Beli</a>
+        </div>
+
+        <div class="product">
+            <div class="product-name">145 Diamonds</div>
+            <div class="price">Rp22.000</div>
+            <a class="buy" href="https://wa.me/62882007902763?text=Halo%20Admin%2C%20saya%20mau%20beli%20145%20Diamonds%20Free%20Fire%20seharga%20Rp22.000." target="_blank">Beli</a>
+        </div>
+
+        <div class="product">
+            <div class="product-name">150 Diamonds</div>
+            <div class="price">Rp23.000</div>
+            <a class="buy" href="https://wa.me/62882007902763?text=Halo%20Admin%2C%20saya%20mau%20beli%20150%20Diamonds%20Free%20Fire%20seharga%20Rp23.000." target="_blank">Beli</a>
+        </div>
+
+        <div class="product">
+            <div class="product-name">190 Diamonds</div>
+            <div class="price">Rp28.000</div>
+            <a class="buy" href="https://wa.me/62882007902763?text=Halo%20Admin%2C%20saya%20mau%20beli%20190%20Diamonds%20Free%20Fire%20seharga%20Rp28.000." target="_blank">Beli</a>
+        </div>
+
+        <div class="product">
+            <div class="product-name">200 Diamonds</div>
+            <div class="price">Rp30.000</div>
+            <a class="buy" href="https://wa.me/62882007902763?text=Halo%20Admin%2C%20saya%20mau%20beli%20200%20Diamonds%20Free%20Fire%20seharga%20Rp30.000." target="_blank">Beli</a>
+        </div>
+
+        <div class="product">
+            <div class="product-name">210 Diamonds</div>
+            <div class="price">Rp30.500</div>
+            <a class="buy" href="https://wa.me/62882007902763?text=Halo%20Admin%2C%20saya%20mau%20beli%20210%20Diamonds%20Free%20Fire%20seharga%20Rp30.500." target="_blank">Beli</a>
+        </div>
+
+        <div class="product">
+            <div class="product-name">280 Diamonds</div>
+            <div class="price">Rp40.000</div>
+            <a class="buy" href="https://wa.me/62882007902763?text=Halo%20Admin%2C%20saya%20mau%20beli%20280%20Diamonds%20Free%20Fire%20seharga%20Rp40.000." target="_blank">Beli</a>
+        </div>
+
+    </div>
+
+    <h2 style="margin-top:45px;">👑 <span>Membership & Pass</span></h2>
+
+    <div class="products">
+
+        <div class="product">
+            <div class="product-name">Member Mingguan</div>
+            <div class="price">Rp30.000</div>
+            <a class="buy" href="https://wa.me/62882007902763?text=Halo%20Admin%2C%20saya%20mau%20beli%20Member%20Mingguan%20Free%20Fire%20seharga%20Rp30.000." target="_blank">Beli</a>
+        </div>
+
+        <div class="product">
+            <div class="product-name">Member Bulanan</div>
+            <div class="price">Rp87.000</div>
+            <a class="buy" href="https://wa.me/62882007902763?text=Halo%20Admin%2C%20saya%20mau%20beli%20Member%20Bulanan%20Free%20Fire%20seharga%20Rp87.000." target="_blank">Beli</a>
+        </div>
+
+        <div class="product">
+            <div class="product-name">BP Card</div>
+            <div class="price">Rp47.000</div>
+            <a class="buy" href="https://wa.me/62882007902763?text=Halo%20Admin%2C%20saya%20mau%20beli%20BP%20Card%20Free%20Fire%20seharga%20Rp47.000." target="_blank">Beli</a>
+        </div>
+
+        <div class="product">
+            <div class="product-name">Level Up Pass - Level 6</div>
+            <div class="price">Rp7.000</div>
+            <a class="buy" href="https://wa.me/62882007902763?text=Halo%20Admin%2C%20saya%20mau%20beli%20Level%20Up%20Pass%20Level%206%20Free%20Fire%20seharga%20Rp7.000." target="_blank">Beli</a>
+        </div>
+
+        <div class="product">
+            <div class="product-name">Level Up Pass - Level 10</div>
+            <div class="price">Rp11.000</div>
+            <a class="buy" href="https://wa.me/62882007902763?text=Halo%20Admin%2C%20saya%20mau%20beli%20Level%20Up%20Pass%20Level%2010%20Free%20Fire%20seharga%20Rp11.000." target="_blank">Beli</a>
+        </div>
+
+        <div class="product">
+            <div class="product-name">Level Up Pass - Level 15</div>
+            <div class="price">Rp11.000</div>
+            <a class="buy" href="https://wa.me/62882007902763?text=Halo%20Admin%2C%20saya%20mau%20beli%20Level%20Up%20Pass%20Level%2015%20Free%20Fire%20seharga%20Rp11.000." target="_blank">Beli</a>
+        </div>
+
+        <div class="product">
+            <div class="product-name">Level Up Pass - Level 20</div>
+            <div class="price">Rp11.000</div>
+            <a class="buy" href="https://wa.me/62882007902763?text=Halo%20Admin%2C%20saya%20mau%20beli%20Level%20Up%20Pass%20Level%2020%20Free%20Fire%20seharga%20Rp11.000." target="_blank">Beli</a>
+        </div>
+
+        <div class="product">
+            <div class="product-name">Level Up Pass - Level 25</div>
+            <div class="price">Rp11.000</div>
+            <a class="buy" href="https://wa.me/62882007902763?text=Halo%20Admin%2C%20saya%20mau%20beli%20Level%20Up%20Pass%20Level%2025%20Free%20Fire%20seharga%20Rp11.000." target="_blank">Beli</a>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= MOBILE LEGENDS ================= -->
+
+<section class="product-section" id="mobilelegends">
+
+    <div class="section-title">
+        <h2>🔵 Mobile Legends</h2>
+        <p>Diamond dan Weekly Diamond Pass Mobile Legends.</p>
+    </div>
+
+    <div class="products">
+
+        <div class="product">
+            <div class="product-name">5 Diamonds</div>
+            <div class="price">Rp2.500</div>
+            <a class="buy" href="https://wa.me/62882007902763?text=Halo%20Admin%2C%20saya%20mau%20beli%205%20Diamonds%20Mobile%20Legends%20seharga%20Rp2.500." target="_blank">Beli</a>
+        </div>
+
+        <div class="product">
+            <div class="product-name">10 Diamonds</div>
+            <div class="price">Rp4.000</div>
+            <a class="buy" href="https://wa.me/62882007902763?text=Halo%20Admin%2C%20saya%20mau%20beli%2010%20Diamonds%20Mobile%20Legends%20seharga%20Rp4.000." target="_blank">Beli</a>
+        </div>
+
+        <div class="product">
+            <div class="product-name">12 Diamonds</div>
+            <div class="price">Rp4.500</div>
+            <a class="buy" href="https://wa.me/62882007902763?text=Halo%20Admin%2C%20saya%20mau%20beli%2012%20Diamonds%20Mobile%20Legends%20seharga%20Rp4.500." target="_blank">Beli</a>
+        </div>
+
+        <div class="product">
+            <div class="product-name">19 Diamonds</div>
+            <div class="price">Rp6.500</div>
+            <a class="buy" href="https://wa.me/62882007902763?text=Halo%20Admin%2C%20saya%20mau%20beli%2019%20Diamonds%20Mobile%20Legends%20seharga%20Rp6.500." target="_blank">Beli</a>
+        </div>
+
+        <div class="product">
+            <div class="product-name">28 Diamonds</div>
+            <div class="price">Rp10.000</div>
+            <a class="buy" href="https://wa.me/62882007902763?text=Halo%20Admin%2C%20saya%20mau%20beli%2028%20Diamonds%20Mobile%20Legends%20seharga%20Rp10.000." target="_blank">Beli</a>
+        </div>
+
+        <div class="product">
+            <div class="product-name">44 Diamonds</div>
+            <div class="price">Rp15.500</div>
+            <a class="buy" href="https://wa.me/62882007902763?text=Halo%20Admin%2C%20saya%20mau%20beli%2044%20Diamonds%20Mobile%20Legends%20seharga%20Rp15.500." target="_blank">Beli</a>
+        </div>
+
+        <div class="product">
+            <div class="product-name">54 Diamonds</div>
+            <div class="price">Rp16.500</div>
+            <a class="buy" href="https://wa.me/62882007902763?text=Halo%20Admin%2C%20saya%20mau%20beli%2054%20Diamonds%20Mobile%20Legends%20seharga%20Rp16.500." target="_blank">Beli</a>
+        </div>
+
+        <div class="product">
+            <div class="product-name">59 Diamonds</div>
+            <div class="price">Rp17.500</div>
+            <a class="buy" href="https://wa.me/62882007902763?text=Halo%20Admin%2C%20saya%20mau%20beli%2059%20Diamonds%20Mobile%20Legends%20seharga%20Rp17.500." target="_blank">Beli</a>
+        </div>
+
+        <div class="product">
+            <div class="product-name">71 Diamonds</div>
+            <div class="price">Rp24.500</div>
+            <a class="buy" href="https://wa.me/62882007902763?text=Halo%20Admin%2C%20saya%20mau%20beli%2071%20Diamonds%20Mobile%20Legends%20seharga%20Rp24.500." target="_blank">Beli</a>
+        </div>
+
+        <div class="product">
+            <div class="product-name">74 Diamonds</div>
+            <div class="price">Rp25.500</div>
+            <a class="buy" href="https://wa.me/62882007902763?text=Halo%20Admin%2C%20saya%20mau%20beli%2074%20Diamonds%20Mobile%20Legends%20seharga%20Rp25.500." target="_blank">Beli</a>
+        </div>
+
+        <div class="product">
+            <div class="product-name">85 Diamonds</div>
+            <div class="price">Rp26.500</div>
+            <a class="buy" href="https://wa.me/62882007902763?text=Halo%20Admin%2C%20saya%20mau%20beli%2085%20Diamonds%20Mobile%20Legends%20seharga%20Rp26.500." target="_blank">Beli</a>
+        </div>
+
+        <div class="product">
+            <div class="product-name">88 Diamonds</div>
+            <div class="price">Rp27.500</div>
+            <a class="buy" href="https://wa.me/62882007902763?text=Halo%20Admin%2C%20saya%20mau%20beli%2088%20Diamonds%20Mobile%20Legends%20seharga%20Rp27.500." target="_blank">Beli</a>
+        </div>
+
+        <div class="product">
+            <div class="product-name">110 Diamonds</div>
+            <div class="price">Rp33.500</div>
+            <a class="buy" href="https://wa.me/62882007902763?text=Halo%20Admin%2C%20saya%20mau%20beli%20110%20Diamonds%20Mobile%20Legends%20seharga%20Rp33.500." target="_blank">Beli</a>
+        </div>
+
+        <div class="product">
+            <div class="product-name">113 Diamonds</div>
+            <div class="price">Rp37.000</div>
+            <a class="buy" href="https://wa.me/62882007902763?text=Halo%20Admin%2C%20saya%20mau%20beli%20113%20Diamonds%20Mobile%20Legends%20seharga%20Rp37.000." target="_blank">Beli</a>
+        </div>
+
+        <div class="product">
+            <div class="product-name">128 Diamonds</div>
+            <div class="price">Rp43.000</div>
+            <a class="buy" href="https://wa.me/62882007902763?text=Halo%20Admin%2C%20saya%20mau%20beli%20128%20Diamonds%20Mobile%20Legends%20seharga%20Rp43.000." target="_blank">Beli</a>
+        </div>
+
+        <div class="product">
+            <div class="product-name">148 Diamonds</div>
+            <div class="price">Rp49.500</div>
+            <a class="buy" href="https://wa.me/62882007902763?text=Halo%20Admin%2C%20saya%20mau%20beli%20148%20Diamonds%20Mobile%20Legends%20seharga%20Rp49.500." target="_blank">Beli</a>
+        </div>
+
+        <div class="product">
+            <div class="product-name">170 Diamonds</div>
+            <div class="price">Rp48.500</div>
+            <a class="buy" href="https://wa.me/62882007902763?text=Halo%20Admin%2C%20saya%20mau%20beli%20170%20Diamonds%20Mobile%20Legends%20seharga%20Rp48.500." target="_blank">Beli</a>
+        </div>
+
+        <div class="product">
+            <div class="product-name">176 Diamonds</div>
+            <div class="price">Rp58.500</div>
+            <a class="buy" href="https://wa.me/62882007902763?text=Halo%20Admin%2C%20saya%20mau%20beli%20176%20Diamonds%20Mobile%20Legends%20seharga%20Rp58.500." target="_blank">Beli</a>
+        </div>
+
+        <div class="product">
+            <div class="product-name">184 Diamonds</div>
+            <div class="price">Rp62.500</div>
+            <a class="buy" href="https://wa.me/62882007902763?text=Halo%20Admin%2C%20saya%20mau%20beli%20184%20Diamonds%20Mobile%20Legends%20seharga%20Rp62.500." target="_blank">Beli</a>
+        </div>
+
+        <div class="product">
+            <div class="product-name">222 Diamonds</div>
+            <div class="price">Rp74.500</div>
+            <a class="buy" href="https://wa.me/62882007902763?text=Halo%20Admin%2C%20saya%20mau%20beli%20222%20Diamonds%20Mobile%20Legends%20seharga%20Rp74.500." target="_blank">Beli</a>
+        </div>
+
+        <div class="product">
+            <div class="product-name">240 Diamonds</div>
+            <div class="price">Rp69.500</div>
+            <a class="buy" href="https://wa.me/62882007902763?text=Halo%20Admin%2C%20saya%20mau%20beli%20240%20Diamonds%20Mobile%20Legends%20seharga%20Rp69.500." target="_blank">Beli</a>
+        </div>
+
+        <div class="product">
+            <div class="product-name">258 Diamonds</div>
+            <div class="price">Rp96.500</div>
+            <a class="buy" href="https://wa.me/62882007902763?text=Halo%20Admin%2C%20saya%20mau%20beli%20258%20Diamonds%20Mobile%20Legends%20seharga%20Rp96.500." target="_blank">Beli</a>
+        </div>
+
+        <div class="product">
+            <div class="product-name">Weekly Diamond Pass</div>
+            <div class="price">Rp30.500</div>
+            <a class="buy" href="https://wa.me/62882007902763?text=Halo%20Admin%2C%20saya%20mau%20beli%20Weekly%20Diamond%20Pass%20Mobile%20Legends%20seharga%20Rp30.500." target="_blank">Beli</a>
+        </div>
+
+        <div class="product">
+            <div class="product-name">Weekly Diamond Pass x2</div>
+            <div class="price">Rp62.500</div>
+            <a class="buy" href="https://wa.me/62882007902763?text=Halo%20Admin%2C%20saya%20mau%20beli%20Weekly%20Diamond%20Pass%20x2%20Mobile%20Legends%20seharga%20Rp62.500." target="_blank">Beli</a>
+        </div>
+
+        <div class="product">
+            <div class="product-name">Weekly Diamond Pass x3</div>
+            <div class="price">Rp92.500</div>
+            <a class="buy" href="https://wa.me/62882007902763?text=Halo%20Admin%2C%20saya%20mau%20beli%20Weekly%20Diamond%20Pass%20x3%20Mobile%20Legends%20seharga%20Rp92.500." target="_blank">Beli</a>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= ROBLOX ================= -->
+
+<section class="product-section" id="roblox">
+
+    <div class="section-title">
+        <h2>🟩 Roblox</h2>
+        <p>Roblox Gift Card IDR dan Robux.</p>
+    </div>
+
+    <h2>🎁 <span>Roblox Gift Card IDR</span></h2>
+
+    <div class="products">
+
+        <div class="product">
+            <div class="product-name">Roblox Gift Card IDR 50.000 🔥 Muraaah</div>
+            <div class="price">Rp51.000</div>
+            <a class="buy" href="https://wa.me/62882007902763?text=Halo%20Admin%2C%20saya%20mau%20beli%20Roblox%20Gift%20Card%20IDR%2050.000%20seharga%20Rp51.000." target="_blank">Beli</a>
+        </div>
+
+        <div class="product">
+            <div class="product-name">Roblox Gift Card IDR 65.000</div>
+            <div class="price">Rp67.000</div>
+            <a class="buy" href="https://wa.me/62882007902763?text=Halo%20Admin%2C%20saya%20mau%20beli%20Roblox%20Gift%20Card%20IDR%2065.000%20seharga%20Rp67.000." target="_blank">Beli</a>
+        </div>
+
+        <div class="product">
+            <div class="product-name">Roblox Gift Card IDR 100.000</div>
+            <div class="price">Rp102.000</div>
+            <a class="buy" href="https://wa.me/62882007902763?text=Halo%20Admin%2C%20saya%20mau%20beli%20Roblox%20Gift%20Card%20IDR%20100.000%20seharga%20Rp102.000." target="_blank">Beli</a>
+        </div>
+
+        <div class="product">
+            <div class="product-name">Roblox Gift Card IDR 200.000</div>
+            <div class="price">Rp202.000</div>
+            <a class="buy" href="https://wa.me/62882007902763?text=Halo%20Admin%2C%20saya%20mau%20beli%20Roblox%20Gift%20Card%20IDR%20200.000%20seharga%20Rp202.000." target="_blank">Beli</a>
+        </div>
+
+        <div class="product">
+            <div class="product-name">Roblox Gift Card IDR 500.000</div>
+            <div class="price">Rp502.000</div>
+            <a class="buy" href="https://wa.me/62882007902763?text=Halo%20Admin%2C%20saya%20mau%20beli%20Roblox%20Gift%20Card%20IDR%20500.000%20seharga%20Rp502.000." target="_blank">Beli</a>
+        </div>
+
+    </div>
+
+    <h2 style="margin-top:45px;">💚 <span>Robux</span></h2>
+
+    <div class="products">
+
+        <div class="product">
+            <div class="product-name">100 Robux</div>
+            <div class="price">Rp35.000</div>
+            <a class="buy" href="https://wa.me/62882007902763?text=Halo%20Admin%2C%20saya%20mau%20beli%20100%20Robux%20seharga%20Rp35.000." target="_blank">Beli</a>
+        </div>
+
+        <div class="product">
+            <div class="product-name">800 Robux</div>
+            <div class="price">Rp174.000</div>
+            <a class="buy" href="https://wa.me/62882007902763?text=Halo%20Admin%2C%20saya%20mau%20beli%20800%20Robux%20seharga%20Rp174.000." target="_blank">Beli</a>
+        </div>
+
+        <div class="product">
+            <div class="product-name">2.000 Robux</div>
+            <div class="price">Rp430.000</div>
+            <a class="buy" href="https://wa.me/62882007902763?text=Halo%20Admin%2C%20saya%20mau%20beli%202000%20Robux%20seharga%20Rp430.000." target="_blank">Beli</a>
+        </div>
+
+        <div class="product">
+            <div class="product-name">10.000 Robux</div>
+            <div class="price">Rp1.932.000</div>
+            <a class="buy" href="https://wa.me/62882007902763?text=Halo%20Admin%2C%20saya%20mau%20beli%2010000%20Robux%20seharga%20Rp1.932.000." target="_blank">Beli</a>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= FEATURES ================= -->
+
+<section>
+
+    <div class="section-title">
+        <h2>Kenapa SANS EXP?</h2>
+        <p>Simple, cepat dan mudah.</p>
+    </div>
+
+    <div class="features">
+
+        <div class="feature">
+            <div class="feature-icon">⚡</div>
+            <h3>Proses Cepat</h3>
+            <p>
+                Pesanan langsung diarahkan ke WhatsApp admin
+                untuk diproses.
+            </p>
+        </div>
+
+        <div class="feature">
+            <div class="feature-icon">💎</div>
+            <h3>Harga Bersahabat</h3>
+            <p>
+                Harga dibuat dengan margin keuntungan kecil
+                supaya tetap terjangkau.
+            </p>
+        </div>
+
+        <div class="feature">
+            <div class="feature-icon">🛡️</div>
+            <h3>Admin Siap Membantu</h3>
+            <p>
+                Jika bingung memilih produk, langsung
+                tanyakan kepada admin.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= ADMIN ================= -->
+
+<div class="admin" id="admin">
+
+    <h2>💬 Butuh Bantuan?</h2>
+
+    <p>
+        Hubungi Admin SANS EXP STORE melalui WhatsApp.
+    </p>
+
+    <div class="wa-number">
+        0882007902763
+    </div>
+
+    <div class="buttons" style="justify-content:center;">
+
+        <a
+            class="btn btn-primary"
+            href="https://wa.me/62882007902763?text=Halo%20Admin%20SANS%20EXP%20STORE."
+            target="_blank"
+        >
+            Chat WhatsApp
+        </a>
+
+    </div>
+
+</div>
+
+<footer>
+    © 2026 SANS EXP STORE • Top Up Game
+</footer>
+
+</body>
+</html>
