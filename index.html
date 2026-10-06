@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>SANS EXP STORE — Top Up Game</title>
 
 <style>
@@ -13,7 +14,9 @@
     font-family:Arial,Helvetica,sans-serif;
 }
 
-html{scroll-behavior:smooth;}
+html{
+    scroll-behavior:smooth;
+}
 
 body{
     background:#050914;
@@ -45,7 +48,7 @@ body::after{
     pointer-events:none;
 }
 
-/* NAVBAR */
+/* ================= NAVBAR ================= */
 
 .navbar{
     position:sticky;
@@ -56,7 +59,7 @@ body::after{
     align-items:center;
     justify-content:space-between;
     padding:0 7%;
-    background:rgba(4,8,19,.9);
+    background:rgba(4,8,19,.88);
     backdrop-filter:blur(18px);
     border-bottom:1px solid rgba(0,180,255,.12);
 }
@@ -67,6 +70,7 @@ body::after{
     gap:10px;
     font-size:17px;
     font-weight:900;
+    letter-spacing:.8px;
 }
 
 .logo-box{
@@ -74,28 +78,29 @@ body::after{
     height:38px;
     border-radius:11px;
     display:flex;
-    align-items:center;
     justify-content:center;
+    align-items:center;
     background:linear-gradient(135deg,#00bfff,#5844ff);
     box-shadow:0 0 25px rgba(0,174,255,.3);
 }
 
 .nav-links{
     display:flex;
-    gap:25px;
+    gap:26px;
 }
 
 .nav-links a{
     color:#aab8cb;
     text-decoration:none;
     font-size:14px;
+    transition:.25s;
 }
 
 .nav-links a:hover{
     color:#00c8ff;
 }
 
-/* HERO */
+/* ================= HERO ================= */
 
 .hero{
     max-width:1250px;
@@ -167,6 +172,7 @@ body::after{
 .primary{
     color:white;
     background:linear-gradient(135deg,#00bfff,#5145ff);
+    box-shadow:0 10px 30px rgba(0,150,255,.18);
 }
 
 .secondary{
@@ -175,7 +181,7 @@ body::after{
     border:1px solid rgba(255,255,255,.1);
 }
 
-/* HERO LOGO */
+/* ================= HERO LOGO ================= */
 
 .hero-logo{
     display:flex;
@@ -234,7 +240,7 @@ body::after{
     to{transform:rotate(360deg);}
 }
 
-/* TRUST */
+/* ================= TRUST ================= */
 
 .trust{
     max-width:1250px;
@@ -263,7 +269,7 @@ body::after{
     font-size:12px;
 }
 
-/* MAIN */
+/* ================= MAIN ================= */
 
 .main{
     max-width:1250px;
@@ -285,7 +291,7 @@ body::after{
     font-size:14px;
 }
 
-/* SEARCH */
+/* ================= SEARCH ================= */
 
 .search-box{
     margin-bottom:25px;
@@ -303,10 +309,10 @@ body::after{
 }
 
 .search:focus{
-    border-color:#00c3ff;
+    border-color:rgba(0,195,255,.5);
 }
 
-/* GAME TABS */
+/* ================= GAME FILTER ================= */
 
 .game-tabs{
     display:flex;
@@ -326,16 +332,17 @@ body::after{
     cursor:pointer;
     font-size:13px;
     font-weight:800;
+    transition:.2s;
 }
 
-.game-tab.active,
-.game-tab:hover{
+.game-tab:hover,
+.game-tab.active{
     background:linear-gradient(135deg,#087cff,#5145ff);
-    color:white;
+    color:#fff;
     border-color:transparent;
 }
 
-/* GAME */
+/* ================= GAME TITLE ================= */
 
 .game-section{
     margin-bottom:55px;
@@ -353,8 +360,8 @@ body::after{
     width:52px;
     height:52px;
     display:flex;
-    align-items:center;
     justify-content:center;
+    align-items:center;
     border-radius:15px;
     background:linear-gradient(135deg,#087eff,#573bff);
     font-weight:1000;
@@ -370,9 +377,16 @@ body::after{
     margin-top:4px;
 }
 
+/* ================= PRODUCT ================= */
+
 .category-title{
     font-size:17px;
     margin:24px 0 13px;
+    color:#e9f3ff;
+}
+
+.category-title span{
+    color:#00c8ff;
 }
 
 .products{
@@ -382,14 +396,12 @@ body::after{
 }
 
 .product{
+    position:relative;
     padding:16px;
     min-height:137px;
     border-radius:15px;
-    background:linear-gradient(
-        145deg,
-        rgba(17,30,55,.92),
-        rgba(7,12,27,.95)
-    );
+    background:
+        linear-gradient(145deg,rgba(17,30,55,.92),rgba(7,12,27,.95));
     border:1px solid rgba(255,255,255,.075);
     transition:.25s;
 }
@@ -416,22 +428,27 @@ body::after{
 }
 
 .buy{
+    display:flex;
+    justify-content:center;
+    align-items:center;
     width:100%;
-    padding:9px;
+    padding:8px;
     border-radius:9px;
     background:#087cff;
-    color:white;
-    border:none;
+    color:#fff;
+    text-decoration:none;
     font-size:12px;
     font-weight:900;
+    border:none;
     cursor:pointer;
+    transition:.2s;
 }
 
 .buy:hover{
     background:#00bfff;
 }
 
-/* FEATURES */
+/* ================= FEATURES ================= */
 
 .features{
     margin-top:20px;
@@ -463,7 +480,7 @@ body::after{
     font-size:13px;
 }
 
-/* ADMIN */
+/* ================= ADMIN ================= */
 
 .admin{
     max-width:1110px;
@@ -488,7 +505,7 @@ body::after{
     font-weight:900;
 }
 
-/* MODAL */
+/* ================= MODAL ================= */
 
 .modal{
     position:fixed;
@@ -498,7 +515,7 @@ body::after{
     align-items:center;
     justify-content:center;
     padding:20px;
-    background:rgba(0,0,0,.75);
+    background:rgba(0,0,0,.72);
     backdrop-filter:blur(8px);
 }
 
@@ -508,9 +525,7 @@ body::after{
 
 .modal-box{
     width:100%;
-    max-width:440px;
-    max-height:90vh;
-    overflow:auto;
+    max-width:430px;
     padding:25px;
     border-radius:22px;
     background:#0a1121;
@@ -535,13 +550,13 @@ body::after{
     border:0;
     border-radius:10px;
     background:rgba(255,255,255,.06);
-    color:white;
+    color:#fff;
     cursor:pointer;
     font-size:18px;
 }
 
 .order-product{
-    padding:14px;
+    padding:13px;
     border-radius:12px;
     background:rgba(255,255,255,.04);
     margin-bottom:17px;
@@ -575,58 +590,23 @@ body::after{
     outline:none;
     background:#050a16;
     border:1px solid rgba(255,255,255,.1);
-    color:white;
+    color:#fff;
 }
 
 .input-group input:focus{
     border-color:#00bfff;
 }
 
-.demo-warning{
-    padding:12px;
-    border-radius:10px;
-    margin-bottom:15px;
-    background:rgba(255,180,0,.08);
-    border:1px solid rgba(255,180,0,.2);
-    color:#ffd76a;
+.modal-note{
+    color:#718096;
     font-size:11px;
     line-height:1.5;
-}
-
-.payment-title{
-    font-size:13px;
-    margin:17px 0 9px;
-    color:#b7c5d8;
-}
-
-.payment-methods{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:9px;
     margin-bottom:15px;
-}
-
-.payment-method{
-    padding:13px;
-    border-radius:11px;
-    background:rgba(255,255,255,.035);
-    border:1px solid rgba(255,255,255,.08);
-    color:#b9c6d8;
-    cursor:pointer;
-    text-align:center;
-    font-size:12px;
-    font-weight:800;
-}
-
-.payment-method.active{
-    border-color:#00bfff;
-    background:rgba(0,180,255,.1);
-    color:white;
 }
 
 .modal-submit{
     width:100%;
-    padding:14px;
+    padding:13px;
     border:0;
     border-radius:11px;
     color:white;
@@ -635,106 +615,7 @@ body::after{
     cursor:pointer;
 }
 
-/* PAYMENT SCREEN */
-
-.payment-screen{
-    text-align:center;
-}
-
-.payment-icon{
-    width:80px;
-    height:80px;
-    margin:5px auto 18px;
-    border-radius:22px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:38px;
-    background:linear-gradient(135deg,#087cff,#5145ff);
-}
-
-.payment-price{
-    font-size:28px;
-    color:#42d5ff;
-    font-weight:1000;
-    margin:10px 0 18px;
-}
-
-.fake-qr{
-    width:190px;
-    height:190px;
-    margin:0 auto 18px;
-    border-radius:10px;
-    background:
-        repeating-linear-gradient(
-            45deg,
-            #fff 0px,
-            #fff 4px,
-            #111 4px,
-            #111 8px
-        );
-    border:8px solid white;
-}
-
-.payment-info{
-    padding:13px;
-    border-radius:11px;
-    background:rgba(255,255,255,.04);
-    color:#9caabd;
-    font-size:11px;
-    line-height:1.6;
-    margin-bottom:15px;
-}
-
-/* SUCCESS */
-
-.success-screen{
-    text-align:center;
-}
-
-.success-icon{
-    width:80px;
-    height:80px;
-    margin:5px auto 18px;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:40px;
-    background:rgba(0,220,130,.12);
-    border:2px solid #00dc82;
-    color:#00dc82;
-}
-
-.order-status{
-    padding:15px;
-    margin:18px 0;
-    border-radius:13px;
-    background:rgba(0,180,255,.07);
-    border:1px solid rgba(0,180,255,.15);
-}
-
-.status-row{
-    display:flex;
-    justify-content:space-between;
-    padding:7px 0;
-    color:#a8b6c9;
-    font-size:12px;
-}
-
-.status-row strong{
-    color:white;
-}
-
-.status-processing{
-    color:#42d5ff!important;
-}
-
-.status-done{
-    color:#00dc82!important;
-}
-
-/* FOOTER */
+/* ================= FOOTER ================= */
 
 footer{
     padding:28px 7%;
@@ -744,7 +625,7 @@ footer{
     border-top:1px solid rgba(255,255,255,.06);
 }
 
-/* RESPONSIVE */
+/* ================= TABLET ================= */
 
 @media(max-width:900px){
 
@@ -770,11 +651,16 @@ footer{
         grid-template-columns:repeat(2,1fr);
     }
 
-    .trust,
+    .trust{
+        grid-template-columns:1fr;
+    }
+
     .features{
         grid-template-columns:1fr;
     }
 }
+
+/* ================= HP ================= */
 
 @media(max-width:520px){
 
@@ -830,6 +716,10 @@ footer{
         font-size:11px;
     }
 
+    .game-title h3{
+        font-size:19px;
+    }
+
     .admin{
         margin-left:5%;
         margin-right:5%;
@@ -839,6 +729,8 @@ footer{
 </head>
 
 <body>
+
+<!-- ================= NAVBAR ================= -->
 
 <header class="navbar">
 
@@ -850,11 +742,14 @@ footer{
     <nav class="nav-links">
         <a href="#home">Home</a>
         <a href="#games">Game</a>
+        <a href="#harga">Harga</a>
         <a href="#admin">Admin</a>
     </nav>
 
 </header>
 
+
+<!-- ================= HERO ================= -->
 
 <section class="hero" id="home">
 
@@ -872,7 +767,7 @@ footer{
         <p>
             Top up game dengan harga bersahabat.
             Pilih game, pilih nominal, masukkan ID game,
-            lalu lakukan checkout dengan mudah.
+            lalu lanjutkan pesanan dengan mudah.
         </p>
 
         <div class="hero-buttons">
@@ -893,20 +788,25 @@ footer{
 
     </div>
 
+
     <div class="hero-logo">
+
         <div class="logo-circle">
             <div class="logo-se">SE</div>
         </div>
+
     </div>
 
 </section>
 
 
+<!-- ================= TRUST ================= -->
+
 <div class="trust">
 
     <div class="trust-item">
         <b>⚡ Proses Cepat</b>
-        <span>Pesanan diproses setelah pembayaran.</span>
+        <span>Pesanan langsung diproses setelah pembayaran.</span>
     </div>
 
     <div class="trust-item">
@@ -915,12 +815,14 @@ footer{
     </div>
 
     <div class="trust-item">
-        <b>🛡️ Checkout Aman</b>
-        <span>Data pesanan ditampilkan sebelum pembayaran.</span>
+        <b>💬 Bantuan Admin</b>
+        <span>Admin siap membantu jika ada kendala.</span>
     </div>
 
 </div>
 
+
+<!-- ================= MAIN ================= -->
 
 <main class="main" id="games">
 
@@ -929,10 +831,13 @@ footer{
         <h2>🎮 Pilih Game</h2>
 
         <p>
-            Pilih game dan produk yang ingin kamu beli.
+            Pilih game dan temukan produk yang kamu butuhkan.
         </p>
 
     </div>
+
+
+    <!-- SEARCH -->
 
     <div class="search-box">
 
@@ -944,6 +849,9 @@ footer{
         >
 
     </div>
+
+
+    <!-- GAME TABS -->
 
     <div class="game-tabs">
 
@@ -965,51 +873,78 @@ footer{
 
     </div>
 
+
+    <!-- ================= PRODUCTS GENERATED BY JAVASCRIPT ================= -->
+
     <div id="productContainer"></div>
 
 </main>
 
 
+<!-- ================= FEATURES ================= -->
+
 <section class="main">
 
     <div class="section-head">
+
         <h2>Kenapa SANS EXP?</h2>
-        <p>Simple, cepat dan mudah.</p>
+
+        <p>
+            Simple, cepat dan mudah.
+        </p>
+
     </div>
+
 
     <div class="features">
 
         <div class="feature">
+
             <div class="feature-icon">⚡</div>
+
             <h3>Proses Cepat</h3>
+
             <p>
-                Sistem checkout dibuat sederhana agar pesanan
-                bisa dilakukan dengan cepat.
+                Pesanan langsung diarahkan untuk diproses
+                setelah data pembelian diberikan.
             </p>
+
         </div>
 
+
         <div class="feature">
+
             <div class="feature-icon">💎</div>
+
             <h3>Harga Bersahabat</h3>
+
             <p>
-                Banyak pilihan nominal tersedia sesuai
-                kebutuhan kamu.
+                Berbagai pilihan nominal tersedia dengan
+                harga yang mudah dijangkau.
             </p>
+
         </div>
 
+
         <div class="feature">
+
             <div class="feature-icon">🛡️</div>
-            <h3>Checkout Terstruktur</h3>
+
+            <h3>Admin Siap Membantu</h3>
+
             <p>
-                Detail game, produk dan harga ditampilkan
-                sebelum melakukan pembayaran.
+                Jika mengalami kesulitan, langsung hubungi
+                admin SANS EXP STORE.
             </p>
+
         </div>
 
     </div>
 
 </section>
 
+
+<!-- ================= ADMIN ================= -->
 
 <div class="admin" id="admin">
 
@@ -1038,27 +973,35 @@ footer{
 </div>
 
 
-<!-- CHECKOUT MODAL -->
+<!-- ================= CHECKOUT MODAL ================= -->
 
 <div class="modal" id="checkoutModal">
 
-    <div class="modal-box" id="modalContent">
+    <div class="modal-box">
 
         <div class="modal-head">
 
-            <h3>🛒 Checkout</h3>
+            <h3>🛒 Detail Pesanan</h3>
 
-            <button class="close" onclick="closeModal()">×</button>
+            <button class="close" onclick="closeModal()">
+                ×
+            </button>
 
         </div>
+
 
         <div class="order-product">
 
-            <b id="selectedProduct">Produk</b>
+            <b id="selectedProduct">
+                Produk
+            </b>
 
-            <span id="selectedPrice">Rp0</span>
+            <span id="selectedPrice">
+                Rp0
+            </span>
 
         </div>
+
 
         <div class="input-group">
 
@@ -1072,7 +1015,8 @@ footer{
 
         </div>
 
-        <div class="input-group">
+
+        <div class="input-group" id="serverBox">
 
             <label>Server / Zone ID</label>
 
@@ -1084,9 +1028,10 @@ footer{
 
         </div>
 
+
         <div class="input-group">
 
-            <label>Nickname (opsional)</label>
+            <label>Nama / Nickname (opsional)</label>
 
             <input
                 type="text"
@@ -1096,39 +1041,20 @@ footer{
 
         </div>
 
-        <div class="demo-warning">
-            ⚠️ <b>MODE DEMO:</b>
-            Pembayaran di halaman ini hanya simulasi.
-            Tidak ada saldo GoPay atau uang asli yang dipotong.
-        </div>
 
-        <div class="payment-title">
-            Pilih metode pembayaran
-        </div>
+        <div class="modal-note">
 
-        <div class="payment-methods">
-
-            <div
-                class="payment-method active"
-                onclick="selectPayment(this,'GoPay')"
-            >
-                💙 GoPay
-            </div>
-
-            <div
-                class="payment-method"
-                onclick="selectPayment(this,'QRIS')"
-            >
-                📱 QRIS
-            </div>
+            Pastikan ID game dan server yang kamu masukkan
+            sudah benar sebelum melanjutkan pesanan.
 
         </div>
+
 
         <button
             class="modal-submit"
-            onclick="startPayment()"
+            onclick="sendOrder()"
         >
-            Lanjut ke Pembayaran
+            💬 Lanjutkan Pesanan
         </button>
 
     </div>
@@ -1136,8 +1062,12 @@ footer{
 </div>
 
 
+<!-- ================= FOOTER ================= -->
+
 <footer>
+
     © 2026 SANS EXP STORE • Top Up Game
+
 </footer>
 
 
@@ -1145,6 +1075,7 @@ footer{
 
 /* =========================================================
    DATA PRODUK
+   HARGA DIPERTAHANKAN DARI HTML LAMA
 ========================================================= */
 
 const games = [
@@ -1296,21 +1227,18 @@ const games = [
 
 let currentGame = "all";
 let selectedProduct = null;
-let selectedPayment = "GoPay";
 
 
 /* =========================================================
-   RENDER
+   RENDER PRODUK
 ========================================================= */
 
 function renderProducts(){
 
-    const container =
-        document.getElementById("productContainer");
+    const container = document.getElementById("productContainer");
 
     const searchValue =
-        document.getElementById("search")
-        .value
+        document.getElementById("search").value
         .toLowerCase()
         .trim();
 
@@ -1318,40 +1246,38 @@ function renderProducts(){
 
     games.forEach(game => {
 
-        if(
-            currentGame !== "all" &&
-            currentGame !== game.id
-        ){
+        if(currentGame !== "all" && currentGame !== game.id){
             return;
         }
 
         let gameHTML = `
-        <section class="game-section">
+            <section class="game-section" id="${game.id}">
+                
+                <div class="game-title">
 
-            <div class="game-title">
+                    <div class="game-icon">
+                        ${game.icon}
+                    </div>
 
-                <div class="game-icon">
-                    ${game.icon}
+                    <div>
+                        <h3>${game.name}</h3>
+                        <p>${game.description}</p>
+                    </div>
+
                 </div>
-
-                <div>
-                    <h3>${game.name}</h3>
-                    <p>${game.description}</p>
-                </div>
-
-            </div>
         `;
 
         let hasProduct = false;
 
         game.categories.forEach(category => {
 
-            const filtered =
-                category.products.filter(product =>
-                    product[0]
+            const filtered = category.products.filter(product => {
+
+                return product[0]
                     .toLowerCase()
-                    .includes(searchValue)
-                );
+                    .includes(searchValue);
+
+            });
 
             if(filtered.length === 0){
                 return;
@@ -1388,7 +1314,7 @@ function renderProducts(){
                                 '${escapeJS(product[1])}'
                             )"
                         >
-                            Beli Sekarang
+                            Beli
                         </button>
 
                     </div>
@@ -1396,7 +1322,9 @@ function renderProducts(){
 
             });
 
-            gameHTML += `</div>`;
+            gameHTML += `
+                </div>
+            `;
 
         });
 
@@ -1419,24 +1347,22 @@ function escapeJS(text){
 
     return text
         .replace(/\\/g,"\\\\")
-        .replace(/'/g,"\\'");
+        .replace(/'/g,"\\'")
+        .replace(/"/g,'&quot;');
 
 }
 
 
 /* =========================================================
-   FILTER
+   FILTER GAME
 ========================================================= */
 
 function filterGame(game,button){
 
     currentGame = game;
 
-    document
-        .querySelectorAll(".game-tab")
-        .forEach(btn =>
-            btn.classList.remove("active")
-        );
+    document.querySelectorAll(".game-tab")
+        .forEach(btn => btn.classList.remove("active"));
 
     button.classList.add("active");
 
@@ -1451,14 +1377,11 @@ function filterGame(game,button){
 
 document
     .getElementById("search")
-    .addEventListener(
-        "input",
-        renderProducts
-    );
+    .addEventListener("input",renderProducts);
 
 
 /* =========================================================
-   OPEN CHECKOUT
+   CHECKOUT
 ========================================================= */
 
 function openCheckout(game,product,price){
@@ -1469,27 +1392,15 @@ function openCheckout(game,product,price){
         price:price
     };
 
-    document
-        .getElementById("selectedProduct")
-        .textContent =
+    document.getElementById("selectedProduct").textContent =
         game + " — " + product;
 
-    document
-        .getElementById("selectedPrice")
-        .textContent =
+    document.getElementById("selectedPrice").textContent =
         price;
 
-    document
-        .getElementById("gameId")
-        .value = "";
-
-    document
-        .getElementById("serverId")
-        .value = "";
-
-    document
-        .getElementById("nickname")
-        .value = "";
+    document.getElementById("gameId").value = "";
+    document.getElementById("serverId").value = "";
+    document.getElementById("nickname").value = "";
 
     document
         .getElementById("checkoutModal")
@@ -1499,41 +1410,33 @@ function openCheckout(game,product,price){
 
 
 /* =========================================================
-   PAYMENT METHOD
+   CLOSE MODAL
 ========================================================= */
 
-function selectPayment(element,payment){
-
-    selectedPayment = payment;
+function closeModal(){
 
     document
-        .querySelectorAll(".payment-method")
-        .forEach(item =>
-            item.classList.remove("active")
-        );
-
-    element.classList.add("active");
+        .getElementById("checkoutModal")
+        .classList.remove("show");
 
 }
 
 
 /* =========================================================
-   START PAYMENT
+   SEND ORDER TO WHATSAPP
 ========================================================= */
 
-function startPayment(){
+function sendOrder(){
 
     const gameId =
-        document
-        .getElementById("gameId")
-        .value
-        .trim();
+        document.getElementById("gameId").value.trim();
 
     const serverId =
-        document
-        .getElementById("serverId")
-        .value
-        .trim();
+        document.getElementById("serverId").value.trim();
+
+    const nickname =
+        document.getElementById("nickname").value.trim();
+
 
     if(!gameId){
 
@@ -1543,6 +1446,7 @@ function startPayment(){
 
     }
 
+
     if(!serverId){
 
         alert("Masukkan Server / Zone ID terlebih dahulu.");
@@ -1551,209 +1455,57 @@ function startPayment(){
 
     }
 
-    showPaymentScreen();
+
+    let message =
+`Halo Admin SANS EXP STORE 👋
+
+Saya mau order:
+
+🎮 Game: ${selectedProduct.game}
+💎 Produk: ${selectedProduct.product}
+💰 Harga: ${selectedProduct.price}
+
+🆔 ID Game: ${gameId}
+🌐 Server / Zone ID: ${serverId}`;
+
+    if(nickname){
+
+        message +=
+`\n👤 Nickname: ${nickname}`;
+
+    }
+
+    message +=
+`
+
+Mohon diproses ya. Terima kasih 🙏`;
+
+
+    const url =
+        "https://wa.me/62882007902763?text="
+        + encodeURIComponent(message);
+
+
+    window.open(url,"_blank");
+
+    closeModal();
 
 }
 
 
 /* =========================================================
-   PAYMENT SCREEN
-========================================================= */
-
-function showPaymentScreen(){
-
-    const modal =
-        document.getElementById("modalContent");
-
-    modal.innerHTML = `
-
-        <div class="modal-head">
-
-            <h3>💳 Pembayaran</h3>
-
-            <button
-                class="close"
-                onclick="closeModal()"
-            >
-                ×
-            </button>
-
-        </div>
-
-        <div class="payment-screen">
-
-            <div class="payment-icon">
-                ${selectedPayment === "GoPay" ? "💙" : "📱"}
-            </div>
-
-            <h3>
-                ${selectedPayment}
-            </h3>
-
-            <div class="payment-price">
-                ${selectedProduct.price}
-            </div>
-
-            <div class="fake-qr"></div>
-
-            <div class="payment-info">
-
-                Ini adalah QR pembayaran <b>DEMO</b>.
-
-                Tidak terhubung ke GoPay/QRIS asli
-                dan tidak akan mengambil saldo.
-
-                <br><br>
-
-                Produk:
-                ${selectedProduct.product}
-
-            </div>
-
-            <button
-                class="modal-submit"
-                onclick="simulatePayment()"
-            >
-                ✓ Saya Sudah Bayar (Demo)
-            </button>
-
-        </div>
-    `;
-
-}
-
-
-/* =========================================================
-   SIMULATE PAYMENT
-========================================================= */
-
-function simulatePayment(){
-
-    const modal =
-        document.getElementById("modalContent");
-
-    modal.innerHTML = `
-
-        <div class="success-screen">
-
-            <div class="success-icon">
-                ✓
-            </div>
-
-            <h2>Pembayaran Berhasil!</h2>
-
-            <p style="
-                color:#8795a9;
-                margin-top:8px;
-                font-size:13px;
-            ">
-                Pembayaran demo berhasil diverifikasi.
-            </p>
-
-            <div class="order-status">
-
-                <div class="status-row">
-                    <span>Game</span>
-                    <strong>
-                        ${selectedProduct.game}
-                    </strong>
-                </div>
-
-                <div class="status-row">
-                    <span>Produk</span>
-                    <strong>
-                        ${selectedProduct.product}
-                    </strong>
-                </div>
-
-                <div class="status-row">
-                    <span>Total</span>
-                    <strong>
-                        ${selectedProduct.price}
-                    </strong>
-                </div>
-
-                <div class="status-row">
-                    <span>Status</span>
-                    <strong class="status-processing">
-                        Memproses Top Up...
-                    </strong>
-                </div>
-
-            </div>
-
-            <p style="
-                color:#657489;
-                font-size:11px;
-                line-height:1.5;
-                margin-bottom:15px;
-            ">
-                Dalam sistem asli, tahap ini akan
-                terhubung ke API supplier untuk
-                mengirim diamond/Robux secara otomatis.
-            </p>
-
-        </div>
-    `;
-
-
-    setTimeout(() => {
-
-        const status =
-            document.querySelector(
-                ".status-processing"
-            );
-
-        if(status){
-
-            status.textContent =
-                "Top Up Berhasil ✓";
-
-            status.className =
-                "status-done";
-
-        }
-
-    },2500);
-
-}
-
-
-/* =========================================================
-   CLOSE
-========================================================= */
-
-function closeModal(){
-
-    document
-        .getElementById("checkoutModal")
-        .classList.remove("show");
-
-    setTimeout(() => {
-
-        location.reload();
-
-    },200);
-
-}
-
-
-/* =========================================================
-   CLICK OUTSIDE
+   CLOSE MODAL KLIK LUAR
 ========================================================= */
 
 document
     .getElementById("checkoutModal")
-    .addEventListener(
-        "click",
-        function(e){
+    .addEventListener("click",function(e){
 
-            if(e.target === this){
-                closeModal();
-            }
-
+        if(e.target === this){
+            closeModal();
         }
-    );
+
+    });
 
 
 /* =========================================================
@@ -1765,4 +1517,4 @@ renderProducts();
 </script>
 
 </body>
-    </html>
+                    </html>
