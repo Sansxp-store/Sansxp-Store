@@ -613,7 +613,60 @@ const rupiah = amount => new Intl.NumberFormat("id-ID", {
   style:"currency", currency:"IDR", maximumFractionDigits:0
 }).format(amount);
 
-function allProducts(){
+
+const API_URL = "https://sansxp-apii.paw12aja.workers.dev";
+
+async function loadCatalogFromMelostore() {
+  try {
+    const response = await fetch(`${API_URL}/products`);
+    const result = await response.json();
+
+    if (!response.ok || !result.success || !Array.isArray(result.data)) {
+      throw new Error("Katalog tidak valid");
+    }
+
+    const brandMap = {
+      1: "ml",
+      5249: "ff",
+      1523: "roblox"
+    };
+
+    Object.values(catalog).forEach(game => {
+      game.products = [];
+    });
+
+    result.data.forEach(item => {
+      const gameKey = brandMap[Number(item.brand_id)];
+      const cost = Number(item.price);
+
+      if (
+        !gameKey ||
+        item.status !== "active" ||
+        !Number.isFinite(cost) ||
+        cost <= 0
+      ) return;
+
+      catalog[gameKey].products.push({
+        name: item.name,
+        price: Math.ceil(cost * 1.10),
+        note: item.type_name || item.category_name || "",
+        sku: item.sku_code,
+        supplierPrice: cost
+      });
+    });
+
+    Object.values(catalog).forEach(game => {
+      game.products.sort((a, b) => a.price - b.price);
+    });
+
+    renderProducts();
+  } catch (error) {
+    console.error("Gagal memuat katalog:", error);
+    alert("Katalog Melostore gagal dimuat. Periksa koneksi dan coba muat ulang.");
+  }
+}
+
+  function allProducts(){
   const items = [];
   Object.entries(catalog).forEach(([key,game])=>{
     game.products.forEach((product,index)=>{
@@ -791,7 +844,7 @@ document.addEventListener("keydown",event=>{
 });
 
 document.getElementById("year").textContent = new Date().getFullYear();
-renderProducts();
+loadCatalogFromMelostore();
 </script>
 </body>
     </html>
