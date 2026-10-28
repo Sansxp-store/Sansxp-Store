@@ -649,7 +649,9 @@ async function loadCatalogFromMelostore() {
       catalog[gameKey].products.push({
         name: item.name,
         price: Math.ceil(cost * 1.10),
-        note: item.type_name || item.category_name || "",
+        note: item.server_name
+  ? item.server_name + " (" + item.server_code + ")"
+  : item.type_name || item.category_name || "",
         sku: item.sku_code,
         supplierPrice: cost
       });
