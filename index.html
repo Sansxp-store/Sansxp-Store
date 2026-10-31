@@ -1,14 +1,14 @@
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#080f20">
+<meta name="description" content="SANS-XP STORE - Top up game cepat, mudah, dan praktis.">
 <title>SANS-XP STORE — Top Up Game</title>
 
 <style>
-:root {
+:root{
   --bg:#080f20;
   --panel:#101c33;
   --panel2:#142541;
@@ -18,75 +18,63 @@
   --blue:#287cf0;
   --cyan:#25c7e8;
   --green:#22c58b;
-  --radius:18px;
+  --radius:16px;
 }
 
-* {
-  box-sizing:border-box;
-}
+*{box-sizing:border-box}
 
-html, body {
-  width:100%;
-  max-width:100%;
+html{scroll-behavior:smooth}
+
+body{
   margin:0;
-  overflow-x:hidden;
-}
-
-body {
   background:var(--bg);
   color:var(--text);
   font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  font-size:14px;
+  -webkit-font-smoothing:antialiased;
 }
 
-button,input,select {
-  font:inherit;
-}
+button,input,select{font:inherit}
+button{cursor:pointer}
+a{-webkit-tap-highlight-color:transparent}
 
-button {
-  cursor:pointer;
-}
-
-.wrap {
+.wrap{
   width:min(1120px,calc(100% - 32px));
-  max-width:100%;
   margin:auto;
 }
 
 /* HEADER */
 
-header {
+header{
   position:sticky;
   top:0;
   z-index:10;
-  width:100%;
   background:#091326ed;
   backdrop-filter:blur(14px);
   border-bottom:1px solid #203553;
 }
 
-.nav {
-  min-height:72px;
+.nav{
+  min-height:68px;
   display:flex;
   align-items:center;
-  gap:20px;
-  min-width:0;
+  gap:18px;
 }
 
-.brand {
+.brand{
   display:flex;
   align-items:center;
   gap:10px;
   font-weight:900;
   letter-spacing:.4px;
-  font-size:20px;
+  font-size:19px;
   white-space:nowrap;
 }
 
-.logo {
+.logo{
   width:38px;
   height:38px;
-  flex-shrink:0;
-  border-radius:12px;
+  border-radius:11px;
   background:linear-gradient(135deg,#287cf0,#22c5df);
   display:grid;
   place-items:center;
@@ -95,95 +83,99 @@ header {
   box-shadow:0 6px 22px #287cf055;
 }
 
-.navsearch {
+.navsearch{
   flex:1;
-  min-width:0;
   position:relative;
 }
 
-.navsearch input {
+.navsearch input{
   width:100%;
-  padding:13px 16px 13px 42px;
+  padding:12px 15px 12px 40px;
   border:1px solid var(--line);
-  border-radius:13px;
+  border-radius:12px;
   background:#0c1930;
   color:white;
   outline:none;
 }
 
-.navsearch span {
+.navsearch input:focus{
+  border-color:var(--blue);
+}
+
+.navsearch span{
   position:absolute;
-  left:15px;
-  top:10px;
+  left:14px;
+  top:9px;
   color:var(--muted);
   font-size:19px;
 }
 
-.navlink {
+.navlink{
   color:#dbe7fa;
   text-decoration:none;
-  font-size:14px;
-  font-weight:700;
-  white-space:nowrap;
+  font-size:13px;
+  font-weight:800;
 }
 
 /* HERO */
 
-.hero {
-  margin:28px 0 26px;
+.hero{
+  margin:26px 0;
   border:1px solid #24436d;
-  border-radius:24px;
+  border-radius:22px;
   overflow:hidden;
   background:
     radial-gradient(circle at 82% 20%,#2459a9 0,transparent 32%),
     linear-gradient(115deg,#142d54,#10213e 58%,#0d1a31);
-  padding:36px;
+  padding:34px;
   position:relative;
-  min-height:220px;
+  min-height:210px;
 }
 
-.hero:after {
+.hero:after{
   content:"XP";
   position:absolute;
   right:7%;
   top:5px;
-  font-size:160px;
+  font-size:150px;
   line-height:1;
   font-weight:1000;
   color:#ffffff0b;
   letter-spacing:-12px;
+  pointer-events:none;
 }
 
-.hero-content {
+.hero-content{
   position:relative;
   z-index:1;
   max-width:570px;
 }
 
-.eyebrow {
+.eyebrow{
   color:#5dd8f3;
-  font-size:12px;
+  font-size:11px;
   font-weight:900;
   letter-spacing:2px;
 }
 
-.hero h1 {
-  font-size:clamp(28px,5vw,44px);
-  line-height:1.08;
+.hero h1{
+  font-size:clamp(27px,4vw,42px);
+  line-height:1.12;
   margin:12px 0;
 }
 
-.hero p {
+.hero p{
   color:#c2d1e8;
   max-width:470px;
   line-height:1.6;
   margin:0 0 20px;
+  font-size:14px;
 }
 
-.primary {
+.primary{
   border:0;
-  border-radius:12px;
-  padding:13px 18px;
+  border-radius:11px;
+  padding:12px 18px;
   color:white;
   font-weight:800;
   background:linear-gradient(100deg,var(--blue),#1c9ce8);
@@ -192,25 +184,22 @@ header {
 
 /* SECTION */
 
-.section {
-  margin:30px 0;
-  min-width:0;
-}
+.section{margin:30px 0}
 
-.section-head {
+.section-head{
   display:flex;
   align-items:end;
   justify-content:space-between;
   gap:12px;
-  margin-bottom:16px;
+  margin-bottom:15px;
 }
 
-.section h2 {
-  font-size:22px;
+.section h2{
+  font-size:21px;
   margin:0;
 }
 
-.section-head p {
+.section-head p{
   color:var(--muted);
   margin:5px 0 0;
   font-size:13px;
@@ -218,555 +207,610 @@ header {
 
 /* GAME CARDS */
 
-.game-grid {
+.game-grid{
   display:grid;
   grid-template-columns:repeat(5,minmax(0,1fr));
-  gap:13px;
-  min-width:0;
+  gap:12px;
 }
 
-.game {
-  min-width:0;
+.game{
   border:1px solid var(--line);
   background:var(--panel);
-  border-radius:16px;
-  padding:14px;
+  border-radius:15px;
+  padding:12px;
   text-align:left;
   color:white;
   transition:.18s;
-  overflow:hidden;
+  min-width:0;
 }
 
-.game:hover,
-.game.active {
+.game:hover,.game.active{
   border-color:#3999ff;
-  transform:translateY(-2px);
   background:#14294a;
+  transform:translateY(-2px);
 }
 
-.game-icon {
-  height:86px;
-  border-radius:13px;
+.game-icon{
+  height:82px;
+  border-radius:12px;
   display:grid;
   place-items:center;
-  font-size:25px;
+  font-size:24px;
   font-weight:1000;
   letter-spacing:-1px;
-  margin-bottom:11px;
+  margin-bottom:10px;
   background:linear-gradient(135deg,#234b83,#172d50);
   color:#dff5ff;
 }
 
-.game:nth-child(2) .game-icon {
+.game:nth-child(2) .game-icon{
   background:linear-gradient(135deg,#8a3d25,#45223c);
 }
 
-.game:nth-child(3) .game-icon {
+.game:nth-child(3) .game-icon{
   background:linear-gradient(135deg,#536b45,#263e3b);
 }
 
-.game:nth-child(4) .game-icon {
+.game:nth-child(4) .game-icon{
   background:linear-gradient(135deg,#59449b,#292653);
 }
 
-.game:nth-child(5) .game-icon {
+.game:nth-child(5) .game-icon{
   background:linear-gradient(135deg,#8a682a,#44331d);
 }
 
-.game strong {
+.game strong{
   display:block;
-  font-size:14px;
-  line-height:1.3;
-  overflow-wrap:anywhere;
+  font-size:13px;
+  line-height:1.35;
 }
 
-.game small {
+.game small{
+  display:block;
   color:var(--muted);
-  font-size:11px;
+  font-size:10px;
+  margin-top:4px;
 }
 
 /* CATALOG */
 
-.catalog-layout {
+.catalog-layout{
   display:grid;
-  grid-template-columns:minmax(0,220px) minmax(0,1fr);
-  gap:18px;
-  width:100%;
-  min-width:0;
+  grid-template-columns:205px minmax(0,1fr);
+  gap:15px;
 }
 
-.filters,
-.product-area {
-  min-width:0;
+.filters,.product-area{
   border:1px solid var(--line);
   background:var(--panel);
   border-radius:var(--radius);
-  padding:18px;
-}
-
-.filters h3 {
-  margin:0 0 12px;
-}
-
-.filter-list {
+  padding:16px;
   min-width:0;
 }
 
-.filter-btn {
+.filters h3{
+  margin:0 0 11px;
+  font-size:15px;
+}
+
+.filter-list{
+  display:flex;
+  flex-direction:column;
+  gap:3px;
+}
+
+.filter-btn{
   display:block;
   width:100%;
   border:0;
   background:transparent;
   color:#b8c8df;
   text-align:left;
-  padding:10px;
+  padding:9px 10px;
   border-radius:9px;
-  margin:3px 0;
+  font-size:12px;
 }
 
-.filter-btn.active,
-.filter-btn:hover {
+.filter-btn.active,.filter-btn:hover{
   background:#1b365d;
   color:white;
 }
 
-.toolbar {
+.toolbar{
   display:flex;
   justify-content:space-between;
   align-items:center;
   gap:10px;
   margin-bottom:14px;
-  min-width:0;
 }
 
-.toolbar select {
-  max-width:100%;
+.toolbar strong{
+  font-size:13px;
+}
+
+.toolbar select{
   background:#0a172b;
   color:white;
   border:1px solid var(--line);
-  border-radius:10px;
-  padding:10px;
+  border-radius:9px;
+  padding:9px 11px;
+  font-size:12px;
+  max-width:180px;
 }
 
-/* PRODUCT CARDS */
-
-.products {
+.products{
   display:grid;
   grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:12px;
-  width:100%;
-  min-width:0;
+  gap:11px;
 }
 
-.product {
-  min-width:0;
+.product{
   background:#0b172b;
   border:1px solid #263d5e;
-  border-radius:14px;
-  padding:14px;
+  border-radius:13px;
+  padding:13px;
   display:flex;
   flex-direction:column;
-  min-height:154px;
-  overflow:hidden;
+  min-height:150px;
+  min-width:0;
 }
 
-.product h4 {
-  font-size:14px;
-  margin:9px 0 7px;
-  line-height:1.35;
-  overflow-wrap:anywhere;
-}
-
-.tag {
-  font-size:10px;
+.tag{
+  font-size:9px;
   font-weight:900;
   color:#66d7ee;
   letter-spacing:.5px;
+  text-transform:uppercase;
+  line-height:1.4;
+}
+
+.product h4{
+  font-size:13px;
+  margin:8px 0 6px;
+  line-height:1.4;
   overflow-wrap:anywhere;
 }
 
-.price {
+.product-info{
+  color:#8fa6c4;
+  font-size:10px;
+  line-height:1.5;
+}
+
+.price{
   font-weight:900;
-  font-size:17px;
+  font-size:16px;
   margin-top:auto;
-  overflow-wrap:anywhere;
+  padding-top:7px;
 }
 
-.product button {
-  width:100%;
-  margin-top:12px;
-  padding:10px 7px;
+.product button{
+  margin-top:10px;
+  padding:9px 7px;
   border:1px solid #337fd4;
   background:#15365f;
   color:white;
   border-radius:9px;
+  font-size:11px;
   font-weight:800;
-  font-size:12px;
 }
 
-.product button:hover {
-  background:#20518c;
+.product button:active{
+  background:#24518a;
 }
 
-/* GROUP BY GAME */
-
-.game-product-group {
-  width:100%;
-  min-width:0;
-  margin-bottom:25px;
-}
-
-.group-heading {
-  display:flex;
-  align-items:center;
-  gap:11px;
-  margin:8px 0 12px;
-  min-width:0;
-}
-
-.group-badge {
-  width:40px;
-  height:40px;
-  flex-shrink:0;
-  border-radius:12px;
-  background:linear-gradient(135deg,#287cf0,#194477);
-  display:grid;
-  place-items:center;
-  font-size:13px;
-  font-weight:1000;
-  color:white;
-}
-
-.group-heading h3 {
-  margin:0;
-  font-size:16px;
-  overflow-wrap:anywhere;
-}
-
-.group-heading small {
-  display:block;
-  color:var(--muted);
-  font-size:11px;
-  margin-top:3px;
-}
-
-.group-count {
-  margin-left:auto;
-  flex-shrink:0;
-  color:var(--muted);
-  font-size:11px;
-}
-
-/* NOTICE */
-
-.empty {
-  padding:30px;
+.empty{
+  padding:28px 15px;
   text-align:center;
   color:var(--muted);
   grid-column:1/-1;
+  font-size:13px;
 }
 
-.notice {
+.notice{
   border:1px dashed #46658b;
-  border-radius:12px;
-  padding:12px;
+  border-radius:11px;
+  padding:11px;
   color:#b7c9e3;
-  font-size:12px;
+  font-size:11px;
   line-height:1.5;
-  margin-top:14px;
-  overflow-wrap:anywhere;
+  margin-top:13px;
 }
 
 /* FOOTER */
 
-footer {
+footer{
   border-top:1px solid #1e3452;
-  margin-top:50px;
-  padding:28px 0 36px;
+  margin-top:45px;
+  padding:25px 0 32px;
   color:var(--muted);
-  font-size:13px;
+  font-size:12px;
 }
 
-.footer-row {
+.footer-row{
   display:flex;
   justify-content:space-between;
   gap:20px;
   flex-wrap:wrap;
 }
 
-.footer-links {
+.footer-links{
   display:flex;
   gap:16px;
   flex-wrap:wrap;
 }
 
-.footer-links a {
+.footer-links a{
   color:#c9d8ec;
   text-decoration:none;
 }
 
-/* ORDER MODAL */
+/* MODAL */
 
-.modal-backdrop {
+.modal-backdrop{
   position:fixed;
   inset:0;
-  background:#020711c9;
+  background:#020711d9;
   z-index:30;
   display:none;
   align-items:center;
   justify-content:center;
-  padding:16px;
+  padding:14px;
 }
 
-.modal-backdrop.show {
-  display:flex;
-}
+.modal-backdrop.show{display:flex}
 
-.modal {
-  width:min(520px,100%);
+.modal{
+  width:min(500px,100%);
   max-height:90vh;
   overflow:auto;
   background:#10213b;
   border:1px solid #36557d;
-  border-radius:20px;
-  padding:22px;
+  border-radius:17px;
+  padding:19px;
   box-shadow:0 20px 70px #0009;
 }
 
-.modal-head {
+.modal-head{
   display:flex;
   justify-content:space-between;
   gap:12px;
   align-items:start;
 }
 
-.modal h2 {
-  font-size:21px;
-  margin:0 0 6px;
+.modal h2{
+  font-size:19px;
+  margin:0 0 5px;
 }
 
-.close {
+.close{
   border:0;
   background:#203957;
   color:white;
   border-radius:9px;
-  width:34px;
-  height:34px;
+  width:32px;
+  height:32px;
   flex-shrink:0;
 }
 
-.field {
-  margin:15px 0;
-}
+.field{margin:14px 0}
 
-.field label {
+.field label{
   display:block;
-  font-size:13px;
+  font-size:12px;
   color:#c6d5e9;
   margin-bottom:7px;
   font-weight:700;
 }
 
-.field input,
-.field select {
+.field input,.field select{
   width:100%;
-  padding:12px;
+  padding:11px;
   border:1px solid #385477;
-  border-radius:10px;
+  border-radius:9px;
   background:#09172c;
   color:white;
   outline:none;
 }
 
-.modal .primary {
-  width:100%;
-  margin-top:8px;
-}
-
-.summary {
+.summary{
   background:#0a172b;
   border:1px solid #2b4263;
-  border-radius:12px;
-  padding:13px;
-  margin:14px 0;
-  font-size:13px;
+  border-radius:11px;
+  padding:12px;
+  margin:13px 0;
+  font-size:12px;
   line-height:1.7;
-  overflow-wrap:anywhere;
 }
 
-/* TOAST */
+.modal .primary{
+  width:100%;
+  margin-top:7px;
+}
 
-.toast {
+.toast{
   position:fixed;
-  bottom:20px;
+  bottom:18px;
   left:50%;
   transform:translateX(-50%);
   background:#17365b;
   border:1px solid #4776aa;
   color:white;
-  padding:12px 17px;
-  border-radius:12px;
+  padding:11px 15px;
+  border-radius:11px;
   display:none;
   z-index:50;
   max-width:90%;
-  font-size:13px;
+  font-size:12px;
 }
 
-/* TABLET AND MOBILE */
+/* TABLET */
 
-@media(max-width:900px) {
-  .products {
-    grid-template-columns:repeat(2,minmax(0,1fr));
-  }
-
-  .catalog-layout {
-    grid-template-columns:minmax(0,1fr);
-  }
-
-  .filters {
-    padding:12px;
-    overflow:hidden;
-  }
-
-  .filter-list {
-    display:flex;
-    gap:6px;
+@media(max-width:900px){
+  .game-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .catalog-layout{grid-template-columns:1fr}
+  .filter-list{
+    flex-direction:row;
     overflow-x:auto;
-    overflow-y:hidden;
-    white-space:nowrap;
     padding-bottom:4px;
     scrollbar-width:thin;
   }
-
-  .filter-btn {
-    flex-shrink:0;
+  .filter-btn{
+    white-space:nowrap;
     width:auto;
-    margin:0;
+    flex-shrink:0;
   }
+  .products{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 
-@media(max-width:760px) {
-  .wrap {
-    width:calc(100% - 28px);
+/* MOBILE */
+
+@media(max-width:600px){
+  body{font-size:13px}
+
+  .wrap{
+    width:calc(100% - 24px);
   }
 
-  .nav {
-    min-height:66px;
+  .nav{
+    min-height:60px;
     flex-wrap:wrap;
-    padding:12px 0;
-    gap:12px;
+    gap:10px;
+    padding:10px 0;
   }
 
-  .brand {
-    font-size:17px;
+  .brand{font-size:17px}
+
+  .logo{
+    width:34px;
+    height:34px;
+    border-radius:10px;
   }
 
-  .navsearch {
+  .navlink{
+    margin-left:auto;
+    font-size:12px;
+  }
+
+  .navsearch{
     order:3;
     flex-basis:100%;
   }
 
-  .navlink {
-    margin-left:auto;
+  .navsearch input{
+    padding:10px 12px 10px 37px;
+    font-size:12px;
   }
 
-  .hero {
-    padding:25px;
-    min-height:210px;
-    margin-top:18px;
+  .navsearch span{
+    top:7px;
+    left:12px;
   }
 
-  .hero:after {
-    font-size:110px;
+  .hero{
+    margin:17px 0 23px;
+    padding:23px 20px;
+    min-height:190px;
+    border-radius:18px;
+  }
+
+  .hero:after{
+    font-size:95px;
     right:4%;
-    top:28px;
+    top:30px;
   }
 
-  .game-grid {
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:10px;
+  .eyebrow{
+    font-size:9px;
   }
 
-  .game:last-child {
-    grid-column:span 2;
+  .hero h1{
+    font-size:27px;
+    max-width:350px;
+    margin:10px 0;
   }
 
-  .game-icon {
-    height:75px;
+  .hero p{
+    font-size:12px;
+    line-height:1.55;
+    max-width:330px;
+    margin-bottom:15px;
   }
 
-  .section {
+  .primary{
+    padding:11px 15px;
+    font-size:12px;
+  }
+
+  .section{
     margin:24px 0;
   }
 
-  .section h2 {
-    font-size:20px;
+  .section h2{
+    font-size:19px;
   }
 
-  .products {
+  .section-head p{
+    font-size:11px;
+  }
+
+  .game-grid{
     grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:10px;
+    gap:9px;
   }
 
-  .product {
+  .game{
+    padding:10px;
+    border-radius:13px;
+  }
+
+  .game:last-child{
+    grid-column:span 2;
+  }
+
+  .game-icon{
+    height:68px;
+    font-size:22px;
+    border-radius:10px;
+    margin-bottom:8px;
+  }
+
+  .game strong{
+    font-size:12px;
+  }
+
+  .game small{
+    font-size:9px;
+  }
+
+  .catalog-layout{
+    display:block;
+  }
+
+  .filters{
     padding:12px;
+    margin-bottom:12px;
+    border-radius:13px;
   }
 
-  .product h4 {
+  .filters h3{
     font-size:13px;
+    margin-bottom:9px;
   }
 
-  .price {
-    font-size:16px;
+  .filter-list{
+    gap:5px;
+    overflow-x:auto;
+    scrollbar-width:thin;
+    padding-bottom:3px;
   }
 
-  .toolbar {
-    align-items:flex-start;
+  .filter-btn{
+    font-size:11px;
+    padding:8px 10px;
+    border-radius:8px;
+  }
+
+  .product-area{
+    padding:12px;
+    border-radius:13px;
+  }
+
+  .toolbar{
+    align-items:center;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-bottom:12px;
+  }
+
+  .toolbar strong{
+    font-size:12px;
+  }
+
+  .toolbar select{
+    font-size:11px;
+    padding:8px 9px;
+    max-width:160px;
+  }
+
+  .products{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:8px;
+  }
+
+  .product{
+    padding:10px;
+    min-height:140px;
+    border-radius:11px;
+  }
+
+  .tag{
+    font-size:8px;
+  }
+
+  .product h4{
+    font-size:11px;
+    margin:7px 0 5px;
+  }
+
+  .product-info{
+    font-size:9px;
+  }
+
+  .price{
+    font-size:14px;
+    padding-top:6px;
+  }
+
+  .product button{
+    font-size:10px;
+    padding:9px 5px;
+    margin-top:9px;
+  }
+
+  .notice{
+    font-size:10px;
+    padding:10px;
+  }
+
+  footer{
+    margin-top:32px;
+    padding:22px 0 28px;
+  }
+
+  .footer-row{
     flex-direction:column;
+    gap:12px;
   }
 
-  .toolbar select {
-    width:100%;
+  .footer-links{
+    gap:14px;
   }
 
-  .group-heading {
-    margin-top:5px;
+  .modal{
+    padding:16px;
+    border-radius:15px;
   }
 
-  .filters,
-  .product-area {
-    padding:13px;
-  }
+  .modal h2{font-size:17px}
 }
 
-@media(max-width:420px) {
-  .wrap {
-    width:calc(100% - 22px);
+/* HP KECIL */
+
+@media(max-width:360px){
+  .wrap{width:calc(100% - 20px)}
+
+  .hero h1{font-size:24px}
+
+  .products{
+    grid-template-columns:1fr;
   }
 
-  .products {
-    grid-template-columns:minmax(0,1fr);
+  .product{
+    min-height:130px;
   }
 
-  .product {
-    min-height:140px;
-  }
-
-  .hero {
-    padding:22px;
-  }
-
-  .hero h1 {
-    font-size:28px;
-  }
-
-  .brand {
-    font-size:16px;
-  }
-
-  .group-count {
-    font-size:10px;
-  }
+  .game-icon{height:62px}
 }
 </style>
 </head>
@@ -783,12 +827,7 @@ footer {
 
     <div class="navsearch">
       <span>⌕</span>
-      <input
-        id="searchInput"
-        type="search"
-        placeholder="Cari game atau produk..."
-        autocomplete="off"
-      >
+      <input id="searchInput" type="search" placeholder="Cari game atau produk...">
     </div>
 
     <a class="navlink" href="#katalog">Katalog</a>
@@ -809,11 +848,8 @@ footer {
         lalu lanjutkan pesanan dengan mudah.
       </p>
 
-      <button
-        class="primary"
-        id="exploreButton"
-        type="button"
-      >
+      <button class="primary"
+        onclick="document.getElementById('games').scrollIntoView({behavior:'smooth'})">
         JELAJAHI GAME
       </button>
     </div>
@@ -837,9 +873,7 @@ footer {
     <div class="section-head">
       <div>
         <h2 id="catalogTitle">Katalog Produk</h2>
-        <p id="catalogSubtitle">
-          Produk pilihan dari SANS-XP STORE.
-        </p>
+        <p id="catalogSubtitle">Produk pilihan dari SANS-XP STORE.</p>
       </div>
     </div>
 
@@ -873,7 +907,6 @@ footer {
 
       </div>
     </div>
-
   </section>
 
 </main>
@@ -896,7 +929,7 @@ footer {
   </div>
 </footer>
 
-<!-- MODAL PEMESANAN -->
+<!-- MODAL PESANAN -->
 
 <div class="modal-backdrop" id="modalBackdrop">
 
@@ -905,17 +938,10 @@ footer {
     <div class="modal-head">
       <div>
         <h2 id="modalTitle">Pilih produk</h2>
-        <div
-          style="color:#9eafc9;font-size:13px"
-          id="modalSubtitle"
-        ></div>
+        <div style="color:#9eafc9;font-size:12px" id="modalSubtitle"></div>
       </div>
 
-      <button
-        class="close"
-        id="closeModal"
-        type="button"
-      >✕</button>
+      <button class="close" id="closeModal">✕</button>
     </div>
 
     <div class="summary" id="selectedSummary"></div>
@@ -924,33 +950,17 @@ footer {
 
       <div class="field">
         <label for="playerId">User ID</label>
-        <input
-          id="playerId"
-          required
-          placeholder="Masukkan User ID"
-          autocomplete="off"
-        >
+        <input id="playerId" required placeholder="Masukkan User ID">
       </div>
 
       <div class="field" id="serverField">
         <label for="serverId">Zone ID / Server (jika diperlukan)</label>
-        <input
-          id="serverId"
-          placeholder="Masukkan Zone ID atau Server"
-          autocomplete="off"
-        >
+        <input id="serverId" placeholder="Masukkan Zone ID atau Server">
       </div>
 
       <div class="field">
         <label for="quantity">Jumlah</label>
-        <input
-          id="quantity"
-          type="number"
-          min="1"
-          max="10"
-          value="1"
-          required
-        >
+        <input id="quantity" type="number" min="1" max="10" value="1" required>
       </div>
 
       <div class="summary" id="orderTotal"></div>
@@ -960,56 +970,26 @@ footer {
       </button>
 
     </form>
-
   </div>
 </div>
 
 <div class="toast" id="toast"></div>
 
 <script>
-"use strict";
-
 /* KONFIGURASI API */
 
-const WORKER_BASE =
-  "https://sansxp-api-v2.paw12aja.workers.dev";
-
-/* Endpoint ini sudah diuji mengembalikan 490 produk. */
+const WORKER_BASE = "https://sansxp-api-v2.paw12aja.workers.dev";
 const CATALOG_ENDPOINT = "/store/catalog";
-
 const CATALOG_PAGE_SIZE = 50;
 
+/* DAFTAR GAME */
+
 const GAMES = [
-  {
-    id:1,
-    name:"Mobile Legends",
-    short:"ML",
-    sub:"Diamond • WDP"
-  },
-  {
-    id:5249,
-    name:"Free Fire",
-    short:"FF",
-    sub:"Diamond • Membership"
-  },
-  {
-    id:3081,
-    name:"PUBG Mobile",
-    short:"PUBG",
-    sub:"UC • Elite Pass"
-  },
-  {
-    id:3613,
-    name:"Roblox Gift Card (IDR)",
-    short:"R$",
-    sub:"Gift Card"
-  },
-  {
-    id:680,
-    name:"Honor of Kings",
-    short:"HOK",
-    sub:"Token • Pass"
-  }
+  {id:1,name:"Mobile Legends",short:"ML",sub:"Diamond • WDP"},
+  {id:5249,name:"Free Fire",short:"FF",sub:"Diamond • Membership"},
+  {id:3081,name:"PUBG Mobile",short:"PUBG",sub:"UC • Elite Pass"},
+  {id:3613,name:"Roblox Gift Card (IDR)",short:"R$",sub:"Gift Card"},
+  {id:680,name:"Honor of Kings",short:"HOK",sub:"Token • Pass"}
 ];
 
 let products = [];
@@ -1019,618 +999,367 @@ let chosen = null;
 
 const $ = id => document.getElementById(id);
 
-const rupiah = value =>
-  new Intl.NumberFormat("id-ID", {
+const rupiah = n =>
+  new Intl.NumberFormat("id-ID",{
     style:"currency",
     currency:"IDR",
     maximumFractionDigits:0
-  }).format(Number(value) || 0);
+  }).format(Number(n)||0);
 
-/* AMANKAN TEKS DARI API */
-
-function escapeHTML(value) {
-  return String(value ?? "").replace(/[&<>"']/g, char => ({
-    "&":"&amp;",
-    "<":"&lt;",
-    ">":"&gt;",
-    '"':"&quot;",
-    "'":"&#39;"
-  })[char]);
+function gameName(id){
+  return GAMES.find(g=>g.id===Number(id))?.name || "Game";
 }
 
-/* INFORMASI GAME */
-
-function getGame(id) {
-  return GAMES.find(
-    game => game.id === Number(id)
-  );
+function toast(msg){
+  const t=$("toast");
+  t.textContent=msg;
+  t.style.display="block";
+  setTimeout(()=>t.style.display="none",2600);
 }
 
-function gameName(id) {
-  return getGame(id)?.name || "Game";
-}
+/* RENDER GAME */
 
-function toast(message) {
-  const element = $("toast");
+function renderGames(){
 
-  element.textContent = message;
-  element.style.display = "block";
+  $("gameGrid").innerHTML = GAMES.map(g=>`
+    <button class="game ${selectedGame===g.id?"active":""}"
+      data-game="${g.id}">
 
-  setTimeout(() => {
-    element.style.display = "none";
-  }, 2600);
-}
+      <div class="game-icon">${g.short}</div>
 
-/* KARTU GAME */
+      <strong>${g.name}</strong>
+      <small>${g.sub}</small>
 
-function renderGames() {
-  $("gameGrid").innerHTML = GAMES.map(game => `
-    <button
-      class="game ${selectedGame === game.id ? "active" : ""}"
-      data-game="${game.id}"
-      type="button"
-    >
-      <div class="game-icon">
-        ${escapeHTML(game.short)}
-      </div>
-
-      <strong>${escapeHTML(game.name)}</strong>
-      <small>${escapeHTML(game.sub)}</small>
     </button>
   `).join("");
 
-  document.querySelectorAll("[data-game]").forEach(button => {
-    button.addEventListener("click", () => {
-      selectGame(Number(button.dataset.game));
+  document.querySelectorAll("[data-game]").forEach(b=>{
+    b.addEventListener("click",()=>{
+      selectGame(Number(b.dataset.game));
     });
   });
+
 }
 
-function selectGame(id) {
-  selectedGame =
-    selectedGame === id ? 0 : id;
+function selectGame(id){
 
+  selectedGame = selectedGame===id ? 0 : id;
   selectedCategory = "Semua";
 
   renderGames();
   renderCategories();
   renderProducts();
 
-  $("katalog").scrollIntoView({
-    behavior:"smooth",
-    block:"start"
-  });
+  $("katalog").scrollIntoView({behavior:"smooth"});
 }
 
-/* FILTER KATEGORI */
+/* KATEGORI */
 
-function categories() {
+function categories(){
+
   const list = products
-    .filter(product =>
-      !selectedGame ||
-      Number(product.brand_id) === selectedGame
-    )
-    .map(product => product.category || "Top Up");
+    .filter(p=>!selectedGame || Number(p.brand_id)===selectedGame)
+    .map(p=>p.category || "Top Up");
 
-  return [
-    "Semua",
-    ...new Set(list)
-  ];
+  return ["Semua",...new Set(list)];
 }
 
-function renderCategories() {
-  const categoryList = categories();
+function renderCategories(){
 
-  if (!categoryList.includes(selectedCategory)) {
-    selectedCategory = "Semua";
+  const cats=categories();
+
+  if(!cats.includes(selectedCategory)){
+    selectedCategory="Semua";
   }
 
-  $("categoryFilters").innerHTML =
-    categoryList.map(category => `
-      <button
-        class="filter-btn ${
-          selectedCategory === category ? "active" : ""
-        }"
-        data-cat="${escapeHTML(category)}"
-        type="button"
-      >
-        ${escapeHTML(category)}
-      </button>
-    `).join("");
+  $("categoryFilters").innerHTML=cats.map(c=>`
+    <button class="filter-btn ${selectedCategory===c?"active":""}"
+      data-cat="${c}">
+      ${c}
+    </button>
+  `).join("");
 
-  document.querySelectorAll("[data-cat]").forEach(button => {
-    button.addEventListener("click", () => {
-      selectedCategory = button.dataset.cat;
-
+  document.querySelectorAll("[data-cat]").forEach(b=>{
+    b.addEventListener("click",()=>{
+      selectedCategory=b.dataset.cat;
       renderCategories();
       renderProducts();
     });
   });
+
 }
 
-/* PENGURUTAN */
+/* RENDER PRODUK */
 
-function sortProducts(list) {
-  const sort = $("sortSelect").value;
+function renderProducts(){
 
-  if (sort === "low") {
-    return list.sort(
-      (a,b) => Number(a.price) - Number(b.price)
-    );
-  }
+  const query=$("searchInput").value.trim().toLowerCase();
 
-  if (sort === "high") {
-    return list.sort(
-      (a,b) => Number(b.price) - Number(a.price)
-    );
-  }
+  let list=products.filter(p=>{
 
-  if (sort === "az") {
-    return list.sort(
-      (a,b) => String(a.name).localeCompare(String(b.name))
-    );
-  }
+    const sameGame =
+      !selectedGame || Number(p.brand_id)===selectedGame;
 
-  return list;
-}
+    const sameCategory =
+      selectedCategory==="Semua" ||
+      (p.category || "Top Up")===selectedCategory;
 
-/* KARTU PRODUK */
-
-function productCard(product) {
-  const productId = Number(product.product_id);
-
-  return `
-    <article class="product">
-
-      <span class="tag">
-        ${
-          product.featured
-            ? "REKOMENDASI • "
-            : ""
-        }${escapeHTML(product.category || "TOP UP")}
-      </span>
-
-      <h4>${escapeHTML(product.name)}</h4>
-
-      <div style="color:#8fa6c4;font-size:11px">
-        ${escapeHTML(gameName(product.brand_id))}
-        ${
-          product.server
-            ? " • " + escapeHTML(product.server)
-            : ""
-        }
-      </div>
-
-      <div class="price">
-        ${rupiah(product.price)}
-      </div>
-
-      <button
-        type="button"
-        data-product="${productId}"
-      >
-        PILIH PRODUK
-      </button>
-
-    </article>
-  `;
-}
-
-/* RENDER KATALOG */
-
-function renderProducts() {
-  const query = $("searchInput")
-    .value
-    .trim()
-    .toLowerCase();
-
-  let list = products.filter(product => {
-
-    const matchesGame =
-      !selectedGame ||
-      Number(product.brand_id) === selectedGame;
-
-    const matchesCategory =
-      selectedCategory === "Semua" ||
-      (product.category || "Top Up") === selectedCategory;
-
-    const matchesSearch =
+    const sameSearch =
       !query ||
-      String(product.name || "").toLowerCase().includes(query) ||
-      gameName(product.brand_id).toLowerCase().includes(query);
+      (p.name||"").toLowerCase().includes(query) ||
+      gameName(p.brand_id).toLowerCase().includes(query);
 
-    return (
-      matchesGame &&
-      matchesCategory &&
-      matchesSearch
-    );
+    return sameGame && sameCategory && sameSearch;
+
   });
 
-  const sort = $("sortSelect").value;
+  const sort=$("sortSelect").value;
 
-  list = sortProducts(list);
+  if(sort==="low") list.sort((a,b)=>a.price-b.price);
+  if(sort==="high") list.sort((a,b)=>b.price-a.price);
+  if(sort==="az") list.sort((a,b)=>a.name.localeCompare(b.name));
 
   $("catalogTitle").textContent =
-    selectedGame
-      ? `Produk ${gameName(selectedGame)}`
-      : "Katalog Produk";
+    selectedGame ? `Produk ${gameName(selectedGame)}` : "Katalog Produk";
 
   $("catalogSubtitle").textContent =
     selectedGame
       ? "Pilih nominal atau layanan yang ingin dibeli."
-      : "Produk pilihan dari game favoritmu.";
+      : "Pilih produk dari game favoritmu.";
 
   $("resultCount").textContent =
     `${list.length} produk tersedia`;
 
-  if (!list.length) {
-    $("productGrid").innerHTML = `
-      <div class="empty">
-        Produk tidak ditemukan.
-        Coba kata kunci atau kategori lain.
-      </div>
-    `;
+  $("productGrid").innerHTML = list.length
+    ? list.map(p=>`
 
-    return;
-  }
+      <article class="product">
 
-  /*
-    Saat urutan rekomendasi dipilih,
-    tampilkan produk dalam grup masing-masing game.
+        <span class="tag">
+          ${p.featured?"REKOMENDASI • ":""}${p.category||"TOP UP"}
+        </span>
 
-    Saat pengguna memilih harga atau nama,
-    tampilkan urutan global sesuai pilihan.
-  */
+        <h4>${p.name}</h4>
 
-  const groupedView =
-    selectedGame === 0 &&
-    sort === "default";
+        <div class="product-info">
+          ${gameName(p.brand_id)}
+          ${p.server ? " • "+p.server : ""}
+        </div>
 
-  if (groupedView) {
+        <div class="price">${rupiah(p.price)}</div>
 
-    let html = "";
+        <button data-product="${p.product_id}">
+          PILIH PRODUK
+        </button>
 
-    for (const game of GAMES) {
+      </article>
 
-      const gameProducts = list.filter(
-        product => Number(product.brand_id) === game.id
-      );
+    `).join("")
+    : '<div class="empty">Produk tidak ditemukan. Coba kata kunci atau kategori lain.</div>';
 
-      if (!gameProducts.length) continue;
-
-      html += `
-        <section class="game-product-group">
-
-          <div class="group-heading">
-
-            <div class="group-badge">
-              ${escapeHTML(game.short)}
-            </div>
-
-            <div>
-              <h3>${escapeHTML(game.name)}</h3>
-              <small>${escapeHTML(game.sub)}</small>
-            </div>
-
-            <span class="group-count">
-              ${gameProducts.length} produk
-            </span>
-
-          </div>
-
-          <div class="products">
-            ${gameProducts.map(productCard).join("")}
-          </div>
-
-        </section>
-      `;
-    }
-
-    $("productGrid").innerHTML = html;
-
-  } else {
-
-    $("productGrid").innerHTML =
-      list.map(productCard).join("");
-
-  }
-
-  document.querySelectorAll("[data-product]").forEach(button => {
-    button.addEventListener("click", () => {
-      openOrder(Number(button.dataset.product));
+  document.querySelectorAll("[data-product]").forEach(b=>{
+    b.addEventListener("click",()=>{
+      openOrder(Number(b.dataset.product));
     });
   });
+
 }
 
-/* MODAL PESANAN */
+/* FORM PESANAN */
 
-function openOrder(id) {
-  chosen = products.find(
-    product => Number(product.product_id) === id
-  );
+function openOrder(id){
 
-  if (!chosen) return;
+  chosen=products.find(p=>Number(p.product_id)===id);
 
-  $("modalTitle").textContent = chosen.name;
+  if(!chosen)return;
 
-  $("modalSubtitle").textContent =
-    gameName(chosen.brand_id);
+  $("modalTitle").textContent=chosen.name;
+  $("modalSubtitle").textContent=gameName(chosen.brand_id);
 
-  $("selectedSummary").innerHTML = `
-    Produk:
-    <strong>${escapeHTML(chosen.name)}</strong>
-    <br>
-
-    Game:
-    ${escapeHTML(gameName(chosen.brand_id))}
-
-    <br>
-
-    Harga satuan:
-    <strong>${rupiah(chosen.price)}</strong>
+  $("selectedSummary").innerHTML=`
+    Produk: <strong>${chosen.name}</strong><br>
+    Game: ${gameName(chosen.brand_id)}<br>
+    Harga satuan: <strong>${rupiah(chosen.price)}</strong>
   `;
 
-  const needsServer = [
-    1,
-    3081,
-    680
-  ].includes(Number(chosen.brand_id));
-
   $("serverField").style.display =
-    needsServer ? "block" : "none";
+    [1,3081,680].includes(Number(chosen.brand_id))
+      ? "block"
+      : "none";
 
-  $("serverId").required = false;
-  $("serverId").value = "";
-
-  $("playerId").value = "";
-  $("quantity").value = 1;
+  $("serverId").required=false;
+  $("quantity").value=1;
 
   updateTotal();
 
   $("modalBackdrop").classList.add("show");
 }
 
-function updateTotal() {
-  if (!chosen) return;
+function updateTotal(){
 
-  const quantity = Math.max(
+  if(!chosen)return;
+
+  const qty=Math.max(
     1,
-    Math.min(
-      10,
-      Number($("quantity").value) || 1
-    )
+    Math.min(10,Number($("quantity").value)||1)
   );
 
-  $("orderTotal").innerHTML = `
-    Subtotal (${quantity} × ${rupiah(chosen.price)}):
-    <strong style="float:right">
-      ${rupiah(chosen.price * quantity)}
-    </strong>
+  $("orderTotal").innerHTML=`
+    Subtotal (${qty} × ${rupiah(chosen.price)}):
+    <strong style="float:right">${rupiah(chosen.price*qty)}</strong>
 
-    <div style="
-      color:#9eafc9;
-      font-size:11px;
-      margin-top:7px;
-      clear:both
-    ">
-      Ringkasan sementara.
-      Biaya akhir akan dikonfirmasi pada tahap checkout.
+    <div style="color:#9eafc9;font-size:10px;margin-top:7px">
+      Ringkasan sementara. Biaya akhir akan dikonfirmasi pada tahap checkout.
     </div>
   `;
+
 }
 
-function closeOrder() {
+$("closeModal").onclick=()=>{
   $("modalBackdrop").classList.remove("show");
-  chosen = null;
-}
+};
 
-$("closeModal").addEventListener("click", closeOrder);
-
-$("modalBackdrop").addEventListener("click", event => {
-  if (event.target === $("modalBackdrop")) {
-    closeOrder();
+$("modalBackdrop").addEventListener("click",e=>{
+  if(e.target===$("modalBackdrop")){
+    $("modalBackdrop").classList.remove("show");
   }
 });
 
-$("quantity").addEventListener("input", updateTotal);
+$("quantity").addEventListener("input",updateTotal);
 
-/* SUBMIT SEMENTARA */
+$("searchInput").addEventListener("input",renderProducts);
 
-$("orderForm").addEventListener("submit", event => {
-  event.preventDefault();
+$("sortSelect").addEventListener("change",renderProducts);
 
-  if (!chosen) return;
+$("orderForm").addEventListener("submit",e=>{
 
-  const quantity = Math.max(
-    1,
-    Math.min(10, Number($("quantity").value) || 1)
-  );
+  e.preventDefault();
 
-  const order = {
+  if(!chosen)return;
+
+  const order={
     game:gameName(chosen.brand_id),
     product:chosen.name,
     product_id:chosen.product_id,
     price:chosen.price,
-    quantity,
+    quantity:Number($("quantity").value),
     user_id:$("playerId").value.trim(),
     server:$("serverId").value.trim()
   };
 
-  console.log("SANS-XP draft order:", order);
+  $("modalBackdrop").classList.remove("show");
 
-  closeOrder();
+  toast("Data pesanan siap. Integrasi checkout belum diaktifkan.");
 
-  toast(
-    "Data pesanan tersimpan sementara. Checkout belum aktif."
-  );
+  console.log("SANS-XP draft order:",order);
+
 });
 
-/* KONEKSI KATALOG API */
+/* AMBIL KATALOG DARI WORKER */
 
-async function loadCatalog() {
+async function loadCatalog(){
 
-  const notice = $("apiNotice");
+  const notice=$("apiNotice");
 
-  notice.textContent =
-    "Menghubungkan ke katalog SANS-XP STORE...";
+  notice.textContent="Menghubungkan ke katalog SANS-XP STORE...";
 
-  try {
+  try{
 
-    let allRows = [];
-    let offset = 0;
-    let total = null;
-    let pages = 0;
+    let allRows=[];
+    let offset=0;
+    let total=null;
 
-    while (
-      total === null ||
-      offset < total
-    ) {
+    while(total===null || offset<total){
 
-      pages++;
+      const url=new URL(WORKER_BASE+CATALOG_ENDPOINT);
 
-      if (pages > 100) {
-        throw new Error(
-          "Batas pagination tercapai."
-        );
+      url.searchParams.set("limit",String(CATALOG_PAGE_SIZE));
+      url.searchParams.set("offset",String(offset));
+
+      const res=await fetch(url.toString(),{
+        headers:{"Accept":"application/json"}
+      });
+
+      if(!res.ok){
+        throw new Error("HTTP "+res.status+" saat mengambil katalog");
       }
 
-      const url = new URL(
-        WORKER_BASE + CATALOG_ENDPOINT
-      );
+      const json=await res.json();
 
-      url.searchParams.set(
-        "limit",
-        String(CATALOG_PAGE_SIZE)
-      );
-
-      url.searchParams.set(
-        "offset",
-        String(offset)
-      );
-
-      const response = await fetch(
-        url.toString(),
-        {
-          method:"GET",
-          headers:{
-            "Accept":"application/json"
-          }
-        }
-      );
-
-      if (!response.ok) {
-        throw new Error(
-          "HTTP " + response.status +
-          " saat mengambil katalog"
-        );
+      if(json.success===false){
+        throw new Error(json.message||"API mengembalikan status gagal");
       }
 
-      const json = await response.json();
+      const rows=Array.isArray(json.data)?json.data:[];
 
-      if (json.success === false) {
-        throw new Error(
-          json.error ||
-          json.message ||
-          "API mengembalikan status gagal"
-        );
+      if(total===null){
+        total=Number(json.total??rows.length);
       }
 
-      const rows = Array.isArray(json.data)
-        ? json.data
-        : [];
-
-      if (total === null) {
-        total = Number(
-          json.total ?? rows.length
-        );
-      }
-
-      if (!rows.length) break;
+      if(!rows.length)break;
 
       allRows.push(...rows);
 
-      offset += rows.length;
+      offset+=rows.length;
 
-      notice.textContent =
+      notice.textContent=
         `Memuat katalog... ${allRows.length} dari ${total} produk`;
 
-      if (rows.length < CATALOG_PAGE_SIZE) {
-        break;
-      }
+      if(rows.length<CATALOG_PAGE_SIZE)break;
+
     }
 
-    if (!allRows.length) {
-      throw new Error(
-        "API terhubung, tetapi data katalog kosong."
-      );
+    if(!allRows.length){
+      throw new Error("Data katalog kosong");
     }
 
-    products = allRows.map(product => ({
-      ...product,
-      product_id:Number(product.product_id),
-      brand_id:Number(product.brand_id),
-      price:Number(product.price),
+    products=allRows.map(p=>({
+
+      ...p,
+
+      product_id:Number(p.product_id),
+      brand_id:Number(p.brand_id),
+      price:Number(p.price),
 
       category:
-        product.category ||
-        product.category_tag ||
-        product.type ||
+        p.category ||
+        p.category_tag ||
+        p.type ||
         "Top Up",
 
       featured:Boolean(
-        product.featured ??
-        product.is_featured
+        p.featured ?? p.is_featured
       )
+
     }));
 
-    notice.textContent =
-      `Katalog berhasil dimuat: ${products.length} produk. Harga sudah mengikuti markup dari server.`;
-
-    renderGames();
-    renderCategories();
-    renderProducts();
-
-  } catch (error) {
-
-    products = [];
-
-    notice.textContent =
-      "Katalog belum bisa dimuat: " +
-      error.message +
-      ". Periksa koneksi Worker.";
+    notice.textContent=
+      `Katalog berhasil dimuat: ${products.length} produk. Harga mengikuti harga API; markup sudah diterapkan di server.`;
 
     renderCategories();
     renderProducts();
 
-    $("resultCount").textContent =
-      "0 produk tersedia";
+  }catch(err){
+
+    products=[];
+
+    notice.textContent=
+      "Katalog belum bisa dimuat: "+
+      err.message+
+      ". Periksa endpoint /store/catalog pada Worker.";
+
+    renderCategories();
+    renderProducts();
+
   }
+
 }
 
-/* EVENT LISTENERS */
-
-$("exploreButton").addEventListener("click", () => {
-  $("games").scrollIntoView({
-    behavior:"smooth"
-  });
-});
-
-$("searchInput").addEventListener(
-  "input",
-  renderProducts
-);
-
-$("sortSelect").addEventListener(
-  "change",
-  renderProducts
-);
-
-/* MULAI WEBSITE */
+/* MULAI */
 
 renderGames();
 loadCatalog();
 
 </script>
-
 </body>
-</html>
+    </html>
