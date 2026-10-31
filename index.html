@@ -32,7 +32,7 @@ footer{border-top:1px solid #1e3452;margin-top:50px;padding:28px 0 36px;color:va
   <section class="section" id="katalog"><div class="section-head"><div><h2 id="catalogTitle">Katalog Produk</h2><p id="catalogSubtitle">Produk pilihan dari SANS-XP STORE.</p></div></div>
     <div class="catalog-layout">
       <aside class="filters"><h3>Kategori</h3><div class="filter-list" id="categoryFilters"></div></aside>
-      <div class="product-area"><div class="toolbar"><strong id="resultCount">Memuat katalog...</strong><select id="sortSelect"><option value="default">Urutan rekomendasi</option><option value="low">Harga terendah</option><option value="high">Harga tertinggi</option><option value="az">Nama A–Z</option></select></div><div class="products" id="productGrid"><div class="empty">Menyiapkan katalog...</div></div><div class="notice" id="apiNotice">Mode pratinjau: tampilan menggunakan contoh produk. Setelah endpoint katalog publik Worker dipastikan, data asli akan dimuat otomatis.</div></div>
+      <div class="product-area"><div class="toolbar"><strong id="resultCount">Memuat katalog...</strong><select id="sortSelect"><option value="default">Urutan rekomendasi</option><option value="low">Harga terendah</option><option value="high">Harga tertinggi</option><option value="az">Nama A–Z</option></select></div><div class="products" id="productGrid"><div class="empty">Menyiapkan katalog...</div></div><div class="notice" id="apiNotice">Menghubungkan ke katalog resmi SANS-X API…</div></div>
     </div>
   </section>
 </main>
@@ -42,7 +42,8 @@ footer{border-top:1px solid #1e3452;margin-top:50px;padding:28px 0 36px;color:va
 <script>
 const WORKER_BASE = "https://sansxp-api-v2.paw12aja.workers.dev";
 // Isi setelah endpoint katalog publik final dipastikan, contoh: "/store/catalog"
-const CATALOG_ENDPOINT = "";
+const CATALOG_ENDPOINT = "/store/catalog";
+const CATALOG_PAGE_SIZE = 50;
 const GAMES = [
  {id:1,name:"Mobile Legends",short:"ML",sub:"Diamond • WDP"},
  {id:5249,name:"Free Fire",short:"FF",sub:"Diamond • Membership"},
@@ -61,7 +62,7 @@ const demo = [
  {product_id:18802,brand_id:5249,name:"70 Diamonds",price:10500,category:"Top Up",featured:false,server:""},
  {product_id:18803,brand_id:680,name:"80 Tokens",price:12000,category:"Top Up",featured:false,server:""}
 ];
-let products=[...demo],selectedGame=0,selectedCategory="Semua",chosen=null;
+let products=[],selectedGame=0,selectedCategory="Semua",chosen=null;
 const $=id=>document.getElementById(id);
 const rupiah=n=>new Intl.NumberFormat("id-ID",{style:"currency",currency:"IDR",maximumFractionDigits:0}).format(Number(n)||0);
 function gameName(id){return GAMES.find(g=>g.id===Number(id))?.name||"Game";}
@@ -75,7 +76,37 @@ function openOrder(id){chosen=products.find(p=>Number(p.product_id)===id);if(!ch
 function updateTotal(){if(!chosen)return;const qty=Math.max(1,Math.min(10,Number($("quantity").value)||1));$("orderTotal").innerHTML=`Subtotal (${qty} × ${rupiah(chosen.price)}): <strong style="float:right">${rupiah(chosen.price*qty)}</strong><div style="color:#9eafc9;font-size:11px;margin-top:7px">Ringkasan sementara. Biaya akhir akan dikonfirmasi pada tahap checkout.</div>`;}
 $("closeModal").onclick=()=>$("modalBackdrop").classList.remove("show");$("modalBackdrop").addEventListener("click",e=>{if(e.target===$("modalBackdrop"))$("modalBackdrop").classList.remove("show")});$("quantity").addEventListener("input",updateTotal);$("searchInput").addEventListener("input",renderProducts);$("sortSelect").addEventListener("change",renderProducts);
 $("orderForm").addEventListener("submit",e=>{e.preventDefault();if(!chosen)return;const order={game:gameName(chosen.brand_id),product:chosen.name,product_id:chosen.product_id,price:chosen.price,quantity:Number($("quantity").value),user_id:$("playerId").value.trim(),server:$("serverId").value.trim()};$("modalBackdrop").classList.remove("show");toast("Data pesanan siap. Integrasi checkout belum diaktifkan.");console.log("SANS-XP draft order:",order);});
-async function loadCatalog(){if(!CATALOG_ENDPOINT){$("apiNotice").textContent="Mode pratinjau aktif. API katalog publik belum dihubungkan; produk contoh hanya untuk melihat desain dan tidak bisa dibeli.";renderCategories();renderProducts();return;}try{const res=await fetch(WORKER_BASE+CATALOG_ENDPOINT);if(!res.ok)throw new Error("HTTP "+res.status);const json=await res.json();const rows=Array.isArray(json.data)?json.data:[];if(!rows.length)throw new Error("Data katalog kosong atau format endpoint berbeda");products=rows.map(p=>({...p,brand_id:Number(p.brand_id),price:Number(p.price),category:p.category||p.category_tag||"Top Up",featured:Boolean(p.featured??p.is_featured)}));$("apiNotice").textContent="Katalog berhasil dimuat dari SANS-XP API.";renderCategories();renderProducts();}catch(err){$("apiNotice").textContent="Katalog API belum berhasil dimuat: "+err.message+". Tampilan contoh dipertahankan.";renderCategories();renderProducts();}}
+async function loadCatalog(){
+  const notice=$("apiNotice");
+  notice.textContent="Menghubungkan ke katalog SANS-XP STORE…";
+  try{
+    let allRows=[],offset=0,total=null;
+    while(total===null||offset<total){
+      const url=new URL(WORKER_BASE+CATALOG_ENDPOINT);
+      url.searchParams.set("limit",String(CATALOG_PAGE_SIZE));
+      url.searchParams.set("offset",String(offset));
+      const res=await fetch(url.toString(),{headers:{"Accept":"application/json"}});
+      if(!res.ok)throw new Error("HTTP "+res.status+" saat mengambil katalog");
+      const json=await res.json();
+      if(json.success===false)throw new Error(json.message||"API mengembalikan status gagal");
+      const rows=Array.isArray(json.data)?json.data:[];
+      if(total===null)total=Number(json.total??rows.length);
+      if(!rows.length)break;
+      allRows.push(...rows);
+      offset+=rows.length;
+      notice.textContent=`Memuat katalog… ${allRows.length} dari ${total} produk`;
+      if(rows.length<CATALOG_PAGE_SIZE)break;
+    }
+    if(!allRows.length)throw new Error("API terhubung, tetapi data katalog kosong");
+    products=allRows.map(p=>({...p,product_id:Number(p.product_id),brand_id:Number(p.brand_id),price:Number(p.price),category:p.category||p.category_tag||p.type||"Top Up",featured:Boolean(p.featured??p.is_featured)}));
+    notice.textContent=`Katalog berhasil dimuat: ${products.length} produk. Harga mengikuti harga dari API (markup sudah diterapkan di server).`;
+    renderCategories();renderProducts();
+  }catch(err){
+    products=[];
+    notice.textContent="Katalog belum bisa dimuat: "+err.message+". Periksa endpoint /store/catalog pada Worker.";
+    renderCategories();renderProducts();
+  }
+}
 renderGames();loadCatalog();
 </script>
 </body></html>
